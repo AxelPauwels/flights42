@@ -15,5 +15,16 @@
         <button (click)="deselect()">Remove</button>
       }
     </div>
+
+    <br/>
+
+    <!-- Place for projected content -->
+    <ng-content>
+      <!-- This content is shown if no content is projected -->
+      <p>No additional information provided.</p>
+    </ng-content>
+
+    <!-- Placeholder for projected content with class="extra-detail" -->
+    <ng-content select=".extra-detail" />
   </div>
 </div>

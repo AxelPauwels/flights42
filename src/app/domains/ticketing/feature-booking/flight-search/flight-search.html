@@ -25,7 +25,13 @@
         <app-flight-card
           [item]="flight"
           [selected]="basket()[flight.id]"
-          (selectedChange)="updateBasket(flight.id, $event)"/>
+          (selectedChange)="updateBasket(flight.id, $event)">
+
+          <!-- Projected content -->
+          <div>The flight #{{ flight.id }} might be delayed. Please check the monitors.</div>
+
+          <p class="extra-detail">Full Id: LUGGAGE-0815-4711-{{ flight.id }}</p>
+        </app-flight-card>
       </div>
     }
   </div>
