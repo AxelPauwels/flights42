@@ -12,6 +12,24 @@ ng serve
 
 Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
+## Development server Debugging
+Update start script in package.json to include a specific port.
+
+```json
+{
+  "scripts": {
+    "start": "ng serve --port 4444"
+  }
+}
+```
+Update the run configurations:
+Go to Run -> Edit Configurations -> JavaScript Debug -> [some project name] -> update the url 
+`http://localhost:4444/`
+![img.png](documentation-resources/debug-configuration.png)
+
+
+Now first run `npm start` and then run the debug configuration with the debug-icon to start debugging.
+![img.png](documentation-resources/debug-project.png)
 ## Code scaffolding
 
 Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
