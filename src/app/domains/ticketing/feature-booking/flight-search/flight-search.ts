@@ -38,6 +38,11 @@ export class FlightSearch {
   protected readonly error = this.flightsResource.error;
   protected readonly isLoading = this.flightsResource.isLoading;
 
+  protected readonly basket = signal<Record<number, boolean>>({
+    3: true,
+    5: true,
+  });
+
   protected readonly filterForm = form(this.filter);
   protected readonly selectedFlight = signal<Flight | null>(null);
   protected search(): void {
@@ -46,5 +51,12 @@ export class FlightSearch {
 
   protected select(f: Flight): void {
     this.selectedFlight.set(f);
+  }
+
+  protected updateBasket(flightId: number, selected: boolean): void {
+    this.basket.update((basket) => ({
+      ...basket,
+      [flightId]: selected,
+    }));
   }
 }
