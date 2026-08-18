@@ -1,11 +1,12 @@
+import { JsonPipe, DatePipe } from '@angular/common';
 import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
-import { form } from '@angular/forms/signals';
+import { FormField, form } from '@angular/forms/signals';
 import { Flight } from '../../data/flight';
 import { initialAircraft } from '../../data/aircraft';
 
 @Component({
   selector: 'app-flight-search',
-  imports: [],
+  imports: [FormField, JsonPipe, DatePipe],
   templateUrl: './flight-search.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
