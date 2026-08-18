@@ -1,0 +1,19 @@
+@let flight = item();
+
+<div [class.selected]="selected()" class="card">
+  <div class="card-header">
+    <h2 class="title">{{ flight.from }} - {{ flight.to }}</h2>
+  </div>
+  <div class="card-body">
+    <p>Flight-No.: #{{ flight.id }}</p>
+    <p>Date: {{ flight.date | date }}</p>
+    <p>Delayed: {{ flight.delayed }}</p>
+    <div>
+      @if (!selected()) {
+        <button (click)="select()">Select</button>
+      } @else {
+        <button (click)="deselect()">Remove</button>
+      }
+    </div>
+  </div>
+</div>

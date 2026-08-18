@@ -19,34 +19,16 @@
 </form>
 
 @if (!error() && flights().length > 0) {
-  <table>
-    <tr>
-      <th>Id</th>
-      <th>From</th>
-      <th>To</th>
-      <th>Date</th>
-      <th>Delayed</th>
-    </tr>
-
+  <div class="row">
     @for (flight of flights(); track flight.id) {
-      <tr
-        [class.selected]="selectedFlight() === flight"
-        [style.color]="flight.delayed ? 'darkred' : 'black'"
-        (click)="select(flight)"
-        class="selectable"
-      >
-        <td>{{ flight.id }}</td>
-        <td>{{ flight.from }}</td>
-        <td>{{ flight.to }}</td>
-        <td>{{ flight.date | date:'dd.MM.yyyy HH:mm' }}</td>
-        <td>{{ flight.delayed }}</td>
-      </tr>
-    } @empty {
-      <tr>
-        <td colspan="5">No flights found.</td>
-      </tr>
+      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+        <app-flight-card
+          [item]="flight"
+          [selected]="basket()[flight.id]"
+          (selectedChange)="updateBasket(flight.id, $event)"/>
+      </div>
     }
-  </table>
+  </div>
 }
 
 @if (error()) {

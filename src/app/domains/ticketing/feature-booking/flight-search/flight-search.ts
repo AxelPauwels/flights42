@@ -3,10 +3,11 @@ import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/cor
 import { FormField, form } from '@angular/forms/signals';
 import { Flight } from '../../data/flight';
 import { httpResource } from '@angular/common/http';
+import { FlightCard } from '../../ui/flight-card/flight-card';
 
 @Component({
   selector: 'app-flight-search',
-  imports: [FormField, JsonPipe, DatePipe],
+  imports: [FormField, JsonPipe, DatePipe, FlightCard],
   templateUrl: './flight-search.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
