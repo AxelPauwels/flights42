@@ -1,5 +1,5 @@
 import { JsonPipe } from '@angular/common';
-import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, signal } from '@angular/core';
 import { FormField, form } from '@angular/forms/signals';
 import { Flight } from '../../data/flight';
 import { httpResource } from '@angular/common/http';
@@ -51,6 +51,10 @@ export class FlightSearch {
   protected search(): void {
     this.flightsResource.reload();
   }
+  // Computed signal automatically updates when filter changes
+  protected readonly flightRoute = computed(
+    () => `${this.filter().from} to ${this.filter().to}`,
+  );
 
   protected select(f: Flight): void {
     this.selectedFlight.set(f);
