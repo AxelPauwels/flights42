@@ -1,5 +1,5 @@
 import { JsonPipe } from '@angular/common';
-import { ChangeDetectionStrategy, Component, computed, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, signal, untracked } from '@angular/core';
 import { FormField, form } from '@angular/forms/signals';
 import { Flight } from '../../data/flight';
 import { httpResource } from '@angular/common/http';
@@ -17,6 +17,16 @@ export class FlightSearch {
     from: 'Hamburg',
     to: 'Graz',
   });
+  protected readonly from = computed(() => this.filter().from);
+  protected readonly to = computed(() => this.filter().to);
+
+  // Only tracks 'from', not 'to'
+  protected readonly flightRoute = computed(() => {
+    const origin = this.from(); // tracked
+    const destination = untracked(() => this.to()); // NOT tracked
+    return `${origin} → ${destination}`;
+  });
+
   protected readonly flightsResource = httpResource<Flight[]>(
     () => {
       const filter = this.filter();
@@ -51,10 +61,6 @@ export class FlightSearch {
   protected search(): void {
     this.flightsResource.reload();
   }
-  // Computed signal automatically updates when filter changes
-  protected readonly flightRoute = computed(
-    () => `${this.filter().from} to ${this.filter().to}`,
-  );
 
   protected select(f: Flight): void {
     this.selectedFlight.set(f);
