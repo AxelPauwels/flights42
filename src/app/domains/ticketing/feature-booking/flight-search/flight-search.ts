@@ -5,6 +5,7 @@ import { Flight } from '../../data/flight';
 import { httpResource } from '@angular/common/http';
 import { FlightCard } from '../../ui/flight-card/flight-card';
 import { DelayStepper } from '../../../shared/ui-common/delay-stepper/delay-stepper';
+import { FlightZodSchema } from '../../data/flight-zod-schema';
 
 @Component({
   selector: 'app-flight-search',
@@ -42,7 +43,10 @@ export class FlightSearch {
         },
       };
     },
-    { defaultValue: [] },
+    {
+      defaultValue: [],
+      // parse: (raw) => FlightZodSchema.array().parse(raw),
+    },
   );
 
   // Get resource result and status
