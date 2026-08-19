@@ -4,6 +4,7 @@ import {
   Component,
   computed,
   inject,
+  resource,
   signal,
   untracked,
 } from '@angular/core';
@@ -14,7 +15,7 @@ import { FlightCard } from '../../ui/flight-card/flight-card';
 import { DelayStepper } from '../../../shared/ui-common/delay-stepper/delay-stepper';
 import { FlightZodSchema } from '../../data/flight-zod-schema';
 import { rxResource } from '@angular/core/rxjs-interop';
-import { Observable } from 'rxjs';
+import { firstValueFrom, Observable, Subject, takeUntil } from 'rxjs';
 
 @Component({
   selector: 'app-flight-search',
@@ -60,13 +61,29 @@ export class FlightSearch {
   //   },
   // );
 
-  protected readonly flightsResource = rxResource({
+  // protected readonly flightsResource = rxResource({
+  //   params: () => ({
+  //     ...this.filter(),
+  //   }),
+  //   stream: (loaderParams)  => {
+  //     const params = loaderParams.params;
+  //     return this._find(params.from, params.to);
+  //   },
+  //   defaultValue: [],
+  // });
+
+  // The main difference from the rxResource is that it uses a loader function that
+  // returns a Promise instead of a stream function that returns an Observable.
+  // Also, here, the API and semantics from the caller’s perspective are the same.
+  protected readonly flightsResource = resource({
     params: () => ({
-      ...this.filter(),
+      from: this.filter().from,
+      to: this.filter().to,
     }),
-    stream: (loaderParams):Observable<Flight[]> => {
-      const params = loaderParams.params;
-      return this._find(params.from, params.to);
+    loader: (loaderParams) => {
+      const c = loaderParams.params;
+      const abortSignal = loaderParams.abortSignal;
+      return this._findPromise(c.from, c.to, abortSignal);
     },
     defaultValue: [],
   });
@@ -106,5 +123,16 @@ export class FlightSearch {
     };
     const params = { from, to, urgent };
     return this.http.get<Flight[]>(url, { headers, params });
+  }
+
+  private _findPromise(from: string, to: string, abortSignal?: AbortSignal): Promise<Flight[]> {
+    const aborted = new Subject<void>();
+    abortSignal?.addEventListener('abort', () => {
+      aborted.next();
+    });
+    const flightsObservable = this._find(from, to).pipe(takeUntil(aborted));
+    // As the HttpClient always returns an Observable, our implementation of
+    // findPromise needs to convert it to a Promise.
+    return firstValueFrom(flightsObservable);
   }
 }
