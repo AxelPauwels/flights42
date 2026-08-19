@@ -1,8 +1,12 @@
 import { JsonPipe } from '@angular/common';
 import {
+  afterEveryRender,
+  afterNextRender,
+  afterRenderEffect,
   ChangeDetectionStrategy,
   Component,
   computed,
+  effect,
   inject,
   resource,
   signal,
@@ -16,6 +20,7 @@ import { DelayStepper } from '../../../shared/ui-common/delay-stepper/delay-step
 import { FlightZodSchema } from '../../data/flight-zod-schema';
 import { rxResource } from '@angular/core/rxjs-interop';
 import { firstValueFrom, Observable, Subject, takeUntil } from 'rxjs';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-flight-search',
@@ -25,6 +30,11 @@ import { firstValueFrom, Observable, Subject, takeUntil } from 'rxjs';
 })
 export class FlightSearch {
   private readonly http = inject(HttpClient);
+  private readonly snackBar = inject(MatSnackBar);
+
+  constructor() {
+    this.showError();
+  }
 
   protected readonly filter = signal({
     from: 'Hamburg',
@@ -134,5 +144,29 @@ export class FlightSearch {
     // As the HttpClient always returns an Observable, our implementation of
     // findPromise needs to convert it to a Promise.
     return firstValueFrom(flightsObservable);
+  }
+
+  private showError() {
+    effect(() => {
+      const error = this.error();
+      if (error || this.filter().to === 'error') {
+        const message = 'Error loading flights: ' + error;
+        this.snackBar.open(message, 'OK');
+      }
+    });
+
+    afterRenderEffect(() => {
+      // DOM manipulation here
+    });
+
+    afterNextRender(() => {
+      const filter = this.filter();
+      console.log('After Next Render: from', filter.from, '-> to', filter.to);
+    });
+
+    afterEveryRender(() => {
+      const filter = this.filter();
+      console.log('After Every Render: from', filter.from, '-> to', filter.to);
+    });
   }
 }
