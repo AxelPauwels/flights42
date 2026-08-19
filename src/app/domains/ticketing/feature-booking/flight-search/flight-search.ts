@@ -1,5 +1,5 @@
-import { JsonPipe, DatePipe } from '@angular/common';
-import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
+import { JsonPipe } from '@angular/common';
+import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { FormField, form } from '@angular/forms/signals';
 import { Flight } from '../../data/flight';
 import { httpResource } from '@angular/common/http';
@@ -8,7 +8,7 @@ import { DelayStepper } from '../../../shared/ui-common/delay-stepper/delay-step
 
 @Component({
   selector: 'app-flight-search',
-  imports: [FormField, JsonPipe, DatePipe, FlightCard, DelayStepper],
+  imports: [FormField, JsonPipe, FlightCard, DelayStepper],
   templateUrl: './flight-search.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
