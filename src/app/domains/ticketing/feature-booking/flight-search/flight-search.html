@@ -37,6 +37,13 @@
   </div>
 }
 
+<div>
+  <label for="date">Max. Delay:</label>
+  <app-delay-stepper
+    [(value)]="maxDelay()"
+  />
+</div>
+
 @if (error()) {
   <div>Error: {{ error() | json }}</div>
 }

@@ -4,10 +4,11 @@ import { FormField, form } from '@angular/forms/signals';
 import { Flight } from '../../data/flight';
 import { httpResource } from '@angular/common/http';
 import { FlightCard } from '../../ui/flight-card/flight-card';
+import { DelayStepper } from '../../../shared/ui-common/delay-stepper/delay-stepper';
 
 @Component({
   selector: 'app-flight-search',
-  imports: [FormField, JsonPipe, DatePipe, FlightCard],
+  imports: [FormField, JsonPipe, DatePipe, FlightCard, DelayStepper],
   templateUrl: './flight-search.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
@@ -43,6 +44,7 @@ export class FlightSearch {
     3: true,
     5: true,
   });
+  protected readonly maxDelay = signal(0);
 
   protected readonly filterForm = form(this.filter);
   protected readonly selectedFlight = signal<Flight | null>(null);
