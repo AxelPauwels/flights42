@@ -1,11 +1,20 @@
 import { JsonPipe } from '@angular/common';
-import { ChangeDetectionStrategy, Component, computed, signal, untracked } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  computed,
+  inject,
+  signal,
+  untracked,
+} from '@angular/core';
 import { FormField, form } from '@angular/forms/signals';
 import { Flight } from '../../data/flight';
-import { httpResource } from '@angular/common/http';
+import { HttpClient, httpResource } from '@angular/common/http';
 import { FlightCard } from '../../ui/flight-card/flight-card';
 import { DelayStepper } from '../../../shared/ui-common/delay-stepper/delay-stepper';
 import { FlightZodSchema } from '../../data/flight-zod-schema';
+import { rxResource } from '@angular/core/rxjs-interop';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-flight-search',
@@ -14,6 +23,8 @@ import { FlightZodSchema } from '../../data/flight-zod-schema';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FlightSearch {
+  private readonly http = inject(HttpClient);
+
   protected readonly filter = signal({
     from: 'Hamburg',
     to: 'Graz',
@@ -28,26 +39,37 @@ export class FlightSearch {
     return `${origin} → ${destination}`;
   });
 
-  protected readonly flightsResource = httpResource<Flight[]>(
-    () => {
-      const filter = this.filter();
-      if (!filter.from || !filter.to) {
-        return undefined;
-      }
+  // protected readonly flightsResource = httpResource<Flight[]>(
+  //   () => {
+  //     const filter = this.filter();
+  //     if (!filter.from || !filter.to) {
+  //       return undefined;
+  //     }
+  //
+  //     return {
+  //       url: 'https://demo.angulararchitects.io/api/flight',
+  //       params: {
+  //         from: filter.from,
+  //         to: filter.to,
+  //       },
+  //     };
+  //   },
+  //   {
+  //     defaultValue: [],
+  //     // parse: (raw) => FlightZodSchema.array().parse(raw),
+  //   },
+  // );
 
-      return {
-        url: 'https://demo.angulararchitects.io/api/flight',
-        params: {
-          from: filter.from,
-          to: filter.to,
-        },
-      };
+  protected readonly flightsResource = rxResource({
+    params: () => ({
+      ...this.filter(),
+    }),
+    stream: (loaderParams):Observable<Flight[]> => {
+      const params = loaderParams.params;
+      return this._find(params.from, params.to);
     },
-    {
-      defaultValue: [],
-      // parse: (raw) => FlightZodSchema.array().parse(raw),
-    },
-  );
+    defaultValue: [],
+  });
 
   // Get resource result and status
   protected readonly flights = this.flightsResource.value;
@@ -75,5 +97,14 @@ export class FlightSearch {
       ...basket,
       [flightId]: selected,
     }));
+  }
+
+  private _find(from: string, to: string, urgent = false): Observable<Flight[]> {
+    const url = `https://demo.angulararchitects.io/api/flight`;
+    const headers = {
+      Accept: 'application/json',
+    };
+    const params = { from, to, urgent };
+    return this.http.get<Flight[]>(url, { headers, params });
   }
 }
