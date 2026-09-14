@@ -42,6 +42,7 @@ export class FlightSearch {
   });
   protected readonly from = computed(() => this.filter().from);
   protected readonly to = computed(() => this.filter().to);
+  protected readonly filterForm = form(this.filter);
 
   // Only tracks 'from', not 'to'
   protected readonly flightRoute = computed(() => {
@@ -50,26 +51,26 @@ export class FlightSearch {
     return `${origin} → ${destination}`;
   });
 
-  // protected readonly flightsResource = httpResource<Flight[]>(
-  //   () => {
-  //     const filter = this.filter();
-  //     if (!filter.from || !filter.to) {
-  //       return undefined;
-  //     }
-  //
-  //     return {
-  //       url: 'https://demo.angulararchitects.io/api/flight',
-  //       params: {
-  //         from: filter.from,
-  //         to: filter.to,
-  //       },
-  //     };
-  //   },
-  //   {
-  //     defaultValue: [],
-  //     // parse: (raw) => FlightZodSchema.array().parse(raw),
-  //   },
-  // );
+  protected readonly flightsResource = httpResource<Flight[]>(
+    () => {
+      const filter = this.filter();
+      if (!filter.from || !filter.to) {
+        return undefined;
+      }
+
+      return {
+        url: 'https://demo.angulararchitects.io/api/flight',
+        params: {
+          from: filter.from,
+          to: filter.to,
+        },
+      };
+    },
+    {
+      defaultValue: [],
+      // parse: (raw) => FlightZodSchema.array().parse(raw),
+    },
+  );
 
   // protected readonly flightsResource = rxResource({
   //   params: () => ({
@@ -85,31 +86,34 @@ export class FlightSearch {
   // The main difference from the rxResource is that it uses a loader function that
   // returns a Promise instead of a stream function that returns an Observable.
   // Also, here, the API and semantics from the caller’s perspective are the same.
-  protected readonly flightsResource = resource({
-    params: () => ({
-      from: this.filter().from,
-      to: this.filter().to,
-    }),
-    loader: (loaderParams) => {
-      const c = loaderParams.params;
-      const abortSignal = loaderParams.abortSignal;
-      return this._findPromise(c.from, c.to, abortSignal);
-    },
-    defaultValue: [],
-  });
+  // protected readonly flightsResource = resource({
+  //   params: () => ({
+  //     from: this.filter().from,
+  //     to: this.filter().to,
+  //   }),
+  //   loader: (loaderParams) => {
+  //     const c = loaderParams.params;
+  //     const abortSignal = loaderParams.abortSignal;
+  //     return this._findPromise(c.from, c.to, abortSignal);
+  //   },
+  //   defaultValue: [],
+  // });
 
   // Get resource result and status
   protected readonly flights = this.flightsResource.value;
   protected readonly error = this.flightsResource.error;
   protected readonly isLoading = this.flightsResource.isLoading;
 
+  protected readonly delayInMin = signal(0);
+  protected readonly flightsWithDelays = computed(() =>
+    toFlightsWithDelays(this.flights(), this.delayInMin()),
+  );
   protected readonly basket = signal<Record<number, boolean>>({
     3: true,
     5: true,
   });
   protected readonly maxDelay = signal(0);
 
-  protected readonly filterForm = form(this.filter);
   protected readonly selectedFlight = signal<Flight | null>(null);
   protected search(): void {
     this.flightsResource.reload();
@@ -124,6 +128,10 @@ export class FlightSearch {
       ...basket,
       [flightId]: selected,
     }));
+  }
+
+  protected delay(): void {
+    this.delayInMin.update((delayInMin) => delayInMin + 15);
   }
 
   private _find(from: string, to: string, urgent = false): Observable<Flight[]> {
@@ -170,3 +178,19 @@ export class FlightSearch {
     });
   }
 }
+
+function toFlightsWithDelays(flights: Flight[], delay: number): Flight[] {
+  if (flights.length === 0) {
+    return [];
+  }
+
+  const ONE_MINUTE = 1000 * 60;
+  const oldFlights = flights;
+  const oldFlight = oldFlights[0];
+  const oldDate = new Date(oldFlight.date);
+  const newDate = new Date(oldDate.getTime() + delay * ONE_MINUTE);
+  const newFlight = { ...oldFlight, date: newDate.toISOString() };
+
+  return [newFlight, ...flights.slice(1)];
+}
+

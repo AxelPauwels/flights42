@@ -6,7 +6,7 @@
   </div>
   <div class="card-body">
     <p>Flight-No.: #{{ flight.id }}</p>
-    <p>Date: {{ flight.date | date }}</p>
+    <p>Date: {{ flight.date | date:"yyyy-MM-dd HH:mm" }}</p>
     <p>Delayed: {{ flight.delayed }}</p>
     <div>
       @if (!selected()) {
