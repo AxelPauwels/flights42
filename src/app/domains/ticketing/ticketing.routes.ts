@@ -41,3 +41,5 @@ export const ticketingRoutes: Routes = [
     redirectTo: 'booking',
   },
 ];
+
+export default ticketingRoutes;

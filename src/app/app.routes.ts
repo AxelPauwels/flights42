@@ -14,7 +14,7 @@ export const routes: Routes = [
   {
     path: 'ticketing',
     loadChildren: () =>
-      import('./domains/ticketing/ticketing.routes').then((m) => m.ticketingRoutes),
+      import('./domains/ticketing/ticketing.routes')
   },
   {
     path: 'about',
