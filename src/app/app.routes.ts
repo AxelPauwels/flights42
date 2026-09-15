@@ -13,12 +13,11 @@ export const routes: Routes = [
   },
   {
     path: 'ticketing',
-    loadChildren: () =>
-      import('./domains/ticketing/ticketing.routes')
+    loadChildren: () => import('./domains/ticketing/ticketing.routes'),
   },
   {
     path: 'about',
-    component: About,
+    loadComponent: () => import('./shell/about/about'),
   },
   {
     path: '**',
