@@ -4,6 +4,7 @@ import { FlightSearch } from './domains/ticketing/feature-booking/flight-search/
 import { PassengerSearch } from './domains/ticketing/feature-booking/passenger-search/passenger-search';
 import { About } from './shell/about/about';
 import { Home } from './shell/home/home';
+import { BookingNavigation } from './domains/ticketing/feature-booking/booking-navigation';
 export const routes: Routes = [
   {
     path: '',
@@ -15,16 +16,31 @@ export const routes: Routes = [
     component: Home,
   },
   {
-    path: 'flight-search',
-    component: FlightSearch,
-  },
-  {
-    path: 'flight-edit/:id',
-    component: FlightEdit,
-  },
-  {
-    path: 'passenger-search',
-    component: PassengerSearch,
+    path: 'booking',
+    component: BookingNavigation,
+    children: [
+      {
+        path: '',
+        redirectTo: 'flight-search',
+        pathMatch: 'full',
+      },
+      {
+        path: 'flight-search',
+        component: FlightSearch,
+      },
+      {
+        path: 'flight-edit/:id',
+        component: FlightEdit,
+      },
+      {
+        path: 'passenger-search',
+        component: PassengerSearch,
+      },
+      {
+        path: '**',
+        redirectTo: 'flight-search',
+      },
+    ],
   },
   {
     path: 'about',
