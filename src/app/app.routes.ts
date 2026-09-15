@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { FlightEdit } from './domains/ticketing/feature-booking/flight-edit/flight-edit';
 import { FlightSearch } from './domains/ticketing/feature-booking/flight-search/flight-search';
 import { PassengerSearch } from './domains/ticketing/feature-booking/passenger-search/passenger-search';
 import { About } from './shell/about/about';
@@ -16,6 +17,10 @@ export const routes: Routes = [
   {
     path: 'flight-search',
     component: FlightSearch,
+  },
+  {
+    path: 'flight-edit/:id',
+    component: FlightEdit,
   },
   {
     path: 'passenger-search',

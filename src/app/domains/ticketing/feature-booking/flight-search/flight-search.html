@@ -40,6 +40,9 @@
           <div>The flight #{{ flight.id }} might be delayed. Please check the monitors.</div>
 
           <p class="extra-detail">Full Id: LUGGAGE-0815-4711-{{ flight.id }}</p>
+
+					<button [routerLink]="['../flight-edit', flight.id, { showDetails: true }]">Edit</button>
+
         </app-flight-card>
       </div>
     }

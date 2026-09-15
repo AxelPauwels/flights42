@@ -13,6 +13,7 @@ import {
   untracked,
 } from '@angular/core';
 import { FormField, form } from '@angular/forms/signals';
+import { RouterLink } from '@angular/router';
 import { Flight } from '../../data/flight';
 import { HttpClient, httpResource } from '@angular/common/http';
 import { FlightCard } from '../../ui/flight-card/flight-card';
@@ -24,7 +25,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-flight-search',
-  imports: [FormField, JsonPipe, FlightCard, DelayStepper],
+  imports: [FormField, JsonPipe, RouterLink,FlightCard, DelayStepper],
   templateUrl: './flight-search.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
