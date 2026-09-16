@@ -1,5 +1,11 @@
 import { ApplicationConfig, provideBrowserGlobalErrorListeners } from '@angular/core';
-import { PreloadAllModules, provideRouter, withComponentInputBinding, withPreloading } from '@angular/router';
+import {
+  PreloadAllModules,
+  provideRouter,
+  withComponentInputBinding,
+  withHashLocation,
+  withPreloading
+} from '@angular/router';
 
 import { routes } from './app.routes';
 
@@ -8,9 +14,9 @@ export const appConfig: ApplicationConfig = {
     provideBrowserGlobalErrorListeners(),
     provideRouter(
       routes,
-      // Enable automatic input binding:
-      withComponentInputBinding(),
-      withPreloading(PreloadAllModules),
+      withComponentInputBinding(), // Enable automatic input binding:
+      withPreloading(PreloadAllModules), // Preload all lazy-loaded modules after initial load
+      withHashLocation(), // Activate HashLocationStrategy
     ),
   ],
 };
