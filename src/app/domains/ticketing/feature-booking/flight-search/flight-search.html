@@ -27,7 +27,7 @@
     </button>
 		<button
 			[style.margin-left]="'10px'"
-			[routerLink]="['../flight-edit',flightsWithDelays()[0].id || 1, { ticketId: flightsWithDelays()[0].id || 1 }]"
+			[routerLink]="['../flight-edit', flightsWithDelays()[0].id || 1, { ticketId: flightsWithDelays()[0].id || 1 }]"
 			queryParamsHandling="merge"
 			[queryParams]="{ expertMode: true }"
 			fragment="confirmation"
