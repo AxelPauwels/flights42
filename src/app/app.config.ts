@@ -2,7 +2,7 @@ import { ApplicationConfig, provideBrowserGlobalErrorListeners } from '@angular/
 import {
   PreloadAllModules,
   provideRouter,
-  withComponentInputBinding,
+  withComponentInputBinding, withExperimentalAutoCleanupInjectors,
   withHashLocation,
   withPreloading
 } from '@angular/router';
@@ -18,6 +18,7 @@ export const appConfig: ApplicationConfig = {
       withComponentInputBinding(), // Enable automatic input binding:
       withPreloading(PreloadAllModules), // Preload all lazy-loaded modules after initial load
       withHashLocation(), // Activate HashLocationStrategy
+      withExperimentalAutoCleanupInjectors(), // Automatically clean up route-level providers when the user navigates away from a route.
     ),
 
     // { provide: LanguageService, useClass: BrowserLanguageService }, // use own provider function below instead

@@ -16,6 +16,7 @@ export const ticketingRoutes: Routes = [
     providers: [
       { provide: LanguageService, useClass: DefaultLanguageService }, // override app-level provider for all children of this route,
       // By default, Angular does not destroy these Environment Providers, Once created, they live until the application is closed
+      // set withExperimentalAutoCleanupInjectors in app.config to auto-clean up when the user navigates away from this route.
     ],
     children: [
       {
