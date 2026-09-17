@@ -12,7 +12,7 @@ import {
   signal,
   untracked
 } from '@angular/core';
-import { FormField, form } from '@angular/forms/signals';
+import { FormField, form, debounce } from '@angular/forms/signals';
 import { RouterLink } from '@angular/router';
 import { Flight } from '../../data/flight';
 import { HttpClient } from '@angular/common/http';
@@ -64,8 +64,10 @@ export class FlightSearch {
   );
   protected readonly from = computed(() => this.filter().from);
   protected readonly to = computed(() => this.filter().to);
-  protected readonly filterForm = form(this.filter);
-
+  protected readonly filterForm = form(this.filter, (path) => {
+    debounce(path.from, 300);
+    debounce(path.to, 300);
+  });
   // Only tracks 'from', not 'to'
   protected readonly flightRoute = computed(() => {
     const origin = this.from(); // tracked
