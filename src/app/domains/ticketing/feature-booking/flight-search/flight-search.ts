@@ -7,29 +7,33 @@ import {
   Component,
   computed,
   effect,
-  inject, Injector,
-  resource, runInInjectionContext,
+  inject,
+  Injector,
   signal,
   untracked
 } from '@angular/core';
 import { FormField, form } from '@angular/forms/signals';
 import { RouterLink } from '@angular/router';
 import { Flight } from '../../data/flight';
-import { HttpClient, httpResource } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { FlightCard } from '../../ui/flight-card/flight-card';
 import { DelayStepper } from '../../../shared/ui-common/delay-stepper/delay-stepper';
-import { FlightZodSchema } from '../../data/flight-zod-schema';
-import { rxResource } from '@angular/core/rxjs-interop';
+// import { FlightZodSchema } from '../../data/flight-zod-schema';
+// import { rxResource } from '@angular/core/rxjs-interop';
 import { firstValueFrom, Observable, Subject, takeUntil } from 'rxjs';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { FlightClient } from '../../data/flight-client';
-import { LanguageService } from '../../../shared/util-common/language';
+import { DefaultLanguageService, LanguageService } from '../../../shared/util-common/language';
 
 @Component({
   selector: 'app-flight-search',
   imports: [FormField, JsonPipe, RouterLink, FlightCard, DelayStepper],
   templateUrl: './flight-search.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  providers:[
+    // Provide the DefaultLanguageService on the component level and children (overrides the app-level provider)
+    { provide: LanguageService, useClass: DefaultLanguageService },
+  ]
 })
 export class FlightSearch {
   private readonly http = inject(HttpClient);
