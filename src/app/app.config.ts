@@ -8,7 +8,7 @@ import {
 } from '@angular/router';
 
 import { routes } from './app.routes';
-import { BrowserLanguageService, LanguageService } from './domains/shared/util-common/language';
+import { provideLanguageService } from './domains/shared/util-common/language';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -19,7 +19,11 @@ export const appConfig: ApplicationConfig = {
       withPreloading(PreloadAllModules), // Preload all lazy-loaded modules after initial load
       withHashLocation(), // Activate HashLocationStrategy
     ),
-    { provide: LanguageService, useClass: BrowserLanguageService },
+
+    // { provide: LanguageService, useClass: BrowserLanguageService }, // use own provider function below instead
+    provideLanguageService('browser'), // Note: we don't need to spread this array, Angular will automatically flatten
+    // nested arrays during configuration processing.
+
     // short-hand syntax for:
     // { provide: FlightClient, useClass: FlightClient },
     // could/should be:

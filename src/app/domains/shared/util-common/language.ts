@@ -1,4 +1,14 @@
-import { Service } from '@angular/core';
+import { Provider, Service } from '@angular/core';
+
+export type LanguageConfig = 'default' | 'browser';
+
+export function provideLanguageService(config: LanguageConfig = 'default'): Provider[] {
+  if (config === 'browser') {
+    return [{ provide: LanguageService, useClass: BrowserLanguageService }];
+  } else {
+    return [{ provide: LanguageService, useClass: DefaultLanguageService }];
+  }
+}
 
 export abstract class LanguageService {
   abstract getUserLang(): string;
