@@ -20,5 +20,9 @@ export const appConfig: ApplicationConfig = {
       withHashLocation(), // Activate HashLocationStrategy
     ),
     { provide: LanguageService, useClass: BrowserLanguageService },
+    // short-hand syntax for:
+    // { provide: FlightClient, useClass: FlightClient },
+    // could/should be:
+    // FlightClient,
   ],
 };
