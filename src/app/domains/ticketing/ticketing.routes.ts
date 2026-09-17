@@ -3,6 +3,7 @@ import { FlightEdit } from './feature-booking/flight-edit/flight-edit';
 import { FlightSearch } from './feature-booking/flight-search/flight-search';
 import { PassengerSearch } from './feature-booking/passenger-search/passenger-search';
 import { BookingNavigation } from './feature-booking/booking-navigation';
+import { DefaultLanguageService, LanguageService } from '../shared/util-common/language';
 export const ticketingRoutes: Routes = [
   {
     path: '',
@@ -12,6 +13,10 @@ export const ticketingRoutes: Routes = [
   {
     path: 'booking',
     component: BookingNavigation,
+    providers: [
+      { provide: LanguageService, useClass: DefaultLanguageService }, // override app-level provider for all children of this route,
+      // By default, Angular does not destroy these Environment Providers, Once created, they live until the application is closed
+    ],
     children: [
       {
         path: '',
