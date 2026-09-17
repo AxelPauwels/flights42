@@ -8,7 +8,7 @@ import {
   computed,
   effect,
   inject,
-  Injector,
+  Injector, linkedSignal,
   signal,
   untracked
 } from '@angular/core';
@@ -24,6 +24,7 @@ import { firstValueFrom, Observable, Subject, takeUntil } from 'rxjs';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { FlightClient } from '../../data/flight-client';
 import { DefaultLanguageService, LanguageService } from '../../../shared/util-common/language';
+import { FlightStore } from './flight-store';
 
 @Component({
   selector: 'app-flight-search',
@@ -44,16 +45,23 @@ export class FlightSearch {
   private readonly snackBar = inject(MatSnackBar);
   private languageService = inject(LanguageService);
   protected injector = inject(Injector);
+  protected store = inject(FlightStore);
 
-  constructor() {
-    this.showError();
-    console.log('languageService', this.languageService.getUserLang());
-  }
-
-  protected readonly filter = signal({
-    from: 'Hamburg',
-    to: 'Graz',
-  });
+  // Linked signals are like computed signals, but they have a local working copy that can be
+  // updated. However, such an update does not affect the original signal (from store).
+  // But is the original signal changes (from store), the linkedSignal will be updated as well.
+  protected readonly filter = linkedSignal(
+    () => ({
+      from: this.store.from(),
+      to: this.store.to(),
+    }),
+    // fix reactive issue after moving filter to the store: the store doesn't update the filter when the filter is changed in the component,
+    // so we need to update the store when the filter is updated in the component.
+    // The set function is called whenever the signal 'filter' is updated, e.g., via set or update.
+    {
+      set: (value) => this.store.updateFilter(value.from, value.to),
+    },
+  );
   protected readonly from = computed(() => this.filter().from);
   protected readonly to = computed(() => this.filter().to);
   protected readonly filterForm = form(this.filter);
@@ -66,13 +74,12 @@ export class FlightSearch {
   });
 
   // Get the resource from the FlightClient service
-  protected readonly flightsResource = this.flightClient.findResource(
-    this.filterForm.from().value,
-    this.filterForm.to().value,
-  );
+  // protected readonly flightsResource = this.flightClient.findResource(
+  //   this.filterForm.from().value,
+  //   this.filterForm.to().value,
+  // );
 
   // protected searchWithoutInjectionContext() {
-
   // this.flightClient = inject(FlightClient);// This would fail
 
   // assertInInjectionContext(this.searchWithoutInjectionContext); // This would fail too
@@ -135,23 +142,27 @@ export class FlightSearch {
   // });
 
   // Get resource result and status
-  protected readonly flights = this.flightsResource.value;
-  protected readonly error = this.flightsResource.error;
-  protected readonly isLoading = this.flightsResource.isLoading;
+  // protected readonly flights = this.flightsResource.value;
+  // protected readonly error = this.flightsResource.error;
+  // protected readonly isLoading = this.flightsResource.isLoading;
+  protected readonly flights = this.store.flightsWithDelays;
+  protected readonly isLoading = this.store.flightsIsLoading;
+  protected readonly error = this.store.flightsError;
 
-  protected readonly delayInMin = signal(0);
-  protected readonly flightsWithDelays = computed(() =>
-    toFlightsWithDelays(this.flights(), this.delayInMin()),
-  );
-  protected readonly basket = signal<Record<number, boolean>>({
-    3: true,
-    5: true,
-  });
+  protected readonly flightsWithDelays = this.store.flightsWithDelays;
+  protected readonly basket = this.store.basket;
+
   protected readonly maxDelay = signal(0);
-
   protected readonly selectedFlight = signal<Flight | null>(null);
+
+  constructor() {
+    this.showError();
+    console.log('languageService', this.languageService.getUserLang());
+  }
+
   protected search(): void {
-    this.flightsResource.reload();
+    this.store.updateFilter(this.filter().from, this.filter().to);
+    this.store.reload();
   }
 
   protected select(f: Flight): void {
@@ -159,14 +170,11 @@ export class FlightSearch {
   }
 
   protected updateBasket(flightId: number, selected: boolean): void {
-    this.basket.update((basket) => ({
-      ...basket,
-      [flightId]: selected,
-    }));
+    this.store.updateBasket(flightId, selected);
   }
 
   protected delay(): void {
-    this.delayInMin.update((delayInMin) => delayInMin + 15);
+    this.store.delay();
   }
 
   private _find(from: string, to: string, urgent = false): Observable<Flight[]> {
