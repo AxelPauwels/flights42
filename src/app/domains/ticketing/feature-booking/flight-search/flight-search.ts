@@ -23,6 +23,7 @@ import { rxResource } from '@angular/core/rxjs-interop';
 import { firstValueFrom, Observable, Subject, takeUntil } from 'rxjs';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { FlightClient } from '../../data/flight-client';
+import { LanguageService } from '../../../shared/util-common/language';
 
 @Component({
   selector: 'app-flight-search',
@@ -34,10 +35,12 @@ export class FlightSearch {
   private readonly http = inject(HttpClient);
   private flightClient = inject(FlightClient);
   private readonly snackBar = inject(MatSnackBar);
+  private languageService = inject(LanguageService);
   protected injector = inject(Injector);
 
   constructor() {
     this.showError();
+    console.log('languageService', this.languageService.getUserLang());
   }
 
   protected readonly filter = signal({
@@ -63,17 +66,17 @@ export class FlightSearch {
 
   // protected searchWithoutInjectionContext() {
 
-    // this.flightClient = inject(FlightClient);// This would fail
+  // this.flightClient = inject(FlightClient);// This would fail
 
-    // assertInInjectionContext(this.searchWithoutInjectionContext); // This would fail too
+  // assertInInjectionContext(this.searchWithoutInjectionContext); // This would fail too
 
-    //   runInInjectionContext(
-    //     this.injector,
-    //     () => {
-    //       const flightClient = inject(FlightClient);
-    //       use flightClient here
-        // },
-      // );
+  //   runInInjectionContext(
+  //     this.injector,
+  //     () => {
+  //       const flightClient = inject(FlightClient);
+  //       use flightClient here
+  // },
+  // );
   // }
 
   // protected readonly flightsResource = httpResource<Flight[]>(

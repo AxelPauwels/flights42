@@ -8,6 +8,7 @@ import {
 } from '@angular/router';
 
 import { routes } from './app.routes';
+import { BrowserLanguageService, LanguageService } from './domains/shared/util-common/language';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -18,5 +19,6 @@ export const appConfig: ApplicationConfig = {
       withPreloading(PreloadAllModules), // Preload all lazy-loaded modules after initial load
       withHashLocation(), // Activate HashLocationStrategy
     ),
+    { provide: LanguageService, useClass: BrowserLanguageService },
   ],
 };
