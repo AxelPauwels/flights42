@@ -30,10 +30,13 @@ import { DefaultLanguageService, LanguageService } from '../../../shared/util-co
   imports: [FormField, JsonPipe, RouterLink, FlightCard, DelayStepper],
   templateUrl: './flight-search.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  providers:[
+  providers: [
     // Provide the DefaultLanguageService on the component level and children (overrides the app-level provider)
+    // If this provider is the same as the app-level provider, it will still be a different instance than te app-level one.
     { provide: LanguageService, useClass: DefaultLanguageService },
-  ]
+    // short-hand for component, but should be injected like 'private languageService = inject(DefaultLanguageService);':
+    // DefaultLanguageService,
+  ],
 })
 export class FlightSearch {
   private readonly http = inject(HttpClient);
