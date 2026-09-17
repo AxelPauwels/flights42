@@ -7,10 +7,10 @@ import {
   Component,
   computed,
   effect,
-  inject,
-  resource,
+  inject, Injector,
+  resource, runInInjectionContext,
   signal,
-  untracked,
+  untracked
 } from '@angular/core';
 import { FormField, form } from '@angular/forms/signals';
 import { RouterLink } from '@angular/router';
@@ -22,16 +22,19 @@ import { FlightZodSchema } from '../../data/flight-zod-schema';
 import { rxResource } from '@angular/core/rxjs-interop';
 import { firstValueFrom, Observable, Subject, takeUntil } from 'rxjs';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { FlightClient } from '../../data/flight-client';
 
 @Component({
   selector: 'app-flight-search',
-  imports: [FormField, JsonPipe, RouterLink,FlightCard, DelayStepper],
+  imports: [FormField, JsonPipe, RouterLink, FlightCard, DelayStepper],
   templateUrl: './flight-search.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FlightSearch {
   private readonly http = inject(HttpClient);
+  private flightClient = inject(FlightClient);
   private readonly snackBar = inject(MatSnackBar);
+  protected injector = inject(Injector);
 
   constructor() {
     this.showError();
@@ -52,26 +55,47 @@ export class FlightSearch {
     return `${origin} → ${destination}`;
   });
 
-  protected readonly flightsResource = httpResource<Flight[]>(
-    () => {
-      const filter = this.filter();
-      if (!filter.from || !filter.to) {
-        return undefined;
-      }
-
-      return {
-        url: 'https://demo.angulararchitects.io/api/flight',
-        params: {
-          from: filter.from,
-          to: filter.to,
-        },
-      };
-    },
-    {
-      defaultValue: [],
-      // parse: (raw) => FlightZodSchema.array().parse(raw),
-    },
+  // Get the resource from the FlightClient service
+  protected readonly flightsResource = this.flightClient.findResource(
+    this.filterForm.from().value,
+    this.filterForm.to().value,
   );
+
+  // protected searchWithoutInjectionContext() {
+
+    // this.flightClient = inject(FlightClient);// This would fail
+
+    // assertInInjectionContext(this.searchWithoutInjectionContext); // This would fail too
+
+    //   runInInjectionContext(
+    //     this.injector,
+    //     () => {
+    //       const flightClient = inject(FlightClient);
+    //       use flightClient here
+        // },
+      // );
+  // }
+
+  // protected readonly flightsResource = httpResource<Flight[]>(
+  //   () => {
+  //     const filter = this.filter();
+  //     if (!filter.from || !filter.to) {
+  //       return undefined;
+  //     }
+  //
+  //     return {
+  //       url: 'https://demo.angulararchitects.io/api/flight',
+  //       params: {
+  //         from: filter.from,
+  //         to: filter.to,
+  //       },
+  //     };
+  //   },
+  //   {
+  //     defaultValue: [],
+  //     // parse: (raw) => FlightZodSchema.array().parse(raw),
+  //   },
+  // );
 
   // protected readonly flightsResource = rxResource({
   //   params: () => ({
