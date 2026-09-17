@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, ChangeDetectionStrategy } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 import { Navbar } from './shell/navbar/navbar';
@@ -7,6 +7,7 @@ import { Sidebar } from './shell/sidebar/sidebar';
 @Component({
   selector: 'app-root',
   imports: [Navbar, Sidebar, RouterOutlet],
+  changeDetection: ChangeDetectionStrategy.Eager,
   templateUrl: './app.html',
 })
 export class App {
