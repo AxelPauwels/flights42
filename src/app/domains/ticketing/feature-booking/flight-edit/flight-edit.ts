@@ -2,19 +2,23 @@ import { ActivatedRoute } from '@angular/router';
 import {
   booleanAttribute,
   ChangeDetectionStrategy,
-  Component, effect,
+  Component,
   inject,
-  input, linkedSignal,
+  input,
+  linkedSignal,
   numberAttribute,
-  signal
 } from '@angular/core';
+import { JsonPipe } from '@angular/common';
 import { SimpleFlightDetailStore } from './simple-flight-detail-store';
 import { Flight } from '../../data/flight';
-import { form, minLength, required } from '@angular/forms/signals';
+import { form, FormField, minLength, required } from '@angular/forms/signals';
 
 @Component({
   selector: 'app-flight-edit',
-  imports: [],
+  imports: [
+    FormField,
+    JsonPipe,
+  ],
   templateUrl: './flight-edit.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

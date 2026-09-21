@@ -1,3 +1,23 @@
-<h1>Flight Edit</h1>
-<p>Id: {{ id() }}</p>
-<p>ShowDetails: {{ showDetails() }}</p>
+<fieldset>
+	<legend>Flight</legend>
+	<div class="form-group">
+		<label for="flight-id">ID</label>
+		<input
+			id="flight-id"
+			class="form-control"
+			[formField]="flightForm.id"
+			type="number"
+		/>
+	</div>
+	<div class="form-group">
+		<label for="flight-from">From</label>
+		<input
+			id="flight-from"
+			class="form-control"
+			[formField]="flightForm.from"
+		/>
+		@if (flightForm.from().invalid()) {
+		<div>{{ flightForm.from().errors() | json }}</div>
+		}
+	</div>
+</fieldset>
