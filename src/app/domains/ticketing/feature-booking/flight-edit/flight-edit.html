@@ -19,5 +19,8 @@
 		@if (flightForm.from().invalid()) {
 		<div>{{ flightForm.from().errors() | json }}</div>
 		}
+		@for (reason of flightForm.delay().disabledReasons(); track $index) {
+		<p>Disabled because {{ reason.message }}</p>
+		}
 	</div>
 </fieldset>
