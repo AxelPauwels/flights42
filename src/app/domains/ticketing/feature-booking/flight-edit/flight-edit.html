@@ -22,5 +22,16 @@
 		@for (reason of flightForm.delay().disabledReasons(); track $index) {
 		<p>Disabled because {{ reason.message }}</p>
 		}
+		@if (!flightForm.delay().hidden()) {
+		<div class="form-group">
+			<label for="flight-delay">Delay (min)</label>
+			<input
+				id="flight-delay"
+				class="form-control"
+				[formField]="flightForm.delay"
+				type="number"
+			/>
+		</div>
+		}
 	</div>
 </fieldset>
