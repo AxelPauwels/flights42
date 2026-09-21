@@ -1,6 +1,16 @@
 import { Aircraft, initialAircraft } from './aircraft';
 import { Price } from './price';
-import { apply, disabled, hidden, minLength, readonly, required, schema } from '@angular/forms/signals';
+import {
+  apply,
+  disabled,
+  hidden,
+  minLength,
+  readonly,
+  required,
+  schema,
+  validateStandardSchema
+} from '@angular/forms/signals';
+import { FlightZodSchema } from './flight-zod-schema';
 
 export interface Flight {
   id: number;
@@ -44,4 +54,10 @@ export const flightFormSchema = schema<Flight>((path) => {
   hidden(path.delay, {
     when: (ctx) => !ctx.valueOf(path.delayed),
   });
+});
+
+// schema with validation against a existing schema like Zod or Valibot for example
+export const flightSchema2 = schema<Flight>((path) => {
+  validateStandardSchema(path, FlightZodSchema);
+  // ... other validation rules
 });
