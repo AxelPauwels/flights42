@@ -10,7 +10,8 @@ import {
   schema,
   validateStandardSchema
 } from '@angular/forms/signals';
-import { FlightZodSchema } from './flight-zod-schema';
+import { FlightZodSchema, validateWithFlightSchema } from './flight-zod-schema';
+import { signal } from '@angular/core';
 
 export interface Flight {
   id: number;
@@ -59,5 +60,11 @@ export const flightFormSchema = schema<Flight>((path) => {
 // schema with validation against a existing schema like Zod or Valibot for example
 export const flightSchema2 = schema<Flight>((path) => {
   validateStandardSchema(path, FlightZodSchema);
+  // ... other validation rules
+});
+
+// schema with conditional schema validation example
+export const flightSchema3 = schema<Flight>((path) => {
+  validateWithFlightSchema(path, signal<boolean>(true));
   // ... other validation rules
 });
