@@ -10,15 +10,12 @@ import {
 } from '@angular/core';
 import { JsonPipe } from '@angular/common';
 import { SimpleFlightDetailStore } from './simple-flight-detail-store';
-import { Flight } from '../../data/flight';
+import { Flight, flightSchema } from '../../data/flight';
 import { form, FormField, minLength, required } from '@angular/forms/signals';
 
 @Component({
   selector: 'app-flight-edit',
-  imports: [
-    FormField,
-    JsonPipe,
-  ],
+  imports: [FormField, JsonPipe],
   templateUrl: './flight-edit.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
@@ -41,12 +38,7 @@ export class FlightEdit {
   // }
 
   // Set up the Signal Form with validation rules
-  protected readonly flightForm = form(this.flight, (path) => {
-    required(path.from);
-    required(path.to);
-    required(path.date);
-    minLength(path.from, 3);
-  });
+  protected readonly flightForm = form(this.flight, flightSchema);
 
   protected readonly id = input.required({
     transform: numberAttribute,

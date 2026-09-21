@@ -1,5 +1,6 @@
 import { Aircraft, initialAircraft } from './aircraft';
 import { Price } from './price';
+import { minLength, required, schema } from '@angular/forms/signals';
 
 export interface Flight {
   id: number;
@@ -22,3 +23,10 @@ export const initialFlight: Flight = {
   aircraft: initialAircraft,
   prices: [],
 };
+
+export const flightSchema = schema<Flight>((path) => {
+  required(path.from);
+  required(path.to);
+  required(path.date);
+  minLength(path.from, 3);
+});
