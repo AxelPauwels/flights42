@@ -9,6 +9,8 @@ import {
 
 import { routes } from './app.routes';
 import { provideLanguageService } from './domains/shared/util-common/language';
+import { NG_STATUS_CLASSES } from '@angular/forms/signals/compat';
+import { provideSignalFormsConfig } from '@angular/forms/signals';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -29,5 +31,10 @@ export const appConfig: ApplicationConfig = {
     // { provide: FlightClient, useClass: FlightClient },
     // could/should be:
     // FlightClient,
+
+    // Add classic CSS classes for new signal-based forms like ng-valid, ng-invalid, ng-dirty, ng-pristine, and ng-pending
+    provideSignalFormsConfig({
+      classes: NG_STATUS_CLASSES,
+    }),
   ],
 };
