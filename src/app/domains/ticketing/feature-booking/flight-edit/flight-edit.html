@@ -23,6 +23,13 @@
 		@for (reason of flightForm.delay().disabledReasons(); track $index) {
 		<p>Disabled because {{ reason.message }}</p>
 		}
+	</div>
+	<div class="form-group">
+		<label for="flight-from">From</label>
+		<input [formField]="flightForm.from" id="flight-from" />
+		<app-validation-errors-pane [errors]="flightForm.from().errors()" />
+	</div>
+
 		@if (!flightForm.delay().hidden()) {
 		<div class="form-group">
 			<label for="flight-delay">Delay (min)</label>
@@ -34,7 +41,6 @@
 			/>
 		</div>
 		}
-	</div>
 </fieldset>
 
 <p>

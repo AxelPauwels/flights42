@@ -7,7 +7,7 @@ export const validateCity = (path: SchemaPathTree<string>, allowed: string[])=> 
     }
 
     return {
-      kind: 'city',
+      kind: 'Unallowed city',
       value,
       allowed,
     };

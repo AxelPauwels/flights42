@@ -13,10 +13,11 @@ import { SimpleFlightDetailStore } from './simple-flight-detail-store';
 import { Flight, flightFormSchema } from '../../data/flight';
 import { FieldTree, form, FormField, FormRoot, submit } from '@angular/forms/signals';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { ValidationErrorsPane } from '../../../shared/ui-forms/validation-errors/validation-errors-pane';
 
 @Component({
   selector: 'app-flight-edit',
-  imports: [FormField, JsonPipe, FormRoot],
+  imports: [FormField, JsonPipe, FormRoot, ValidationErrorsPane],
   templateUrl: './flight-edit.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

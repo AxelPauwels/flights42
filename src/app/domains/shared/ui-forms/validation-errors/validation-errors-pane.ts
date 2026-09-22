@@ -1,0 +1,50 @@
+import { ChangeDetectionStrategy, Component, computed, input } from '@angular/core';
+import {
+  MinLengthValidationError,
+  MinValidationError,
+  ValidationError
+} from '@angular/forms/signals';
+
+@Component({
+  selector: 'app-validation-errors-pane',
+  imports: [],
+  changeDetection: ChangeDetectionStrategy.Eager,
+  templateUrl: './validation-errors-pane.html',
+})
+export class ValidationErrorsPane {
+  readonly errors = input.required<ValidationError.WithFieldTree[]>();
+  readonly showFieldNames = input(false);
+
+  protected readonly errorMessages = computed(() =>
+    toErrorMessages(this.errors(), this.showFieldNames()),
+  );
+}
+
+function toErrorMessages(errors: ValidationError.WithFieldTree[], showFieldNames: boolean): string[] {
+  return errors.map((error) => {
+    const prefix = showFieldNames ? toFieldName(error) + ': ' : '';
+
+    const message = error.message ?? toMessage(error);
+    return prefix + message;
+  });
+}
+
+function toFieldName(error: ValidationError.WithFieldTree) {
+  return error.fieldTree().name().split('.').at(-1);
+}
+
+function toMessage(error: ValidationError): string {
+  switch (error.kind) {
+    case 'required':
+      return 'Enter a value!';
+    case 'roundtrip':
+    case 'roundtrip_tree':
+      return 'Roundtrips are not supported!';
+    case 'min':
+      return `Minimum amount: ${(error as MinValidationError).min}`;
+    case 'minLength':
+      return `Please enter at least ${(error as MinLengthValidationError).minLength} characters!`;
+    default:
+      return error.kind ?? 'Validation Error';
+  }
+}
