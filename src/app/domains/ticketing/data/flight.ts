@@ -7,7 +7,7 @@ import {
   minLength,
   readonly,
   required,
-  schema,
+  schema, validate,
   validateStandardSchema
 } from '@angular/forms/signals';
 import { FlightZodSchema, validateWithFlightSchema } from './flight-zod-schema';
@@ -54,6 +54,21 @@ export const flightFormSchema = schema<Flight>((path) => {
   });
   hidden(path.delay, {
     when: (ctx) => !ctx.valueOf(path.delayed),
+  });
+
+  const allowed = ['Graz', 'Hamburg', 'Zürich'];
+  validate(path.from, (ctx) => {
+    const value = ctx.value();
+    if (allowed.includes(value)) {
+      return null; // returns null if validation passes
+    }
+
+    // returns an object with validation error details if validation fails
+    return {
+      kind: 'city',
+      value,
+      allowed,
+    };
   });
 });
 
