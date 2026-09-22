@@ -98,15 +98,23 @@ export class FlightClient {
 
   findResourceById(id: Signal<number>) {
     return httpResource<Flight>(
-      () => ({
-        url: `${this.configService.baseUrl}/flight`,
-        headers: {
-          Accept: 'application/json',
-        },
-        params: {
-          id: id(),
-        },
-      }),
+      () => {
+        const current = id();
+        // Do not call the backend when no valid id is set (e.g., initial 0)
+        if (!current) {
+          return undefined;
+        }
+
+        return {
+          url: `${this.configService.baseUrl}/flight`,
+          headers: {
+            Accept: 'application/json',
+          },
+          params: {
+            id: current,
+          },
+        };
+      },
       // TODO: Extend Service
       {
         defaultValue: initialFlight,

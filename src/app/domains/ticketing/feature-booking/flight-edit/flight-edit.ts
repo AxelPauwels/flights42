@@ -6,39 +6,45 @@ import {
   inject,
   input,
   linkedSignal,
-  numberAttribute,
+  numberAttribute, signal,
 } from '@angular/core';
 import { JsonPipe } from '@angular/common';
 import { SimpleFlightDetailStore } from './simple-flight-detail-store';
 import { Flight, flightFormSchema } from '../../data/flight';
-import { form, FormField } from '@angular/forms/signals';
+import { FieldTree, form, FormField, FormRoot } from '@angular/forms/signals';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-flight-edit',
-  imports: [FormField, JsonPipe],
+  imports: [FormField, JsonPipe, FormRoot],
   templateUrl: './flight-edit.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FlightEdit {
-  // private readonly route = inject(ActivatedRoute);
+  private readonly route = inject(ActivatedRoute);
   private readonly activatedRoute = inject(ActivatedRoute);
   private readonly store = inject(SimpleFlightDetailStore);
   protected readonly flight = linkedSignal(() => normalizeFlight(this.store.flight()));
+  private readonly snackBar = inject(MatSnackBar);
 
-  // protected readonly id = signal(0);
-  // protected readonly showDetails = signal(false);
-
-  // constructor() {
-  // this.route.paramMap.subscribe((paramsMap) => {
-  //   const flightId = parseInt(paramsMap.get('id') ?? '0');
-  //   this.id.set(flightId);
-  //   const showDetails = (paramsMap.get('showDetails') === 'true');
-  //   this.showDetails.set(showDetails);
-  // });
-  // }
+  constructor() {
+    this.route.paramMap.subscribe((paramsMap) => {
+      const flightId = parseInt(paramsMap.get('id') ?? '0');
+      this.store.setFlightId(flightId);
+    });
+  }
 
   // Set up the Signal Form with validation rules
-  protected readonly flightForm = form(this.flight, flightFormSchema);
+  protected readonly flightForm = form(
+    this.flight,
+    flightFormSchema, {
+      submission: {
+        action: async (form) => this.save(form),
+        ignoreValidators: 'none',
+        onInvalid: (form) => this.reportValidationError(form),
+      },
+    }
+  );
 
   protected readonly id = input.required({
     transform: numberAttribute,
@@ -63,6 +69,30 @@ export class FlightEdit {
   //   console.log('subscribe fragment = ', fragment);
   // });
   // }
+
+  protected async save(form: FieldTree<Flight>) {
+    try {
+      await this.store.saveFlight(form().value());
+      return null;
+    } catch (error) {
+      return {
+        kind: 'processing_error',
+        error: error,
+      };
+    }
+  }
+
+  private reportValidationError(form: FieldTree<Flight>): void {
+    this.snackBar.open('Please correct the validation errors', 'OK');
+    this.focusInvalid(form);
+  }
+
+  private focusInvalid(form: FieldTree<Flight>) {
+    const errors = form().errorSummary();
+    if (errors.length > 0) {
+      errors[0].fieldTree().focusBoundControl();
+    }
+  }
 }
 
 function normalizeFlight(flight: Flight): Flight {
