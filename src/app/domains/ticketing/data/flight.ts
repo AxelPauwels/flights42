@@ -12,6 +12,7 @@ import {
 } from '@angular/forms/signals';
 import { FlightZodSchema, validateWithFlightSchema } from './flight-zod-schema';
 import { signal } from '@angular/core';
+import { validateCity } from './flight-validators';
 
 export interface Flight {
   id: number;
@@ -56,20 +57,7 @@ export const flightFormSchema = schema<Flight>((path) => {
     when: (ctx) => !ctx.valueOf(path.delayed),
   });
 
-  const allowed = ['Graz', 'Hamburg', 'Zürich'];
-  validate(path.from, (ctx) => {
-    const value = ctx.value();
-    if (allowed.includes(value)) {
-      return null; // returns null if validation passes
-    }
-
-    // returns an object with validation error details if validation fails
-    return {
-      kind: 'city',
-      value,
-      allowed,
-    };
-  });
+  validateCity(path.from, ['Graz', 'Hamburg', 'Zürich']);
 });
 
 // schema with validation against a existing schema like Zod or Valibot for example
