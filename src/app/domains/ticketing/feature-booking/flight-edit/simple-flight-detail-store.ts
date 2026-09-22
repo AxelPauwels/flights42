@@ -19,9 +19,7 @@ export class SimpleFlightDetailStore {
   readonly isPending = this._isPending.asReadonly();
 
   // FlightResource
-  private readonly flightResource = this.flightClient.findResourceById(
-    this.flightId,
-  );
+  private readonly flightResource = this.flightClient.findResourceById(this.flightId);
   readonly flight = this.flightResource.value;
   readonly isLoading = this.flightResource.isLoading;
   readonly error = this.flightResource.error;
@@ -58,5 +56,9 @@ export class SimpleFlightDetailStore {
 
   reload(): void {
     this.flightResource.reload();
+  }
+
+  requestApproval(flight: Flight): Promise<Flight> {
+    return Promise.resolve(flight);
   }
 }

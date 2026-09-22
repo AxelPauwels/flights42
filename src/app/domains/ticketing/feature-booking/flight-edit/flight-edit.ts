@@ -11,7 +11,7 @@ import {
 import { JsonPipe } from '@angular/common';
 import { SimpleFlightDetailStore } from './simple-flight-detail-store';
 import { Flight, flightFormSchema } from '../../data/flight';
-import { FieldTree, form, FormField, FormRoot } from '@angular/forms/signals';
+import { FieldTree, form, FormField, FormRoot, submit } from '@angular/forms/signals';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
@@ -35,16 +35,24 @@ export class FlightEdit {
   }
 
   // Set up the Signal Form with validation rules
-  protected readonly flightForm = form(
-    this.flight,
-    flightFormSchema, {
-      submission: {
-        action: async (form) => this.save(form),
-        ignoreValidators: 'none',
-        onInvalid: (form) => this.reportValidationError(form),
+  protected readonly flightForm = form(this.flight, flightFormSchema, {
+    submission: {
+      action: async (form) => this.save(form),
+      ignoreValidators: 'none',
+      onInvalid: (form) => this.reportValidationError(form),
+    },
+  });
+
+  protected async requestApproval(): Promise<void> {
+    await submit(this.flightForm, {
+      action: async (form) => {
+        console.log('Requesting approval for flight:', form().value());
+        await this.store.requestApproval(form().value());
       },
-    }
-  );
+      ignoreValidators: 'none',
+      onInvalid: (form) => this.reportValidationError(form),
+    });
+  }
 
   protected readonly id = input.required({
     transform: numberAttribute,
