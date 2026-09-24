@@ -1,4 +1,5 @@
 import {
+  metadata,
   SchemaPath,
   SchemaPathTree,
   validate,
@@ -10,6 +11,7 @@ import { Flight } from './flight';
 import { delay, map, Observable, of } from 'rxjs';
 import { rxResource } from '@angular/core/rxjs-interop';
 import { Price } from './price';
+import { CITY } from '../../shared/util-common/properties';
 export const validateCity = (path: SchemaPathTree<string>, allowed: string[])=> {
   validate(path, (ctx) => {
     const value = ctx.value();
@@ -128,6 +130,7 @@ function rxValidateAirport(airport: string): Observable<boolean> {
 }
 
 export const validateCityHttp = (path: SchemaPathTree<string>) => {
+  metadata(path, CITY, () => true);
   validateHttp(path, {
     request: (ctx) => ({
       url: 'https://demo.angulararchitects.io/api/flight',
