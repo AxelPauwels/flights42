@@ -9,21 +9,24 @@
 			[formField]="flightForm.id"
 			type="number"
 		/>
+		<app-validation-errors-pane [errors]="flightForm.id().errors()" />
 	</div>
-	<div class="form-group">
-		<label for="flight-from">From</label>
-		<input
-			id="flight-from"
-			class="form-control"
-			[formField]="flightForm.from"
-		/>
-		@if (flightForm.from().invalid()) {
-		<div>{{ flightForm.from().errors() | json }}</div>
-		}
+<!--	<div class="form-group">-->
+<!--		<label for="flight-from">From</label>-->
+<!--		<input-->
+<!--			id="flight-from"-->
+<!--			class="form-control"-->
+<!--			[formField]="flightForm.from"-->
+<!--		/>-->
+<!--		@if (flightForm.from().invalid()) {-->
+<!--		<div>{{ flightForm.from().errors() | json }}</div>-->
+<!--		}-->
+	@if (flightForm.delay().disabledReasons().length > 0) {
 		@for (reason of flightForm.delay().disabledReasons(); track $index) {
 		<p>Disabled because {{ reason.message }}</p>
 		}
-	</div>
+	}
+<!--	</div>-->
 	<div class="form-group">
 		<label for="flight-from">From</label>
 		<input [formField]="flightForm.from" id="flight-from" />
@@ -43,9 +46,11 @@
 		}
 </fieldset>
 
-<p>
-	{{ flightForm().errorSummary() | json }}
-</p>
+	@if(flightForm().errorSummary().length){
+		<p>
+			{{ flightForm().errorSummary() | json }}
+		</p>
+	}
 	<div>
 		<button>Save</button>
 		<button type="button" (click)="requestApproval()">Request Approval</button>
