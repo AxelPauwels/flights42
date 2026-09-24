@@ -1,5 +1,7 @@
-import { SchemaPathTree, validate, validateTree } from '@angular/forms/signals';
+import { SchemaPathTree, validate, validateAsync, validateTree } from '@angular/forms/signals';
 import { Flight } from './flight';
+import { delay, map, Observable, of } from 'rxjs';
+import { rxResource } from '@angular/core/rxjs-interop';
 export const validateCity = (path: SchemaPathTree<string>, allowed: string[])=> {
   validate(path, (ctx) => {
     const value = ctx.value();
@@ -74,4 +76,45 @@ export const validateRoundTripTree = (path: SchemaPathTree<Flight>) => {
 
     return null;
   });
+}
+
+export function validateCityAsync(path: SchemaPathTree<string>) {
+  validateAsync(path, {
+    params: (ctx) => ({
+      value: ctx.value(),
+    }),
+    factory: (params) => {
+      return rxResource({
+        params,
+        stream: (p) => {
+          return rxValidateAirport(p.params.value);
+        },
+      });
+    },
+    onSuccess: (result: boolean, _ctx) => {
+      if (!result) {
+        return {
+          kind: 'airport_not_found_http',
+        };
+      }
+
+      return null;
+    },
+    onError: (error, _ctx) => {
+      console.error('api error validating city', error);
+
+      return {
+        kind: 'api-failed',
+      };
+    },
+  });
+}
+
+// Simulates a server-side validation
+function rxValidateAirport(airport: string): Observable<boolean> {
+  const allowed = ['Graz', 'Hamburg', 'Zürich'];
+  return of(null).pipe(
+    delay(2000),
+    map(() => allowed.includes(airport)),
+  );
 }

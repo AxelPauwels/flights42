@@ -13,7 +13,7 @@ import {
 } from '@angular/forms/signals';
 import { FlightZodSchema, validateWithFlightSchema } from './flight-zod-schema';
 import { signal } from '@angular/core';
-import { validateCity, validateRoundTrip, validateRoundTripTree } from './flight-validators';
+import { validateCity, validateCityAsync, validateRoundTrip, validateRoundTripTree } from './flight-validators';
 
 export interface Flight {
   id: number;
@@ -76,7 +76,9 @@ export const flightFormSchema = schema<Flight>((path) => {
     when: (ctx) => !ctx.valueOf(path.delayed),
   });
 
-  validateCity(path.from, ['Graz', 'Hamburg', 'Zürich']);
+  // validateCity(path.from, ['Graz', 'Hamburg', 'Zürich']);
+  validateCityAsync(path.from);
+
   validateRoundTrip(path);
   // validateRoundTripTree(path);
 });

@@ -36,6 +36,9 @@
 		<input [formField]="flightForm.from" id="flight-from" />
 		<app-validation-errors-pane [errors]="flightForm.from().errors()" />
 	</div>
+	@if (flightForm.from().pending()) {
+		<div>Waiting for Async Validation Result...</div>
+	}
 	<div>
 		<label for="flight-to"> To </label>
 		<input [formField]="flightForm.to" id="flight-to" />
