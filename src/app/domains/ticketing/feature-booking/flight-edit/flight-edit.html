@@ -36,6 +36,13 @@
 		<input [formField]="flightForm.from" id="flight-from" />
 		<app-validation-errors-pane [errors]="flightForm.from().errors()" />
 	</div>
+	<div>
+		<label for="flight-to"> To </label>
+		<input [formField]="flightForm.to" id="flight-to" />
+		@if (flightForm.to().invalid()) {
+			<div>{{ flightForm.to().errors() | json }}</div>
+		}
+	</div>
 
 		@if (!flightForm.delay().hidden()) {
 		<div class="form-group">

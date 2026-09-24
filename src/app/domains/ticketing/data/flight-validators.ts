@@ -1,4 +1,4 @@
-import { SchemaPathTree, validate } from '@angular/forms/signals';
+import { SchemaPathTree, validate, validateTree } from '@angular/forms/signals';
 import { Flight } from './flight';
 export const validateCity = (path: SchemaPathTree<string>, allowed: string[])=> {
   validate(path, (ctx) => {
@@ -47,6 +47,26 @@ export const validateRoundTrip2 = (path: SchemaPathTree<Flight>) => {
     if (from === to) {
       return {
         kind: 'roundtrip',
+        from,
+        to,
+      };
+    }
+
+    return null;
+  });
+}
+
+// Tree validators are special multi-field validators that can define error messages for all levels of a field tree.
+// To do so, they store the affected field in the ValidationError object
+export const validateRoundTripTree = (path: SchemaPathTree<Flight>) => {
+  validateTree(path, (ctx) => {
+    const from = ctx.fieldTree.from().value();
+    const to = ctx.fieldTree.to().value();
+
+    if (from === to) {
+      return {
+        kind: 'roundtrip_tree',
+        field: ctx.fieldTree.from,
         from,
         to,
       };
