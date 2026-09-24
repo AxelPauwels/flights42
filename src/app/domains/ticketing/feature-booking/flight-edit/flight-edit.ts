@@ -15,6 +15,7 @@ import { FieldTree, form, FormField, FormRoot, submit } from '@angular/forms/sig
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ValidationErrorsPane } from '../../../shared/ui-forms/validation-errors/validation-errors-pane';
 import { flightFormSchema } from '../../data/flight-schema';
+import { initialPrice } from '../../data/price';
 
 @Component({
   selector: 'app-flight-edit',
@@ -90,6 +91,17 @@ export class FlightEdit {
         error: error,
       };
     }
+  }
+
+  protected addPrice(): void {
+    this.flight.update((flight)=> {
+      const prices = [...flight.prices, { ...initialPrice }];
+
+      return {
+        ...flight,
+        prices
+      }
+    });
   }
 
   private reportValidationError(form: FieldTree<Flight>): void {

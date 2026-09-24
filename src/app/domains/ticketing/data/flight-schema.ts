@@ -9,7 +9,7 @@ import {
   min,
   schema,
   validateStandardSchema,
-  applyWhen
+  applyWhen, applyEach
 } from '@angular/forms/signals';
 import { FlightZodSchema, validateWithFlightSchema } from './flight-zod-schema';
 import { signal } from '@angular/core';
@@ -22,6 +22,7 @@ import {
 } from './flight-validators';
 import { Flight } from './flight';
 import { aircraftSchema } from './aircraft-schema';
+import { priceSchema } from './price-schema';
 
 export const delayedFlight = schema<Flight>((path) => {
   required(path.delay);
@@ -47,6 +48,7 @@ export const flightSchema = schema<Flight>((path) => {
   //   when: (ctx) => ctx.valueOf(path.delayed),
   // });
   apply(path.aircraft, aircraftSchema);
+  applyEach(path.prices, priceSchema);
 });
 
 // create schema based on schema
