@@ -1,4 +1,4 @@
-import { SchemaPathTree, validate, validateAsync, validateTree } from '@angular/forms/signals';
+import { SchemaPathTree, validate, validateAsync, validateHttp, validateTree } from '@angular/forms/signals';
 import { Flight } from './flight';
 import { delay, map, Observable, of } from 'rxjs';
 import { rxResource } from '@angular/core/rxjs-interop';
@@ -117,4 +117,29 @@ function rxValidateAirport(airport: string): Observable<boolean> {
     delay(2000),
     map(() => allowed.includes(airport)),
   );
+}
+
+export const validateCityHttp = (path: SchemaPathTree<string>) => {
+  validateHttp(path, {
+    request: (ctx) => ({
+      url: 'https://demo.angulararchitects.io/api/flight',
+      params: {
+        from: ctx.value(),
+      },
+    }),
+    onSuccess: (result: Flight[], _ctx) => {
+      if (result.length === 0) {
+        return {
+          kind: 'airport_not_found_http',
+        };
+      }
+      return null;
+    },
+    onError: (error, _ctx) => {
+      console.error('api error validating city', error);
+      return {
+        kind: 'api-failed',
+      };
+    },
+  });
 }
