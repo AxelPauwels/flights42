@@ -10,10 +10,11 @@ import {
 } from '@angular/core';
 import { JsonPipe } from '@angular/common';
 import { SimpleFlightDetailStore } from './simple-flight-detail-store';
-import { Flight, flightFormSchema } from '../../data/flight';
+import { Flight } from '../../data/flight';
 import { FieldTree, form, FormField, FormRoot, submit } from '@angular/forms/signals';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ValidationErrorsPane } from '../../../shared/ui-forms/validation-errors/validation-errors-pane';
+import { flightFormSchema } from '../../data/flight-schema';
 
 @Component({
   selector: 'app-flight-edit',
