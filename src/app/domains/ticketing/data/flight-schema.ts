@@ -9,7 +9,7 @@ import {
   min,
   schema,
   validateStandardSchema,
-  applyWhen, applyEach
+  applyWhen, applyEach, maxLength
 } from '@angular/forms/signals';
 import { FlightZodSchema, validateWithFlightSchema } from './flight-zod-schema';
 import { signal } from '@angular/core';
@@ -35,6 +35,7 @@ export const flightSchema = schema<Flight>((path) => {
   required(path.to);
   required(path.date);
   minLength(path.from, 3);
+  maxLength(path.from, 30);
 
   // When the predicate is true, the schema 'delayedFlight' will be applied
   applyWhenValue(path, (flight) => flight.delayed, delayedFlight);

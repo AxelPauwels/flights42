@@ -4,6 +4,7 @@ import { FieldTree, FormField } from '@angular/forms/signals';
 import { DelayStepper } from '../../../../shared/ui-common/delay-stepper/delay-stepper';
 import { ValidationErrorsPane } from '../../../../shared/ui-forms/validation-errors/validation-errors-pane';
 import { Flight } from '../../../data/flight';
+import { FieldMetaDataPane } from '../../../../shared/ui-forms/field-meta-data-pane/field-meta-data-pane';
 
 @Component({
   selector: 'app-flight-form',
@@ -11,6 +12,7 @@ import { Flight } from '../../../data/flight';
     FormField,
     ValidationErrorsPane,
     DelayStepper,
+    FieldMetaDataPane
   ],
   templateUrl: './flight-form.html',
 })
