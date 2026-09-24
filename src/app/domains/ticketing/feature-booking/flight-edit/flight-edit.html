@@ -1,4 +1,4 @@
-@if (flight().id !== 0) {
+@if (flightDomainModel().id !== 0) {
 	<app-validation-errors-pane [errors]="flightForm().errors()" />
 	<form class="flight-form" novalidate>
 		<app-flight-form [flight]="flightForm"></app-flight-form>

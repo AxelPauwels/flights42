@@ -1,5 +1,5 @@
 import { computed, inject, Service, signal } from '@angular/core';
-import { Flight } from '../../data/flight';
+import { FlightDomainModel } from '../../data/flight-model';
 import { FlightClient } from '../../data/flight-client';
 
 @Service()
@@ -57,7 +57,7 @@ export class FlightStore {
   }
 }
 
-function toFlightsWithDelays(flights: Flight[], delay: number): Flight[] {
+function toFlightsWithDelays(flights: FlightDomainModel[], delay: number): FlightDomainModel[] {
   if (flights.length === 0) {
     return [];
   }

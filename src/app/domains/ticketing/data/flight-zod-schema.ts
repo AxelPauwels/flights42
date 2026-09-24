@@ -1,6 +1,6 @@
 import { z } from 'zod';
 import { SchemaPathTree, validateStandardSchema } from '@angular/forms/signals';
-import { Flight } from './flight';
+import { FlightFormModel } from './flight-model';
 import { Signal } from '@angular/core';
 
 export const FlightZodSchema = z.object({
@@ -19,6 +19,6 @@ export const StrictFlightZodSchema = z.object({
   delayed: z.boolean(),
 });
 
-export function validateWithFlightSchema(path: SchemaPathTree<Flight>, strict: Signal<boolean>) {
+export function validateWithFlightSchema(path: SchemaPathTree<FlightFormModel>, strict: Signal<boolean>) {
   validateStandardSchema(path, () => (strict() ? StrictFlightZodSchema : FlightZodSchema));
 }

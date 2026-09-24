@@ -2,7 +2,7 @@ import { inject, Service, signal } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { catchError, finalize, firstValueFrom, tap, throwError } from 'rxjs';
 
-import { Flight } from '../../data/flight';
+import { FlightDomainModel } from '../../data/flight-model';
 import { FlightClient } from '../../data/flight-client';
 
 @Service()
@@ -28,7 +28,7 @@ export class SimpleFlightDetailStore {
     this._flightId.set(id);
   }
 
-  saveFlight(flight: Flight): Promise<Flight> {
+  saveFlight(flight: FlightDomainModel): Promise<FlightDomainModel> {
     this._isPending.set(true);
 
     return firstValueFrom(
@@ -58,7 +58,7 @@ export class SimpleFlightDetailStore {
     this.flightResource.reload();
   }
 
-  requestApproval(flight: Flight): Promise<Flight> {
+  requestApproval(flight: FlightDomainModel): Promise<FlightDomainModel> {
     return Promise.resolve(flight);
   }
 }

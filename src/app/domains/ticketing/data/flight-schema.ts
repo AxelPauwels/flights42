@@ -20,17 +20,18 @@ import {
   validateRoundTrip,
   validateRoundTripTree
 } from './flight-validators';
-import { Flight } from './flight';
+import { FlightFormModel } from './flight-model';
 import { aircraftSchema } from './aircraft-schema';
 import { priceSchema } from './price-schema';
+import { FlightForm } from '../feature-booking/flight-edit/flight-form/flight-form';
 
-export const delayedFlight = schema<Flight>((path) => {
+export const delayedFlight = schema<FlightFormModel>((path) => {
   required(path.delay);
   min(path.delay, 15);
 });
 
 
-export const flightSchema = schema<Flight>((path) => {
+export const flightSchema = schema<FlightFormModel>((path) => {
   required(path.from);
   required(path.to);
   required(path.date);
@@ -54,7 +55,7 @@ export const flightSchema = schema<Flight>((path) => {
 });
 
 // create schema based on schema
-export const flightFormSchema = schema<Flight>((path) => {
+export const flightFormSchema = schema<FlightFormModel>((path) => {
   apply(path, flightSchema); // include all rules defined in flightSchema
   required(path.id); // Additional rules...
   disabled(path.delay, {
@@ -76,13 +77,13 @@ export const flightFormSchema = schema<Flight>((path) => {
 });
 
 // schema with validation against a existing schema like Zod or Valibot for example
-export const flightSchema2 = schema<Flight>((path) => {
+export const flightSchema2 = schema<FlightFormModel>((path) => {
   validateStandardSchema(path, FlightZodSchema);
   // ... other validation rules
 });
 
 // schema with conditional schema validation example
-export const flightSchema3 = schema<Flight>((path) => {
+export const flightSchema3 = schema<FlightFormModel>((path) => {
   validateWithFlightSchema(path, signal<boolean>(true));
   // ... other validation rules
 });

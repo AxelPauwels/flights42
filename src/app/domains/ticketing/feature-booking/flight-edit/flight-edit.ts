@@ -10,7 +10,7 @@ import {
 } from '@angular/core';
 import { JsonPipe } from '@angular/common';
 import { SimpleFlightDetailStore } from './simple-flight-detail-store';
-import { Flight } from '../../data/flight';
+import { FlightDomainModel, FlightFormModel } from '../../data/flight-model';
 import { FieldTree, form, FormField, FormRoot, submit } from '@angular/forms/signals';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ValidationErrorsPane } from '../../../shared/ui-forms/validation-errors/validation-errors-pane';
@@ -19,16 +19,11 @@ import { initialPrice } from '../../data/price';
 import { FlightForm } from './flight-form/flight-form';
 import { AircraftForm } from './aircraft-form/aircraft-form';
 import { PricesForm } from './prices-form/prices-form';
+import { toFlightDomainModel, toFlightFormModel } from '../../data/flight-mapper';
 
 @Component({
   selector: 'app-flight-edit',
-  imports: [
-    AircraftForm,
-    PricesForm,
-    FlightForm,
-    ValidationErrorsPane,
-    FlightForm
-  ],
+  imports: [AircraftForm, PricesForm, FlightForm, ValidationErrorsPane, FlightForm],
   templateUrl: './flight-edit.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
@@ -36,7 +31,10 @@ export class FlightEdit {
   private readonly route = inject(ActivatedRoute);
   private readonly activatedRoute = inject(ActivatedRoute);
   private readonly store = inject(SimpleFlightDetailStore);
-  protected readonly flight = linkedSignal(() => normalizeFlight(this.store.flight()));
+  protected readonly flightDomainModel = linkedSignal(() => normalizeFlight(this.store.flight()));
+  protected readonly flightFormModel = linkedSignal(() =>
+    toFlightFormModel(this.flightDomainModel()),
+  );
   private readonly snackBar = inject(MatSnackBar);
 
   constructor() {
@@ -47,7 +45,7 @@ export class FlightEdit {
   }
 
   // Set up the Signal Form with validation rules
-  protected readonly flightForm = form(this.flight, flightFormSchema, {
+  protected readonly flightForm = form(this.flightFormModel, flightFormSchema, {
     submission: {
       action: async (form) => this.save(form),
       ignoreValidators: 'none',
@@ -90,9 +88,10 @@ export class FlightEdit {
   // });
   // }
 
-  protected async save(form: FieldTree<Flight>) {
+  protected async save(form: FieldTree<FlightFormModel>) {
     try {
-      await this.store.saveFlight(form().value());
+      const formModel = form().value();
+      await this.store.saveFlight(toFlightDomainModel(formModel));
       return null;
     } catch (error) {
       return {
@@ -103,7 +102,7 @@ export class FlightEdit {
   }
 
   protected addPrice(): void {
-    this.flight.update((flight) => {
+    this.flightDomainModel.update((flight) => {
       const prices = [...flight.prices, { ...initialPrice }];
 
       return {
@@ -113,12 +112,12 @@ export class FlightEdit {
     });
   }
 
-  private reportValidationError(form: FieldTree<Flight>): void {
+  private reportValidationError(form: FieldTree<FlightDomainModel>): void {
     this.snackBar.open('Please correct the validation errors', 'OK');
     this.focusInvalid(form);
   }
 
-  private focusInvalid(form: FieldTree<Flight>) {
+  private focusInvalid(form: FieldTree<FlightDomainModel>) {
     const errors = form().errorSummary();
     if (errors.length > 0) {
       errors[0].fieldTree().focusBoundControl();
@@ -126,7 +125,7 @@ export class FlightEdit {
   }
 }
 
-function normalizeFlight(flight: Flight): Flight {
+function normalizeFlight(flight: FlightDomainModel): FlightDomainModel {
   const localDate = flight.date.substring(0, 16);
   return {
     ...flight,
