@@ -1,7 +1,15 @@
-import { SchemaPathTree, validate, validateAsync, validateHttp, validateTree } from '@angular/forms/signals';
+import {
+  SchemaPath,
+  SchemaPathTree,
+  validate,
+  validateAsync,
+  validateHttp,
+  validateTree
+} from '@angular/forms/signals';
 import { Flight } from './flight';
 import { delay, map, Observable, of } from 'rxjs';
 import { rxResource } from '@angular/core/rxjs-interop';
+import { Price } from './price';
 export const validateCity = (path: SchemaPathTree<string>, allowed: string[])=> {
   validate(path, (ctx) => {
     const value = ctx.value();
@@ -141,5 +149,25 @@ export const validateCityHttp = (path: SchemaPathTree<string>) => {
         kind: 'api-failed',
       };
     },
+  });
+}
+
+export const validateDuplicatePrices = (path: SchemaPath<Price[]>) => {
+  validate(path, (ctx) => {
+    const prices = ctx.value();
+    const flightClasses = new Set<string>();
+
+    for (const price of prices) {
+      if (flightClasses.has(price.flightClass)) {
+        return {
+          kind: 'duplicateFlightClass',
+          message:
+            'There can only be one price per flight class (FlightClass' + price.flightClass + ')',
+          flightClass: price.flightClass,
+        };
+      }
+      flightClasses.add(price.flightClass);
+    }
+    return null;
   });
 }

@@ -16,7 +16,7 @@ import { signal } from '@angular/core';
 import {
   validateCity,
   validateCityAsync,
-  validateCityHttp,
+  validateCityHttp, validateDuplicatePrices,
   validateRoundTrip,
   validateRoundTripTree
 } from './flight-validators';
@@ -49,6 +49,7 @@ export const flightSchema = schema<Flight>((path) => {
   // });
   apply(path.aircraft, aircraftSchema);
   applyEach(path.prices, priceSchema);
+  validateDuplicatePrices(path.prices);
 });
 
 // create schema based on schema
