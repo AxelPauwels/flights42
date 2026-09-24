@@ -13,7 +13,7 @@ import {
 } from '@angular/forms/signals';
 import { FlightZodSchema, validateWithFlightSchema } from './flight-zod-schema';
 import { signal } from '@angular/core';
-import { validateCity } from './flight-validators';
+import { validateCity, validateRoundTrip } from './flight-validators';
 
 export interface Flight {
   id: number;
@@ -77,6 +77,7 @@ export const flightFormSchema = schema<Flight>((path) => {
   });
 
   validateCity(path.from, ['Graz', 'Hamburg', 'Zürich']);
+  validateRoundTrip(path);
 });
 
 // schema with validation against a existing schema like Zod or Valibot for example

@@ -716,11 +716,11 @@ input[type='button']:disabled {
 }
 
 .validation-errors {
-  align-items: center;
   background: rgba(241, 22, 83, 0.06);
   border-radius: var(--border-radius);
   color: var(--color-error);
   display: flex;
+  flex-direction: column;
   font-size: var(--font-size-xs);
   gap: 8px;
   margin-bottom: 24px;

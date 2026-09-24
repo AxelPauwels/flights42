@@ -1,3 +1,7 @@
+<app-validation-errors-pane
+	[errors]="flightForm().errorSummary()"
+	[showFieldNames]="true"
+/>
 <form [formRoot]="flightForm">
 <fieldset>
 	<legend>Flight</legend>
