@@ -21,6 +21,7 @@ import {
   validateRoundTripTree
 } from './flight-validators';
 import { Flight } from './flight';
+import { aircraftSchema } from './aircraft-schema';
 
 export const delayedFlight = schema<Flight>((path) => {
   required(path.delay);
@@ -45,6 +46,7 @@ export const flightSchema = schema<Flight>((path) => {
   // required(path.delay, {
   //   when: (ctx) => ctx.valueOf(path.delayed),
   // });
+  apply(path.aircraft, aircraftSchema);
 });
 
 // create schema based on schema
