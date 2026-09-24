@@ -162,7 +162,7 @@ export const validateDuplicatePrices = (path: SchemaPath<Price[]>) => {
         return {
           kind: 'duplicateFlightClass',
           message:
-            'There can only be one price per flight class (FlightClass' + price.flightClass + ')',
+            'There can only be one price per flight class (FlightClass "' + price.flightClass + '")',
           flightClass: price.flightClass,
         };
       }

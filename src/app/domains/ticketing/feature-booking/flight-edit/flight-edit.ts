@@ -16,10 +16,19 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { ValidationErrorsPane } from '../../../shared/ui-forms/validation-errors/validation-errors-pane';
 import { flightFormSchema } from '../../data/flight-schema';
 import { initialPrice } from '../../data/price';
+import { FlightForm } from './flight-form/flight-form';
+import { AircraftForm } from './aircraft-form/aircraft-form';
+import { PricesForm } from './prices-form/prices-form';
 
 @Component({
   selector: 'app-flight-edit',
-  imports: [FormField, JsonPipe, FormRoot, ValidationErrorsPane],
+  imports: [
+    AircraftForm,
+    PricesForm,
+    FlightForm,
+    ValidationErrorsPane,
+    FlightForm
+  ],
   templateUrl: './flight-edit.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
@@ -94,13 +103,13 @@ export class FlightEdit {
   }
 
   protected addPrice(): void {
-    this.flight.update((flight)=> {
+    this.flight.update((flight) => {
       const prices = [...flight.prices, { ...initialPrice }];
 
       return {
         ...flight,
-        prices
-      }
+        prices,
+      };
     });
   }
 
