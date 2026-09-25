@@ -8,7 +8,7 @@ import {
 import { FormValueControl, ValidationError } from '@angular/forms/signals';
 
 @Component({
-  selector: 'app-delay-stepper',
+  selector: 'app-delay-stepper-form-field',
   imports: [],
   templateUrl: './delay-stepper.html',
   changeDetection: ChangeDetectionStrategy.Eager,
@@ -16,6 +16,14 @@ import { FormValueControl, ValidationError } from '@angular/forms/signals';
 })
 export class DelayStepper implements FormValueControl<number> {
   readonly value = model(0);
+  readonly disabled = input(false);
+  readonly errors = input<readonly ValidationError.WithOptionalFieldTree[]>([]);
+
+  constructor() {
+    effect(() => {
+      console.log('DelayStepper, errors', this.errors());
+    });
+  }
 
   protected inc(): void {
     this.value.update((v) => v + 15);
