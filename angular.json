@@ -79,7 +79,16 @@
           "defaultConfiguration": "development"
         },
         "test": {
-          "builder": "@angular/build:unit-test"
+          "builder": "@angular/build:unit-test",
+          "options": {
+            "browsers": ["Chromium"]
+          },
+          "configurations": {
+            "ci": {
+              "watch": false,
+              "browsers": ["ChromiumHeadless"]
+            }
+          }
         },
         "lint": {
           "builder": "@angular-eslint/builder:lint",
