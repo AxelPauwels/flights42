@@ -6,6 +6,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { provideRouter } from '@angular/router';
 import { FlightSearch } from './flight-search';
 import { page } from 'vitest/browser';
+import { By } from '@angular/platform-browser';
 describe('flight-search', () => {
   let component: FlightSearch;
   let fixture: ComponentFixture<FlightSearch>;
@@ -59,5 +60,14 @@ describe('flight-search', () => {
 
     // Assert
     await expect.element(headings).toHaveLength(0);
+  });
+
+  it('test debugElement', async () => {
+    // Arrange
+    const to = await fixture.debugElement.query(By.css('input.to')).nativeElement;
+    to.value = 'London';
+    to.dispatchEvent(new Event('input'));
+    // Act
+    // Assert
   });
 });
