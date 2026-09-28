@@ -7,6 +7,11 @@ import { provideRouter } from '@angular/router';
 import { FlightSearch } from './flight-search';
 import { page } from 'vitest/browser';
 import { By } from '@angular/platform-browser';
+import { TestOptions } from 'vitest';
+
+const suiteOptions: TestOptions = { timeout: 200 };
+const caseOptions: TestOptions = { timeout: 300 };
+
 describe('flight-search', () => {
   let component: FlightSearch;
   let fixture: ComponentFixture<FlightSearch>;
@@ -69,5 +74,11 @@ describe('flight-search', () => {
     to.dispatchEvent(new Event('input'));
     // Act
     // Assert
+  });
+
+  describe('FlightEdit (router)', suiteOptions, () => {
+    it('navigates to flight details on click', caseOptions, async () => {
+      // ...
+    });
   });
 });
