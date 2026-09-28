@@ -8,6 +8,7 @@ import { FlightSearch } from './flight-search';
 import { page } from 'vitest/browser';
 import { By } from '@angular/platform-browser';
 import { TestOptions } from 'vitest';
+import { provideTestConfig } from '../../../../testing/provide-test-config';
 
 const suiteOptions: TestOptions = { timeout: 200 };
 const caseOptions: TestOptions = { timeout: 300 };
@@ -23,6 +24,8 @@ describe('flight-search', () => {
       providers: [
         provideRouter([]),
         provideHttpClientTesting(),
+        // { provide: ConfigService, useValue: { baseUrl: '' } },
+        provideTestConfig(),
       ],
     }).compileComponents();
     fixture = TestBed.createComponent(FlightSearch);
