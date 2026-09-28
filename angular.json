@@ -86,7 +86,8 @@
           "configurations": {
             "ci": {
               "watch": false,
-              "browsers": ["ChromiumHeadless"]
+              "browsers": ["ChromiumHeadless"],
+              "setupFiles": ["src/vitest-setup.ts"]
             }
           }
         },
