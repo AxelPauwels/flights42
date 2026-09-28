@@ -12,6 +12,7 @@ import { FlightStore } from './flight-store';
 import { createTestFlight } from '../../../../testing/create-test-flight';
 import { FlightEdit } from '../flight-edit/flight-edit';
 import { RouterTestingHarness } from '@angular/router/testing';
+import { appSettings } from '../../../shared/ui-common/app-settings';
 
 const suiteOptions: TestOptions = { timeout: 200 };
 const caseOptions: TestOptions = { timeout: 300 };
@@ -48,6 +49,9 @@ describe('flight-search', () => {
       // remove: { imports: [FlightCard] },
       // add: { imports: [DummyFlightCard] },
     });
+
+    vi.spyOn(appSettings, 'debounceTimeMs', 'get').mockReturnValue(0); // before creating the component
+
     fixture = TestBed.createComponent(FlightSearch);
     component = fixture.componentInstance;
 

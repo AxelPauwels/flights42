@@ -25,6 +25,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { FlightClient } from '../../data/flight-client';
 import { DefaultLanguageService, LanguageService } from '../../../shared/util-common/language';
 import { FlightStore } from './flight-store';
+import { appSettings } from '../../../shared/ui-common/app-settings';
 
 @Component({
   selector: 'app-flight-search',
@@ -67,8 +68,8 @@ export class FlightSearch {
   protected readonly filterForm = form(this.filter, (path) => {
     // debounce(path.from, 'blur');
     // debounce(path.from, 300);
-    debounce(path.from, 'blur');
-    debounce(path.to, 300);
+    debounce(path.from, appSettings.debounceTimeMs);
+    debounce(path.to, appSettings.debounceTimeMs);
     debounce(path, (_ctx, _abortSignal) => {
       return new Promise((resolve) => {
         setTimeout(resolve, 300);
