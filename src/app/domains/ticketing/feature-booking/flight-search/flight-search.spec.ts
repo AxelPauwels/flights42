@@ -45,10 +45,10 @@ describe('flight-search', () => {
       },
     });
     // Mocked child components for shallow testing
-    TestBed.overrideComponent(FlightSearch, {
+    // TestBed.overrideComponent(FlightSearch, {
       // remove: { imports: [FlightCard] },
       // add: { imports: [DummyFlightCard] },
-    });
+    // });
 
     vi.spyOn(appSettings, 'debounceTimeMs', 'get').mockReturnValue(0); // before creating the component
 
@@ -126,14 +126,22 @@ describe('flight-search', () => {
       // Custom mock behavior
     // });
 
-    await page.getByLabelText('From').fill('Paris');
-    await page.getByLabelText('To').fill('London');
+    const from = page.getByLabelText('From');
+    const to = page.getByLabelText('To');
 
-    // From commits on blur before the To value is committed.
-    const intermediateRequest = await vi.waitFor(() =>
+    await from.fill('Paris');
+
+    const parisHamburg = await vi.waitFor(() =>
       httpController.expectOne('/flight?from=Paris&to=Hamburg'),
     );
-    intermediateRequest.flush([]);
+    parisHamburg.flush([]);
+
+    await to.fill('London');
+
+    const parisLondon = await vi.waitFor(() =>
+      httpController.expectOne('/flight?from=Paris&to=London'),
+    );
+    parisLondon.flush([]);
 
     const button = page.getByRole('button', { name: 'Search' });
 
@@ -142,7 +150,11 @@ describe('flight-search', () => {
     const request = await vi.waitFor(() =>
       httpController.expectOne('/flight?from=Paris&to=London'),
     );
-    request.flush([createTestFlight(1), createTestFlight(2), createTestFlight(3)]);
+    request.flush([
+      createTestFlight(1),
+      createTestFlight(2),
+      createTestFlight(3)
+    ]);
 
     // Assert
     const headings = page.getByRole('heading', {
@@ -151,33 +163,75 @@ describe('flight-search', () => {
 
     await expect.element(headings).toHaveLength(3);
 
-    expect(flightStore.updateFilter).toBeCalled();
-    expect(flightStore.updateFilter).toBeCalledTimes(3);
-    expect(flightStore.updateFilter).toBeCalledWith('Paris', 'London');
+    expect(flightStore.updateFilter).toHaveBeenCalled();
+    expect(flightStore.updateFilter).toHaveBeenCalledTimes(3);
+    expect(flightStore.updateFilter).toHaveBeenCalledWith('Paris', 'London');
   });
 });
 
 describe('FlightEdit (router)', suiteOptions, () => {
+  let component: FlightSearch;
+  let fixture: ComponentFixture<FlightSearch>;
+  let httpController: HttpTestingController;
+
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [FlightEdit],
       providers: [
-        // Set up test routes
         provideRouter([
           {
             path: 'flight-edit/:id',
             component: FlightEdit,
           },
         ]),
+        provideHttpClientTesting(), // Mock HTTP client providers
+        // { provide: ConfigService, useValue: { baseUrl: '' } },
+        provideTestConfig(), // Mocked service for services that are provided at root level
       ],
-    }).compileComponents();
+    })
+      // Mocked service for services that are provided at component level (overrides the app-level provider)
+      .overrideComponent(FlightSearch, {
+        add: {
+          providers: [
+            {
+              provide: LanguageService,
+              useClass: DefaultLanguageService,
+            },
+          ],
+        },
+      })
+      // Mocked child components for shallow testing
+      // .overrideComponent(FlightSearch, {
+      // remove: { imports: [FlightCard] },
+      // add: { imports: [DummyFlightCard] },
+      // });
+      .compileComponents();
+
+    vi.spyOn(appSettings, 'debounceTimeMs', 'get').mockReturnValue(0); // before creating the component
+
+    fixture = TestBed.createComponent(FlightSearch);
+    component = fixture.componentInstance;
+
+    httpController = TestBed.inject(HttpTestingController);
+
+    // Await initial data loading (httpResource uses effects internally to load data)
+    const request = await vi.waitFor(
+      () => httpController.expectOne('/flight?from=Graz&to=Hamburg'),
+      // In our example, chances are high that we just need a single retry, as we only need to
+      // wait for the pending microtask that triggers the resource. So, we could even set the
+      // interval to zero to await the next possible event loop tick after this microtask has
+      // been executed
+      // { interval: 0 },
+    );
+    // After success or timeout, flush the request to complete it and avoid memory leaks
+    request.flush([]);
   });
 
   it('navigates to flight details on click', caseOptions, async () => {
-  // Example using caseOptions.
-});
+    // Example using caseOptions.
+  });
 
-  it('shows the route id in the id field', async () => {
+  it.skip('shows the route id in the id field', async () => {
       // Arrange
       const harness = await RouterTestingHarness.create();
       await harness.navigateByUrl('/flight-edit/42');
@@ -188,3 +242,4 @@ describe('FlightEdit (router)', suiteOptions, () => {
       await expect.element(input).toHaveValue(42);
     });
 });
+

@@ -8,8 +8,8 @@ import { page } from 'vitest/browser';
 
 import { createTestFlight } from '../../../../testing/create-test-flight';
 import { provideTestConfig } from '../../../../testing/provide-test-config';
-import { appSettings } from '../../../shared/util-common/app-settings';
 import { ReactiveFlightSearch } from './reactive-flight-search';
+import { appSettings } from '../../../shared/ui-common/app-settings';
 
 describe('reactive-flight-search', () => {
   let component: ReactiveFlightSearch;
