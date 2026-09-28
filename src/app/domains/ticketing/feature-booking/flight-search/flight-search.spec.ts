@@ -10,6 +10,8 @@ import { DefaultLanguageService, LanguageService } from '../../../shared/util-co
 import { FlightCard } from '../../ui/flight-card/flight-card';
 import { FlightStore } from './flight-store';
 import { createTestFlight } from '../../../../testing/create-test-flight';
+import { FlightEdit } from '../flight-edit/flight-edit';
+import { RouterTestingHarness } from '@angular/router/testing';
 
 const suiteOptions: TestOptions = { timeout: 200 };
 const caseOptions: TestOptions = { timeout: 300 };
@@ -73,29 +75,22 @@ describe('flight-search', () => {
     expect(component).not.toBeUndefined();
   });
 
-  // it.skip('disables search button when from and to are not given', async () => {
-  //   // Arrange
-  //   // await page.getByLabelText('From').fill('');
-  //   await page.getByLabelText(/From|Airport of Departure/i).fill(''); // regex
-  //   await page.getByLabelText('To').fill('');
-  //   const button = page.getByRole('button', { name: 'Search', exact: true }); // exact match
-  //
-  //   const request = await vi.waitFor(() =>
-  //     httpController.expectOne('/flight?from=Paris&to=Hamburg'),
-  //   );
-  //   request.flush([]);
-  //
-  //
-  //   // Access the DOM node behind a locator immediately:
-  //   // const element = button.element();
-  //   // Act
-  //
-  //   // Assert
-  //   // If the defined DOM element cannot be found, these methods retry until reaching a timeout.
-  //   // Between each attempt, such methods wait for a short interval to allow asynchronous tasks to complete.
-  //   // await expect.element(button ).toBeDisabled();
-  //   await expect.element(button, { interval: 50, timeout: 100 }).toBeDisabled();
-  // });
+  it('disables search button when from and to are not given', async () => {
+    // Arrange
+    // await page.getByLabelText('From').fill('');
+    await page.getByLabelText(/From|Airport of Departure/i).fill(''); // regex
+    await page.getByLabelText('To').fill('');
+    const button = page.getByRole('button', { name: 'Search', exact: true }); // exact match
+    // Access the DOM node behind a locator immediately:
+    // const element = button.element();
+    // Act
+
+    // Assert
+    // If the defined DOM element cannot be found, these methods retry until reaching a timeout.
+    // Between each attempt, such methods wait for a short interval to allow asynchronous tasks to complete.
+    // await expect.element(button ).toBeDisabled();
+    await expect.element(button, { interval: 50, timeout: 100 }).toBeDisabled();
+  });
 
   it('shows three flights', async () => {
     // Arrange
@@ -115,12 +110,6 @@ describe('flight-search', () => {
     to.dispatchEvent(new Event('input'));
     // Act
     // Assert
-  });
-
-  describe('FlightEdit (router)', suiteOptions, () => {
-    it('navigates to flight details on click', caseOptions, async () => {
-      // ...
-    });
   });
 
   it('searches for flights when from and to are given', async () => {
@@ -162,4 +151,36 @@ describe('flight-search', () => {
     expect(flightStore.updateFilter).toBeCalledTimes(3);
     expect(flightStore.updateFilter).toBeCalledWith('Paris', 'London');
   });
+});
+
+describe('FlightEdit (router)', suiteOptions, () => {
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [FlightEdit],
+      providers: [
+        // Set up test routes
+        provideRouter([
+          {
+            path: 'flight-edit/:id',
+            component: FlightEdit,
+          },
+        ]),
+      ],
+    }).compileComponents();
+  });
+
+  it('navigates to flight details on click', caseOptions, async () => {
+  // Example using caseOptions.
+});
+
+  it('shows the route id in the id field', async () => {
+      // Arrange
+      const harness = await RouterTestingHarness.create();
+      await harness.navigateByUrl('/flight-edit/42');
+      const input = page.getByLabelText('ID');
+      // Act
+
+      // Assert
+      await expect.element(input).toHaveValue(42);
+    });
 });
