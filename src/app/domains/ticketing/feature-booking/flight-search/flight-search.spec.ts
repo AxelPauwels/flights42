@@ -34,9 +34,30 @@ describe('flight-search', () => {
   });
 
   it('disables search button when from and to are not given', async () => {
-    await page.getByLabelText('From').fill('');
+    // Arrange
+    // await page.getByLabelText('From').fill('');
+    await page.getByLabelText(/From|Airport of Departure/i).fill(''); // regex
     await page.getByLabelText('To').fill('');
-    const button = page.getByRole('button', { name: 'Search' });
-    await expect.element(button).toBeDisabled();
+    const button = page.getByRole('button', { name: 'Search', exact: true }); // exact match
+    // Access the DOM node behind a locator immediately:
+    // const element = button.element();
+    // Act
+
+    // Assert
+    // If the defined DOM element cannot be found, these methods retry until reaching a timeout.
+    // Between each attempt, such methods wait for a short interval to allow asynchronous tasks to complete.
+    // await expect.element(button ).toBeDisabled();
+    await expect.element(button, { interval: 50, timeout: 100 }).toBeDisabled();
+  });
+
+  it('shows three flights', async () => {
+    // Arrange
+    const headings = page.getByRole('heading', {
+      name: 'Paris - London',
+    });
+    // Act
+
+    // Assert
+    await expect.element(headings).toHaveLength(0);
   });
 });
