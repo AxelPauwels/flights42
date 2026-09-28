@@ -9,7 +9,8 @@ import { page } from 'vitest/browser';
 import { By } from '@angular/platform-browser';
 import { TestOptions } from 'vitest';
 import { provideTestConfig } from '../../../../testing/provide-test-config';
-import { LanguageService, LanguageService } from '../../../shared/util-common/language';
+import { DefaultLanguageService, LanguageService } from '../../../shared/util-common/language';
+import { FlightCard } from '../../ui/flight-card/flight-card';
 
 const suiteOptions: TestOptions = { timeout: 200 };
 const caseOptions: TestOptions = { timeout: 300 };
@@ -40,6 +41,11 @@ describe('flight-search', () => {
           },
         ],
       },
+    });
+    // Mocked child components for shallow testing
+    TestBed.overrideComponent(FlightSearch, {
+      remove: { imports: [FlightCard] },
+      add: { imports: [DummyFlightCard] },
     });
     fixture = TestBed.createComponent(FlightSearch);
     component = fixture.componentInstance;
