@@ -18,14 +18,14 @@ const caseOptions: TestOptions = { timeout: 300 };
 describe('flight-search', () => {
   let component: FlightSearch;
   let fixture: ComponentFixture<FlightSearch>;
-  let ctrl: HttpTestingController;
+  let httpController: HttpTestingController;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [FlightSearch],
       providers: [
         provideRouter([]),
-        provideHttpClientTesting(),
+        provideHttpClientTesting(), // Mock HTTP client providers
         // { provide: ConfigService, useValue: { baseUrl: '' } },
         provideTestConfig(), // Mocked service for services that are provided at root level
       ],
@@ -44,17 +44,25 @@ describe('flight-search', () => {
     });
     // Mocked child components for shallow testing
     TestBed.overrideComponent(FlightSearch, {
-      remove: { imports: [FlightCard] },
-      add: { imports: [DummyFlightCard] },
+      // remove: { imports: [FlightCard] },
+      // add: { imports: [DummyFlightCard] },
     });
     fixture = TestBed.createComponent(FlightSearch);
     component = fixture.componentInstance;
 
-    ctrl = TestBed.inject(HttpTestingController);
-  });
+    httpController = TestBed.inject(HttpTestingController);
+
+    // Await initial data loading (httpResource uses effects internally to load data)
+    const request = await vi.waitFor(() =>
+      httpController.expectOne('/flight?from=Graz&to=Hamburg'),
+    { interval: 50, timeout: 1000 },
+    );
+    // After success or timeout, flush the request to complete it and avoid memory leaks
+    request.flush([]);
+    });
 
   afterEach(() => {
-    // ctrl.verify();
+    httpController.verify();
   });
 
   it('can be created', () => {
