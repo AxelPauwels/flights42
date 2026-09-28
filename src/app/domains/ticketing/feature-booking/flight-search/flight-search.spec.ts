@@ -127,6 +127,11 @@ describe('flight-search', () => {
     // Arrange
     const flightStore = TestBed.inject(FlightStore);
     vi.spyOn(flightStore, 'updateFilter');
+    // When a service is provided at component level, we should access it via the fixture's debugElement:
+    // flightStore = fixture.debugElement.injector.get(FlightStore);
+    // vi.spyOn(flightStore, 'updateFilter').mockImplementation((_from, _to) => {
+      // Custom mock behavior
+    // });
 
     await page.getByLabelText('From').fill('Paris');
     await page.getByLabelText('To').fill('London');
