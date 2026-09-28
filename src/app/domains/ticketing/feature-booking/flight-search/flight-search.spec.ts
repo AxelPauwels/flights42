@@ -9,6 +9,7 @@ import { page } from 'vitest/browser';
 import { By } from '@angular/platform-browser';
 import { TestOptions } from 'vitest';
 import { provideTestConfig } from '../../../../testing/provide-test-config';
+import { LanguageService, LanguageService } from '../../../shared/util-common/language';
 
 const suiteOptions: TestOptions = { timeout: 200 };
 const caseOptions: TestOptions = { timeout: 300 };
@@ -25,9 +26,21 @@ describe('flight-search', () => {
         provideRouter([]),
         provideHttpClientTesting(),
         // { provide: ConfigService, useValue: { baseUrl: '' } },
-        provideTestConfig(),
+        provideTestConfig(), // Mocked service for services that are provided at root level
       ],
     }).compileComponents();
+
+    // Mocked service for services that are provided at component level (overrides the app-level provider)
+    TestBed.overrideComponent(FlightSearch, {
+      add: {
+        providers: [
+          {
+            provide: LanguageService,
+            useClass: DefaultLanguageService,
+          },
+        ],
+      },
+    });
     fixture = TestBed.createComponent(FlightSearch);
     component = fixture.componentInstance;
 
