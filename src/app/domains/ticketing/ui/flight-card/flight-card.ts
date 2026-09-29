@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, input, model, output } from '@angular/core';
-import { FlightDomainModel } from '../../data/flight-model';
 import { DatePipe } from '@angular/common';
+import { FlightDomainModel } from '@flights/ticketing/data/flight-model';
 
 @Component({
   selector: 'app-flight-card',
