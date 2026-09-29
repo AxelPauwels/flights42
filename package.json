@@ -9,7 +9,8 @@
     "test": "ng test",
     "test-coverage": "ng test --coverage",
     "lint": "ng lint",
-    "sheriff-list": "npx sheriff list src/main.ts"
+    "sheriff": "npx sheriff list src/main.ts",
+    "detective": "npx detective"
   },
   "private": true,
   "packageManager": "npm@11.6.1",
@@ -22,6 +23,7 @@
     "@angular/material": "^21.2.14",
     "@angular/platform-browser": "^22.1.7",
     "@angular/router": "^22.1.7",
+    "@softarc/detective": "^2.1.2",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0"
   },

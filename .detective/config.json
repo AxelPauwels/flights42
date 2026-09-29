@@ -1,0 +1,32 @@
+{
+  "scopes": [
+    "src/app/domains/ticketing/feature-booking",
+    "src/app/domains/ticketing/data",
+    "src/app/domains/ticketing/ui",
+    "src/app/domains/shared/util-common",
+    "src/app/domains/shared/ui-forms",
+    "src/app/domains/shared/ui-common"
+  ],
+  "groups": [
+    "src/app/domains/shared",
+    "src/app/domains/ticketing",
+    "src/app/domains",
+    "src/app"
+  ],
+  "entries": [],
+  "filter": {
+    "files": [],
+    "logs": []
+  },
+  "aliases": {},
+  "teams": {
+    "example-team-a": [
+      "John Doe",
+      "Jane Doe"
+    ],
+    "example-team-b": [
+      "Max Muster",
+      "Susi Sorglos"
+    ]
+  }
+}

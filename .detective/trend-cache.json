@@ -1,0 +1,3632 @@
+{
+  "version": "2.1.2",
+  "commitCache": [
+    [
+      "9aef8a3b0f56355a68dce54623f767f0acd5b37a:.ts,.js,.tsx,.jsx:2.1.2",
+      {
+        "commitHash": "9aef8a3b0f56355a68dce54623f767f0acd5b37a",
+        "fileExtensions": [
+          ".ts",
+          ".js",
+          ".tsx",
+          ".jsx"
+        ],
+        "version": "2.1.2",
+        "timestamp": 1790681498223,
+        "metrics": [
+          {
+            "commitHash": "9aef8a3b0f56355a68dce54623f767f0acd5b37a",
+            "commitDate": "2026-09-29T10:04:18.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Installing and configuring Sheriff",
+            "filePath": "eslint.config.js",
+            "linesAdded": 5,
+            "linesRemoved": 0,
+            "totalLinesAtCommit": 47,
+            "mccabeComplexityAtCommit": 1,
+            "processingTimeMs": 74
+          },
+          {
+            "commitHash": "9aef8a3b0f56355a68dce54623f767f0acd5b37a",
+            "commitDate": "2026-09-29T10:04:18.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Installing and configuring Sheriff",
+            "filePath": "sheriff.config.ts",
+            "linesAdded": 33,
+            "linesRemoved": 0,
+            "totalLinesAtCommit": 34,
+            "mccabeComplexityAtCommit": 1,
+            "processingTimeMs": 74
+          }
+        ]
+      }
+    ],
+    [
+      "f8fbd6d233139a057c0f018073a84c1b98f4130a:.ts,.js,.tsx,.jsx:2.1.2",
+      {
+        "commitHash": "f8fbd6d233139a057c0f018073a84c1b98f4130a",
+        "fileExtensions": [
+          ".ts",
+          ".js",
+          ".tsx",
+          ".jsx"
+        ],
+        "version": "2.1.2",
+        "timestamp": 1790681498223,
+        "metrics": []
+      }
+    ],
+    [
+      "c87dad5cebc5c111bb0ef75a043b56b239279dfa:.ts,.js,.tsx,.jsx:2.1.2",
+      {
+        "commitHash": "c87dad5cebc5c111bb0ef75a043b56b239279dfa",
+        "fileExtensions": [
+          ".ts",
+          ".js",
+          ".tsx",
+          ".jsx"
+        ],
+        "version": "2.1.2",
+        "timestamp": 1790681498223,
+        "metrics": [
+          {
+            "commitHash": "c87dad5cebc5c111bb0ef75a043b56b239279dfa",
+            "commitDate": "2026-09-28T14:08:57.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Testing Services",
+            "filePath": "src/app/domains/ticketing/feature-booking/flight-search/flight-search.spec.ts",
+            "linesAdded": 71,
+            "linesRemoved": 16,
+            "totalLinesAtCommit": 246,
+            "mccabeComplexityAtCommit": 1,
+            "processingTimeMs": 57
+          },
+          {
+            "commitHash": "c87dad5cebc5c111bb0ef75a043b56b239279dfa",
+            "commitDate": "2026-09-28T14:08:57.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Testing Services",
+            "filePath": "src/app/domains/ticketing/feature-booking/flight-search/flight-search.ts",
+            "linesAdded": 0,
+            "linesRemoved": 16,
+            "totalLinesAtCommit": 237,
+            "mccabeComplexityAtCommit": 2,
+            "processingTimeMs": 70
+          },
+          {
+            "commitHash": "c87dad5cebc5c111bb0ef75a043b56b239279dfa",
+            "commitDate": "2026-09-28T14:08:57.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Testing Services",
+            "filePath": "src/app/domains/ticketing/feature-booking/flight-search/flight-store.spec.ts",
+            "linesAdded": 47,
+            "linesRemoved": 0,
+            "totalLinesAtCommit": 48,
+            "mccabeComplexityAtCommit": 1,
+            "processingTimeMs": 82
+          },
+          {
+            "commitHash": "c87dad5cebc5c111bb0ef75a043b56b239279dfa",
+            "commitDate": "2026-09-28T14:08:57.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Testing Services",
+            "filePath": "src/app/domains/ticketing/feature-booking/reactive-flight-search/reactive-flight-search.spec.ts",
+            "linesAdded": 1,
+            "linesRemoved": 1,
+            "totalLinesAtCommit": 68,
+            "mccabeComplexityAtCommit": 1,
+            "processingTimeMs": 78
+          }
+        ]
+      }
+    ],
+    [
+      "7ed3418a10db0844f230bcb6dd8697a32c02ca3a:.ts,.js,.tsx,.jsx:2.1.2",
+      {
+        "commitHash": "7ed3418a10db0844f230bcb6dd8697a32c02ca3a",
+        "fileExtensions": [
+          ".ts",
+          ".js",
+          ".tsx",
+          ".jsx"
+        ],
+        "version": "2.1.2",
+        "timestamp": 1790681498223,
+        "metrics": [
+          {
+            "commitHash": "7ed3418a10db0844f230bcb6dd8697a32c02ca3a",
+            "commitDate": "2026-09-28T13:34:39.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Using VI fake timers",
+            "filePath": "src/app/domains/ticketing/feature-booking/reactive-flight-search/reactive-flight-search.fake-timers.spec.ts",
+            "linesAdded": 75,
+            "linesRemoved": 0,
+            "totalLinesAtCommit": 76,
+            "mccabeComplexityAtCommit": 1,
+            "processingTimeMs": 73
+          },
+          {
+            "commitHash": "7ed3418a10db0844f230bcb6dd8697a32c02ca3a",
+            "commitDate": "2026-09-28T13:34:39.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Using VI fake timers",
+            "filePath": "src/app/domains/ticketing/feature-booking/reactive-flight-search/reactive-flight-search.spec.ts",
+            "linesAdded": 67,
+            "linesRemoved": 0,
+            "totalLinesAtCommit": 68,
+            "mccabeComplexityAtCommit": 1,
+            "processingTimeMs": 69
+          },
+          {
+            "commitHash": "7ed3418a10db0844f230bcb6dd8697a32c02ca3a",
+            "commitDate": "2026-09-28T13:34:39.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Using VI fake timers",
+            "filePath": "src/app/domains/ticketing/feature-booking/reactive-flight-search/reactive-flight-search.ts",
+            "linesAdded": 98,
+            "linesRemoved": 0,
+            "totalLinesAtCommit": 99,
+            "mccabeComplexityAtCommit": 2,
+            "processingTimeMs": 72
+          }
+        ]
+      }
+    ],
+    [
+      "2cf22c79139bec74b52d003774a8fba867a8f96d:.ts,.js,.tsx,.jsx:2.1.2",
+      {
+        "commitHash": "2cf22c79139bec74b52d003774a8fba867a8f96d",
+        "fileExtensions": [
+          ".ts",
+          ".js",
+          ".tsx",
+          ".jsx"
+        ],
+        "version": "2.1.2",
+        "timestamp": 1790681498223,
+        "metrics": [
+          {
+            "commitHash": "2cf22c79139bec74b52d003774a8fba867a8f96d",
+            "commitDate": "2026-09-28T13:24:19.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding appSettings config for debounceTime and spy on it in tests",
+            "filePath": "src/app/domains/shared/ui-common/app-settings.ts",
+            "linesAdded": 7,
+            "linesRemoved": 0,
+            "totalLinesAtCommit": 8,
+            "mccabeComplexityAtCommit": 1,
+            "processingTimeMs": 68
+          },
+          {
+            "commitHash": "2cf22c79139bec74b52d003774a8fba867a8f96d",
+            "commitDate": "2026-09-28T13:24:19.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding appSettings config for debounceTime and spy on it in tests",
+            "filePath": "src/app/domains/ticketing/feature-booking/flight-search/flight-search.spec.ts",
+            "linesAdded": 4,
+            "linesRemoved": 0,
+            "totalLinesAtCommit": 191,
+            "mccabeComplexityAtCommit": 1,
+            "processingTimeMs": 69
+          },
+          {
+            "commitHash": "2cf22c79139bec74b52d003774a8fba867a8f96d",
+            "commitDate": "2026-09-28T13:24:19.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding appSettings config for debounceTime and spy on it in tests",
+            "filePath": "src/app/domains/ticketing/feature-booking/flight-search/flight-search.ts",
+            "linesAdded": 3,
+            "linesRemoved": 2,
+            "totalLinesAtCommit": 253,
+            "mccabeComplexityAtCommit": 3,
+            "processingTimeMs": 56
+          }
+        ]
+      }
+    ],
+    [
+      "a3a6b9166881de254dfaa8698017433af524a857:.ts,.js,.tsx,.jsx:2.1.2",
+      {
+        "commitHash": "a3a6b9166881de254dfaa8698017433af524a857",
+        "fileExtensions": [
+          ".ts",
+          ".js",
+          ".tsx",
+          ".jsx"
+        ],
+        "version": "2.1.2",
+        "timestamp": 1790681498329,
+        "metrics": [
+          {
+            "commitHash": "a3a6b9166881de254dfaa8698017433af524a857",
+            "commitDate": "2026-09-28T12:49:40.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding tests at routed component by using RouterTestingHarness",
+            "filePath": "src/app/domains/ticketing/feature-booking/flight-search/flight-search.spec.ts",
+            "linesAdded": 50,
+            "linesRemoved": 29,
+            "totalLinesAtCommit": 187,
+            "mccabeComplexityAtCommit": 1,
+            "processingTimeMs": 44
+          }
+        ]
+      }
+    ],
+    [
+      "89896ebc9cf1dca566e5957f821182c864a6ee61:.ts,.js,.tsx,.jsx:2.1.2",
+      {
+        "commitHash": "89896ebc9cf1dca566e5957f821182c864a6ee61",
+        "fileExtensions": [
+          ".ts",
+          ".js",
+          ".tsx",
+          ".jsx"
+        ],
+        "version": "2.1.2",
+        "timestamp": 1790681498329,
+        "metrics": [
+          {
+            "commitHash": "89896ebc9cf1dca566e5957f821182c864a6ee61",
+            "commitDate": "2026-09-28T12:15:44.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding spies: default at root by TestBed.inject, and component-level by fixture.debugElement.injector",
+            "filePath": "src/app/domains/ticketing/feature-booking/flight-search/flight-search.spec.ts",
+            "linesAdded": 5,
+            "linesRemoved": 0,
+            "totalLinesAtCommit": 166,
+            "mccabeComplexityAtCommit": 1,
+            "processingTimeMs": 44
+          }
+        ]
+      }
+    ],
+    [
+      "31d74047ff3a96636034244c5d3c5cd68ee46db9:.ts,.js,.tsx,.jsx:2.1.2",
+      {
+        "commitHash": "31d74047ff3a96636034244c5d3c5cd68ee46db9",
+        "fileExtensions": [
+          ".ts",
+          ".js",
+          ".tsx",
+          ".jsx"
+        ],
+        "version": "2.1.2",
+        "timestamp": 1790681498329,
+        "metrics": [
+          {
+            "commitHash": "31d74047ff3a96636034244c5d3c5cd68ee46db9",
+            "commitDate": "2026-09-28T12:07:45.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding more vi.waitFor() cases and flush the results",
+            "filePath": "src/app/domains/ticketing/feature-booking/flight-search/flight-search.spec.ts",
+            "linesAdded": 70,
+            "linesRemoved": 24,
+            "totalLinesAtCommit": 161,
+            "mccabeComplexityAtCommit": 1,
+            "processingTimeMs": 44
+          },
+          {
+            "commitHash": "31d74047ff3a96636034244c5d3c5cd68ee46db9",
+            "commitDate": "2026-09-28T12:07:45.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding more vi.waitFor() cases and flush the results",
+            "filePath": "src/app/testing/create-test-flight.ts",
+            "linesAdded": 7,
+            "linesRemoved": 0,
+            "totalLinesAtCommit": 8,
+            "mccabeComplexityAtCommit": 1,
+            "processingTimeMs": 44
+          }
+        ]
+      }
+    ],
+    [
+      "a5dde8c3425702aebd8a5027863b8e7360b13332:.ts,.js,.tsx,.jsx:2.1.2",
+      {
+        "commitHash": "a5dde8c3425702aebd8a5027863b8e7360b13332",
+        "fileExtensions": [
+          ".ts",
+          ".js",
+          ".tsx",
+          ".jsx"
+        ],
+        "version": "2.1.2",
+        "timestamp": 1790681498329,
+        "metrics": [
+          {
+            "commitHash": "a5dde8c3425702aebd8a5027863b8e7360b13332",
+            "commitDate": "2026-09-28T09:32:33.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding mocked http calls",
+            "filePath": "src/app/domains/ticketing/feature-booking/flight-search/flight-search.spec.ts",
+            "linesAdded": 15,
+            "linesRemoved": 7,
+            "totalLinesAtCommit": 115,
+            "mccabeComplexityAtCommit": 1,
+            "processingTimeMs": 43
+          }
+        ]
+      }
+    ],
+    [
+      "3cb086bdea80e8ecf9afefe3084cecdaf339e1c9:.ts,.js,.tsx,.jsx:2.1.2",
+      {
+        "commitHash": "3cb086bdea80e8ecf9afefe3084cecdaf339e1c9",
+        "fileExtensions": [
+          ".ts",
+          ".js",
+          ".tsx",
+          ".jsx"
+        ],
+        "version": "2.1.2",
+        "timestamp": 1790681498329,
+        "metrics": [
+          {
+            "commitHash": "3cb086bdea80e8ecf9afefe3084cecdaf339e1c9",
+            "commitDate": "2026-09-28T09:14:39.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding dummy components to replace child components for shallow testing",
+            "filePath": "src/app/domains/ticketing/feature-booking/flight-search/flight-search.spec.ts",
+            "linesAdded": 7,
+            "linesRemoved": 1,
+            "totalLinesAtCommit": 107,
+            "mccabeComplexityAtCommit": 1,
+            "processingTimeMs": 48
+          }
+        ]
+      }
+    ],
+    [
+      "100191a4b666be2ca6e198e7e96497e4445549e7:.ts,.js,.tsx,.jsx:2.1.2",
+      {
+        "commitHash": "100191a4b666be2ca6e198e7e96497e4445549e7",
+        "fileExtensions": [
+          ".ts",
+          ".js",
+          ".tsx",
+          ".jsx"
+        ],
+        "version": "2.1.2",
+        "timestamp": 1790681498431,
+        "metrics": [
+          {
+            "commitHash": "100191a4b666be2ca6e198e7e96497e4445549e7",
+            "commitDate": "2026-09-28T09:11:37.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding mock for component level providers",
+            "filePath": "src/app/domains/ticketing/feature-booking/flight-search/flight-search.spec.ts",
+            "linesAdded": 14,
+            "linesRemoved": 1,
+            "totalLinesAtCommit": 101,
+            "mccabeComplexityAtCommit": 1,
+            "processingTimeMs": 43
+          }
+        ]
+      }
+    ],
+    [
+      "b391230460f11abfed9c1cf8e61eb6679eb25cd7:.ts,.js,.tsx,.jsx:2.1.2",
+      {
+        "commitHash": "b391230460f11abfed9c1cf8e61eb6679eb25cd7",
+        "fileExtensions": [
+          ".ts",
+          ".js",
+          ".tsx",
+          ".jsx"
+        ],
+        "version": "2.1.2",
+        "timestamp": 1790681498431,
+        "metrics": [
+          {
+            "commitHash": "b391230460f11abfed9c1cf8e61eb6679eb25cd7",
+            "commitDate": "2026-09-28T09:07:14.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding mock by extracted provider function",
+            "filePath": "src/app/domains/ticketing/feature-booking/flight-search/flight-search.spec.ts",
+            "linesAdded": 3,
+            "linesRemoved": 0,
+            "totalLinesAtCommit": 88,
+            "mccabeComplexityAtCommit": 1,
+            "processingTimeMs": 41
+          },
+          {
+            "commitHash": "b391230460f11abfed9c1cf8e61eb6679eb25cd7",
+            "commitDate": "2026-09-28T09:07:14.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding mock by extracted provider function",
+            "filePath": "src/app/testing/provide-test-config.ts",
+            "linesAdded": 10,
+            "linesRemoved": 0,
+            "totalLinesAtCommit": 11,
+            "mccabeComplexityAtCommit": 1,
+            "processingTimeMs": 42
+          }
+        ]
+      }
+    ],
+    [
+      "db296e1e00667172cbbca8484242a74e5dd499a7:.ts,.js,.tsx,.jsx:2.1.2",
+      {
+        "commitHash": "db296e1e00667172cbbca8484242a74e5dd499a7",
+        "fileExtensions": [
+          ".ts",
+          ".js",
+          ".tsx",
+          ".jsx"
+        ],
+        "version": "2.1.2",
+        "timestamp": 1790681498431,
+        "metrics": [
+          {
+            "commitHash": "db296e1e00667172cbbca8484242a74e5dd499a7",
+            "commitDate": "2026-09-28T08:57:32.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding timeouts by using vitest config file",
+            "filePath": "src/vitest-setup.ts",
+            "linesAdded": 5,
+            "linesRemoved": 0,
+            "totalLinesAtCommit": 6,
+            "mccabeComplexityAtCommit": 1,
+            "processingTimeMs": 41
+          }
+        ]
+      }
+    ],
+    [
+      "10efdae5b5e14e8365cd0e90823736313f5d5d4c:.ts,.js,.tsx,.jsx:2.1.2",
+      {
+        "commitHash": "10efdae5b5e14e8365cd0e90823736313f5d5d4c",
+        "fileExtensions": [
+          ".ts",
+          ".js",
+          ".tsx",
+          ".jsx"
+        ],
+        "version": "2.1.2",
+        "timestamp": 1790681498431,
+        "metrics": [
+          {
+            "commitHash": "10efdae5b5e14e8365cd0e90823736313f5d5d4c",
+            "commitDate": "2026-09-28T08:56:23.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding suite and case timeouts",
+            "filePath": "src/app/domains/ticketing/feature-booking/flight-search/flight-search.spec.ts",
+            "linesAdded": 11,
+            "linesRemoved": 0,
+            "totalLinesAtCommit": 85,
+            "mccabeComplexityAtCommit": 1,
+            "processingTimeMs": 43
+          }
+        ]
+      }
+    ],
+    [
+      "d6d274040964817558a6f3e4a2717b063a6368bc:.ts,.js,.tsx,.jsx:2.1.2",
+      {
+        "commitHash": "d6d274040964817558a6f3e4a2717b063a6368bc",
+        "fileExtensions": [
+          ".ts",
+          ".js",
+          ".tsx",
+          ".jsx"
+        ],
+        "version": "2.1.2",
+        "timestamp": 1790681498431,
+        "metrics": [
+          {
+            "commitHash": "d6d274040964817558a6f3e4a2717b063a6368bc",
+            "commitDate": "2026-09-28T08:53:36.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding debugElement case",
+            "filePath": "src/app/domains/ticketing/feature-booking/flight-search/flight-search.spec.ts",
+            "linesAdded": 10,
+            "linesRemoved": 0,
+            "totalLinesAtCommit": 74,
+            "mccabeComplexityAtCommit": 1,
+            "processingTimeMs": 41
+          }
+        ]
+      }
+    ],
+    [
+      "b8d16aad48a4ce3c62981036a47837e0fdedd410:.ts,.js,.tsx,.jsx:2.1.2",
+      {
+        "commitHash": "b8d16aad48a4ce3c62981036a47837e0fdedd410",
+        "fileExtensions": [
+          ".ts",
+          ".js",
+          ".tsx",
+          ".jsx"
+        ],
+        "version": "2.1.2",
+        "timestamp": 1790681498592,
+        "metrics": [
+          {
+            "commitHash": "b8d16aad48a4ce3c62981036a47837e0fdedd410",
+            "commitDate": "2026-09-28T08:48:14.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding Vitest locators",
+            "filePath": "src/app/domains/ticketing/feature-booking/flight-search/flight-search.spec.ts",
+            "linesAdded": 24,
+            "linesRemoved": 3,
+            "totalLinesAtCommit": 64,
+            "mccabeComplexityAtCommit": 1,
+            "processingTimeMs": 88
+          }
+        ]
+      }
+    ],
+    [
+      "2b01de9d947ed165643f30d4387add341214584f:.ts,.js,.tsx,.jsx:2.1.2",
+      {
+        "commitHash": "2b01de9d947ed165643f30d4387add341214584f",
+        "fileExtensions": [
+          ".ts",
+          ".js",
+          ".tsx",
+          ".jsx"
+        ],
+        "version": "2.1.2",
+        "timestamp": 1790681498592,
+        "metrics": [
+          {
+            "commitHash": "2b01de9d947ed165643f30d4387add341214584f",
+            "commitDate": "2026-09-25T09:27:07.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding first unittest at FlightSearch: using browser DOM elements by using page from Vitest",
+            "filePath": "src/app/app.spec.ts",
+            "linesAdded": 1,
+            "linesRemoved": 1,
+            "totalLinesAtCommit": 28,
+            "mccabeComplexityAtCommit": 1,
+            "processingTimeMs": 84
+          },
+          {
+            "commitHash": "2b01de9d947ed165643f30d4387add341214584f",
+            "commitDate": "2026-09-25T09:27:07.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding first unittest at FlightSearch: using browser DOM elements by using page from Vitest",
+            "filePath": "src/app/domains/ticketing/feature-booking/flight-search/flight-search.spec.ts",
+            "linesAdded": 42,
+            "linesRemoved": 0,
+            "totalLinesAtCommit": 43,
+            "mccabeComplexityAtCommit": 1,
+            "processingTimeMs": 82
+          }
+        ]
+      }
+    ],
+    [
+      "0a4f1d6002ba7ddfaa7a94bb008a0b451b6c23bf:.ts,.js,.tsx,.jsx:2.1.2",
+      {
+        "commitHash": "0a4f1d6002ba7ddfaa7a94bb008a0b451b6c23bf",
+        "fileExtensions": [
+          ".ts",
+          ".js",
+          ".tsx",
+          ".jsx"
+        ],
+        "version": "2.1.2",
+        "timestamp": 1790681498592,
+        "metrics": [
+          {
+            "commitHash": "0a4f1d6002ba7ddfaa7a94bb008a0b451b6c23bf",
+            "commitDate": "2026-09-25T09:02:50.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Installing Playwright for Vitest",
+            "filePath": "src/app/app.spec.ts",
+            "linesAdded": 4,
+            "linesRemoved": 0,
+            "totalLinesAtCommit": 28,
+            "mccabeComplexityAtCommit": 1,
+            "processingTimeMs": 77
+          }
+        ]
+      }
+    ],
+    [
+      "10ea6c50cd383a6bfa35c71a0877de17da36307e:.ts,.js,.tsx,.jsx:2.1.2",
+      {
+        "commitHash": "10ea6c50cd383a6bfa35c71a0877de17da36307e",
+        "fileExtensions": [
+          ".ts",
+          ".js",
+          ".tsx",
+          ".jsx"
+        ],
+        "version": "2.1.2",
+        "timestamp": 1790681498592,
+        "metrics": [
+          {
+            "commitHash": "10ea6c50cd383a6bfa35c71a0877de17da36307e",
+            "commitDate": "2026-09-25T08:56:42.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Updating delay-stepper to handle errors",
+            "filePath": "src/app/domains/shared/ui-common/delay-stepper/delay-stepper.ts",
+            "linesAdded": 9,
+            "linesRemoved": 1,
+            "totalLinesAtCommit": 36,
+            "mccabeComplexityAtCommit": 1,
+            "processingTimeMs": 72
+          }
+        ]
+      }
+    ],
+    [
+      "fdcaaba4b36fa93a4ec1dfe5df671c93d0c53644:.ts,.js,.tsx,.jsx:2.1.2",
+      {
+        "commitHash": "fdcaaba4b36fa93a4ec1dfe5df671c93d0c53644",
+        "fileExtensions": [
+          ".ts",
+          ".js",
+          ".tsx",
+          ".jsx"
+        ],
+        "version": "2.1.2",
+        "timestamp": 1790681498592,
+        "metrics": [
+          {
+            "commitHash": "fdcaaba4b36fa93a4ec1dfe5df671c93d0c53644",
+            "commitDate": "2026-09-24T13:35:28.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Converting Flight to FlightDomainModel and add FlightFormModel and mappers to map back and forward",
+            "filePath": "src/app/domains/ticketing/data/flight-client.ts",
+            "linesAdded": 13,
+            "linesRemoved": 13,
+            "totalLinesAtCommit": 176,
+            "mccabeComplexityAtCommit": 4,
+            "processingTimeMs": 58
+          },
+          {
+            "commitHash": "fdcaaba4b36fa93a4ec1dfe5df671c93d0c53644",
+            "commitDate": "2026-09-24T13:35:28.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Converting Flight to FlightDomainModel and add FlightFormModel and mappers to map back and forward",
+            "filePath": "src/app/domains/ticketing/data/flight-mapper.ts",
+            "linesAdded": 15,
+            "linesRemoved": 0,
+            "totalLinesAtCommit": 16,
+            "mccabeComplexityAtCommit": 2,
+            "processingTimeMs": 55
+          },
+          {
+            "commitHash": "fdcaaba4b36fa93a4ec1dfe5df671c93d0c53644",
+            "commitDate": "2026-09-24T13:35:28.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Converting Flight to FlightDomainModel and add FlightFormModel and mappers to map back and forward",
+            "filePath": "src/app/domains/ticketing/data/flight-schema.ts",
+            "linesAdded": 7,
+            "linesRemoved": 6,
+            "totalLinesAtCommit": 90,
+            "mccabeComplexityAtCommit": 2,
+            "processingTimeMs": 68
+          },
+          {
+            "commitHash": "fdcaaba4b36fa93a4ec1dfe5df671c93d0c53644",
+            "commitDate": "2026-09-24T13:35:28.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Converting Flight to FlightDomainModel and add FlightFormModel and mappers to map back and forward",
+            "filePath": "src/app/domains/ticketing/data/flight-validators.ts",
+            "linesAdded": 5,
+            "linesRemoved": 5,
+            "totalLinesAtCommit": 177,
+            "mccabeComplexityAtCommit": 9,
+            "processingTimeMs": 64
+          },
+          {
+            "commitHash": "fdcaaba4b36fa93a4ec1dfe5df671c93d0c53644",
+            "commitDate": "2026-09-24T13:35:28.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Converting Flight to FlightDomainModel and add FlightFormModel and mappers to map back and forward",
+            "filePath": "src/app/domains/ticketing/data/flight-zod-schema.ts",
+            "linesAdded": 2,
+            "linesRemoved": 2,
+            "totalLinesAtCommit": 25,
+            "mccabeComplexityAtCommit": 2,
+            "processingTimeMs": 67
+          },
+          {
+            "commitHash": "fdcaaba4b36fa93a4ec1dfe5df671c93d0c53644",
+            "commitDate": "2026-09-24T13:35:28.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Converting Flight to FlightDomainModel and add FlightFormModel and mappers to map back and forward",
+            "filePath": "src/app/domains/ticketing/feature-booking/flight-edit/flight-edit.ts",
+            "linesAdded": 15,
+            "linesRemoved": 16,
+            "totalLinesAtCommit": 136,
+            "mccabeComplexityAtCommit": 3,
+            "processingTimeMs": 63
+          },
+          {
+            "commitHash": "fdcaaba4b36fa93a4ec1dfe5df671c93d0c53644",
+            "commitDate": "2026-09-24T13:35:28.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Converting Flight to FlightDomainModel and add FlightFormModel and mappers to map back and forward",
+            "filePath": "src/app/domains/ticketing/feature-booking/flight-edit/flight-form/flight-form.ts",
+            "linesAdded": 2,
+            "linesRemoved": 2,
+            "totalLinesAtCommit": 22,
+            "mccabeComplexityAtCommit": 1,
+            "processingTimeMs": 58
+          },
+          {
+            "commitHash": "fdcaaba4b36fa93a4ec1dfe5df671c93d0c53644",
+            "commitDate": "2026-09-24T13:35:28.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Converting Flight to FlightDomainModel and add FlightFormModel and mappers to map back and forward",
+            "filePath": "src/app/domains/ticketing/feature-booking/flight-edit/simple-flight-detail-store.ts",
+            "linesAdded": 3,
+            "linesRemoved": 3,
+            "totalLinesAtCommit": 65,
+            "mccabeComplexityAtCommit": 1,
+            "processingTimeMs": 51
+          },
+          {
+            "commitHash": "fdcaaba4b36fa93a4ec1dfe5df671c93d0c53644",
+            "commitDate": "2026-09-24T13:35:28.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Converting Flight to FlightDomainModel and add FlightFormModel and mappers to map back and forward",
+            "filePath": "src/app/domains/ticketing/feature-booking/flight-search/flight-search.ts",
+            "linesAdded": 7,
+            "linesRemoved": 7,
+            "totalLinesAtCommit": 252,
+            "mccabeComplexityAtCommit": 3,
+            "processingTimeMs": 51
+          },
+          {
+            "commitHash": "fdcaaba4b36fa93a4ec1dfe5df671c93d0c53644",
+            "commitDate": "2026-09-24T13:35:28.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Converting Flight to FlightDomainModel and add FlightFormModel and mappers to map back and forward",
+            "filePath": "src/app/domains/ticketing/feature-booking/flight-search/flight-store.ts",
+            "linesAdded": 2,
+            "linesRemoved": 2,
+            "totalLinesAtCommit": 72,
+            "mccabeComplexityAtCommit": 2,
+            "processingTimeMs": 52
+          },
+          {
+            "commitHash": "fdcaaba4b36fa93a4ec1dfe5df671c93d0c53644",
+            "commitDate": "2026-09-24T13:35:28.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Converting Flight to FlightDomainModel and add FlightFormModel and mappers to map back and forward",
+            "filePath": "src/app/domains/ticketing/ui/flight-card/flight-card.ts",
+            "linesAdded": 2,
+            "linesRemoved": 2,
+            "totalLinesAtCommit": 23,
+            "mccabeComplexityAtCommit": 1,
+            "processingTimeMs": 49
+          }
+        ]
+      }
+    ],
+    [
+      "8bfc715a0d38bc67d93e3fe1d0f075f2e1ab4680:.ts,.js,.tsx,.jsx:2.1.2",
+      {
+        "commitHash": "8bfc715a0d38bc67d93e3fe1d0f075f2e1ab4680",
+        "fileExtensions": [
+          ".ts",
+          ".js",
+          ".tsx",
+          ".jsx"
+        ],
+        "version": "2.1.2",
+        "timestamp": 1790681498767,
+        "metrics": [
+          {
+            "commitHash": "8bfc715a0d38bc67d93e3fe1d0f075f2e1ab4680",
+            "commitDate": "2026-09-24T12:47:26.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding custom created 'metadata'",
+            "filePath": "src/app/domains/shared/ui-forms/field-meta-data-pane/field-meta-data-pane.ts",
+            "linesAdded": 7,
+            "linesRemoved": 15,
+            "totalLinesAtCommit": 19,
+            "mccabeComplexityAtCommit": 1,
+            "processingTimeMs": 88
+          },
+          {
+            "commitHash": "8bfc715a0d38bc67d93e3fe1d0f075f2e1ab4680",
+            "commitDate": "2026-09-24T12:47:26.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding custom created 'metadata'",
+            "filePath": "src/app/domains/shared/util-common/properties.ts",
+            "linesAdded": 22,
+            "linesRemoved": 0,
+            "totalLinesAtCommit": 23,
+            "mccabeComplexityAtCommit": 1,
+            "processingTimeMs": 87
+          },
+          {
+            "commitHash": "8bfc715a0d38bc67d93e3fe1d0f075f2e1ab4680",
+            "commitDate": "2026-09-24T12:47:26.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding custom created 'metadata'",
+            "filePath": "src/app/domains/ticketing/data/flight-validators.ts",
+            "linesAdded": 3,
+            "linesRemoved": 0,
+            "totalLinesAtCommit": 177,
+            "mccabeComplexityAtCommit": 9,
+            "processingTimeMs": 83
+          }
+        ]
+      }
+    ],
+    [
+      "b85a60b837f8795b50489bc3ac255710dc405e73:.ts,.js,.tsx,.jsx:2.1.2",
+      {
+        "commitHash": "b85a60b837f8795b50489bc3ac255710dc405e73",
+        "fileExtensions": [
+          ".ts",
+          ".js",
+          ".tsx",
+          ".jsx"
+        ],
+        "version": "2.1.2",
+        "timestamp": 1790681498767,
+        "metrics": [
+          {
+            "commitHash": "b85a60b837f8795b50489bc3ac255710dc405e73",
+            "commitDate": "2026-09-24T12:30:49.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding formControl 'metadata'",
+            "filePath": "src/app/domains/shared/ui-forms/field-meta-data-pane/field-meta-data-pane.ts",
+            "linesAdded": 26,
+            "linesRemoved": 0,
+            "totalLinesAtCommit": 27,
+            "mccabeComplexityAtCommit": 1,
+            "processingTimeMs": 55
+          },
+          {
+            "commitHash": "b85a60b837f8795b50489bc3ac255710dc405e73",
+            "commitDate": "2026-09-24T12:30:49.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding formControl 'metadata'",
+            "filePath": "src/app/domains/ticketing/data/flight-schema.ts",
+            "linesAdded": 2,
+            "linesRemoved": 1,
+            "totalLinesAtCommit": 89,
+            "mccabeComplexityAtCommit": 2,
+            "processingTimeMs": 54
+          },
+          {
+            "commitHash": "b85a60b837f8795b50489bc3ac255710dc405e73",
+            "commitDate": "2026-09-24T12:30:49.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding formControl 'metadata'",
+            "filePath": "src/app/domains/ticketing/feature-booking/flight-edit/flight-form/flight-form.ts",
+            "linesAdded": 2,
+            "linesRemoved": 0,
+            "totalLinesAtCommit": 22,
+            "mccabeComplexityAtCommit": 1,
+            "processingTimeMs": 55
+          }
+        ]
+      }
+    ],
+    [
+      "4191e38a816b83e026376664681504f76187d72f:.ts,.js,.tsx,.jsx:2.1.2",
+      {
+        "commitHash": "4191e38a816b83e026376664681504f76187d72f",
+        "fileExtensions": [
+          ".ts",
+          ".js",
+          ".tsx",
+          ".jsx"
+        ],
+        "version": "2.1.2",
+        "timestamp": 1790681498767,
+        "metrics": [
+          {
+            "commitHash": "4191e38a816b83e026376664681504f76187d72f",
+            "commitDate": "2026-09-24T12:13:47.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Refactoring files: extract form groups to separate sub forms",
+            "filePath": "src/app/domains/ticketing/data/flight-validators.ts",
+            "linesAdded": 1,
+            "linesRemoved": 1,
+            "totalLinesAtCommit": 174,
+            "mccabeComplexityAtCommit": 9,
+            "processingTimeMs": 65
+          },
+          {
+            "commitHash": "4191e38a816b83e026376664681504f76187d72f",
+            "commitDate": "2026-09-24T12:13:47.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Refactoring files: extract form groups to separate sub forms",
+            "filePath": "src/app/domains/ticketing/feature-booking/flight-edit/aircraft-form/aircraft-form.ts",
+            "linesAdded": 12,
+            "linesRemoved": 0,
+            "totalLinesAtCommit": 13,
+            "mccabeComplexityAtCommit": 1,
+            "processingTimeMs": 60
+          },
+          {
+            "commitHash": "4191e38a816b83e026376664681504f76187d72f",
+            "commitDate": "2026-09-24T12:13:47.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Refactoring files: extract form groups to separate sub forms",
+            "filePath": "src/app/domains/ticketing/feature-booking/flight-edit/flight-edit.ts",
+            "linesAdded": 13,
+            "linesRemoved": 4,
+            "totalLinesAtCommit": 137,
+            "mccabeComplexityAtCommit": 3,
+            "processingTimeMs": 61
+          },
+          {
+            "commitHash": "4191e38a816b83e026376664681504f76187d72f",
+            "commitDate": "2026-09-24T12:13:47.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Refactoring files: extract form groups to separate sub forms",
+            "filePath": "src/app/domains/ticketing/feature-booking/flight-edit/flight-form/flight-form.ts",
+            "linesAdded": 19,
+            "linesRemoved": 0,
+            "totalLinesAtCommit": 20,
+            "mccabeComplexityAtCommit": 1,
+            "processingTimeMs": 57
+          },
+          {
+            "commitHash": "4191e38a816b83e026376664681504f76187d72f",
+            "commitDate": "2026-09-24T12:13:47.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Refactoring files: extract form groups to separate sub forms",
+            "filePath": "src/app/domains/ticketing/feature-booking/flight-edit/prices-form/prices-form.ts",
+            "linesAdded": 17,
+            "linesRemoved": 0,
+            "totalLinesAtCommit": 18,
+            "mccabeComplexityAtCommit": 1,
+            "processingTimeMs": 58
+          }
+        ]
+      }
+    ],
+    [
+      "a613c8f1c9f5826682f90f4d01b0dc1b3368f991:.ts,.js,.tsx,.jsx:2.1.2",
+      {
+        "commitHash": "a613c8f1c9f5826682f90f4d01b0dc1b3368f991",
+        "fileExtensions": [
+          ".ts",
+          ".js",
+          ".tsx",
+          ".jsx"
+        ],
+        "version": "2.1.2",
+        "timestamp": 1790681498767,
+        "metrics": [
+          {
+            "commitHash": "a613c8f1c9f5826682f90f4d01b0dc1b3368f991",
+            "commitDate": "2026-09-24T12:03:26.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding formArray validator 'validateDuplicatePrices()'",
+            "filePath": "src/app/domains/ticketing/data/flight-schema.ts",
+            "linesAdded": 2,
+            "linesRemoved": 1,
+            "totalLinesAtCommit": 88,
+            "mccabeComplexityAtCommit": 2,
+            "processingTimeMs": 63
+          },
+          {
+            "commitHash": "a613c8f1c9f5826682f90f4d01b0dc1b3368f991",
+            "commitDate": "2026-09-24T12:03:26.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding formArray validator 'validateDuplicatePrices()'",
+            "filePath": "src/app/domains/ticketing/data/flight-validators.ts",
+            "linesAdded": 29,
+            "linesRemoved": 1,
+            "totalLinesAtCommit": 174,
+            "mccabeComplexityAtCommit": 9,
+            "processingTimeMs": 57
+          },
+          {
+            "commitHash": "a613c8f1c9f5826682f90f4d01b0dc1b3368f991",
+            "commitDate": "2026-09-24T12:03:26.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding formArray validator 'validateDuplicatePrices()'",
+            "filePath": "src/app/domains/ticketing/data/price-schema.ts",
+            "linesAdded": 1,
+            "linesRemoved": 0,
+            "totalLinesAtCommit": 9,
+            "mccabeComplexityAtCommit": 1,
+            "processingTimeMs": 53
+          }
+        ]
+      }
+    ],
+    [
+      "b7ef585c6f01567ff3ce658825a5a2f2b3792fc1:.ts,.js,.tsx,.jsx:2.1.2",
+      {
+        "commitHash": "b7ef585c6f01567ff3ce658825a5a2f2b3792fc1",
+        "fileExtensions": [
+          ".ts",
+          ".js",
+          ".tsx",
+          ".jsx"
+        ],
+        "version": "2.1.2",
+        "timestamp": 1790681498767,
+        "metrics": [
+          {
+            "commitHash": "b7ef585c6f01567ff3ce658825a5a2f2b3792fc1",
+            "commitDate": "2026-09-24T11:56:26.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding form fieldset 'prices' with form arrays",
+            "filePath": "src/app/domains/ticketing/data/flight-schema.ts",
+            "linesAdded": 3,
+            "linesRemoved": 1,
+            "totalLinesAtCommit": 87,
+            "mccabeComplexityAtCommit": 2,
+            "processingTimeMs": 79
+          },
+          {
+            "commitHash": "b7ef585c6f01567ff3ce658825a5a2f2b3792fc1",
+            "commitDate": "2026-09-24T11:56:26.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding form fieldset 'prices' with form arrays",
+            "filePath": "src/app/domains/ticketing/data/price-schema.ts",
+            "linesAdded": 7,
+            "linesRemoved": 0,
+            "totalLinesAtCommit": 8,
+            "mccabeComplexityAtCommit": 1,
+            "processingTimeMs": 77
+          },
+          {
+            "commitHash": "b7ef585c6f01567ff3ce658825a5a2f2b3792fc1",
+            "commitDate": "2026-09-24T11:56:26.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding form fieldset 'prices' with form arrays",
+            "filePath": "src/app/domains/ticketing/data/price.ts",
+            "linesAdded": 5,
+            "linesRemoved": 0,
+            "totalLinesAtCommit": 10,
+            "mccabeComplexityAtCommit": 1,
+            "processingTimeMs": 74
+          },
+          {
+            "commitHash": "b7ef585c6f01567ff3ce658825a5a2f2b3792fc1",
+            "commitDate": "2026-09-24T11:56:26.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding form fieldset 'prices' with form arrays",
+            "filePath": "src/app/domains/ticketing/feature-booking/flight-edit/flight-edit.ts",
+            "linesAdded": 12,
+            "linesRemoved": 0,
+            "totalLinesAtCommit": 128,
+            "mccabeComplexityAtCommit": 3,
+            "processingTimeMs": 70
+          }
+        ]
+      }
+    ],
+    [
+      "cf0a5ad8d1b08832a44850746ab5b271ad0defa5:.ts,.js,.tsx,.jsx:2.1.2",
+      {
+        "commitHash": "cf0a5ad8d1b08832a44850746ab5b271ad0defa5",
+        "fileExtensions": [
+          ".ts",
+          ".js",
+          ".tsx",
+          ".jsx"
+        ],
+        "version": "2.1.2",
+        "timestamp": 1790681498895,
+        "metrics": [
+          {
+            "commitHash": "cf0a5ad8d1b08832a44850746ab5b271ad0defa5",
+            "commitDate": "2026-09-24T11:25:39.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding form fieldset 'aircraft'",
+            "filePath": "src/app/domains/ticketing/data/aircraft-schema.ts",
+            "linesAdded": 7,
+            "linesRemoved": 0,
+            "totalLinesAtCommit": 8,
+            "mccabeComplexityAtCommit": 1,
+            "processingTimeMs": 50
+          },
+          {
+            "commitHash": "cf0a5ad8d1b08832a44850746ab5b271ad0defa5",
+            "commitDate": "2026-09-24T11:25:39.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding form fieldset 'aircraft'",
+            "filePath": "src/app/domains/ticketing/data/flight-schema.ts",
+            "linesAdded": 2,
+            "linesRemoved": 0,
+            "totalLinesAtCommit": 85,
+            "mccabeComplexityAtCommit": 2,
+            "processingTimeMs": 48
+          }
+        ]
+      }
+    ],
+    [
+      "a13fbab91e6583e0ba3298135468381ba91dbc65:.ts,.js,.tsx,.jsx:2.1.2",
+      {
+        "commitHash": "a13fbab91e6583e0ba3298135468381ba91dbc65",
+        "fileExtensions": [
+          ".ts",
+          ".js",
+          ".tsx",
+          ".jsx"
+        ],
+        "version": "2.1.2",
+        "timestamp": 1790681498895,
+        "metrics": [
+          {
+            "commitHash": "a13fbab91e6583e0ba3298135468381ba91dbc65",
+            "commitDate": "2026-09-24T11:15:48.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Refactoring files: extract schemas to schema file",
+            "filePath": "src/app/domains/ticketing/data/flight-schema.ts",
+            "linesAdded": 82,
+            "linesRemoved": 0,
+            "totalLinesAtCommit": 83,
+            "mccabeComplexityAtCommit": 2,
+            "processingTimeMs": 49
+          },
+          {
+            "commitHash": "a13fbab91e6583e0ba3298135468381ba91dbc65",
+            "commitDate": "2026-09-24T11:15:48.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Refactoring files: extract schemas to schema file",
+            "filePath": "src/app/domains/ticketing/data/flight.ts",
+            "linesAdded": 0,
+            "linesRemoved": 79,
+            "totalLinesAtCommit": 25,
+            "mccabeComplexityAtCommit": 1,
+            "processingTimeMs": 51
+          },
+          {
+            "commitHash": "a13fbab91e6583e0ba3298135468381ba91dbc65",
+            "commitDate": "2026-09-24T11:15:48.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Refactoring files: extract schemas to schema file",
+            "filePath": "src/app/domains/ticketing/feature-booking/flight-edit/flight-edit.ts",
+            "linesAdded": 2,
+            "linesRemoved": 1,
+            "totalLinesAtCommit": 116,
+            "mccabeComplexityAtCommit": 3,
+            "processingTimeMs": 51
+          }
+        ]
+      }
+    ],
+    [
+      "ca2246afdc39dcf970a96a11cf6f6290cb80c426:.ts,.js,.tsx,.jsx:2.1.2",
+      {
+        "commitHash": "ca2246afdc39dcf970a96a11cf6f6290cb80c426",
+        "fileExtensions": [
+          ".ts",
+          ".js",
+          ".tsx",
+          ".jsx"
+        ],
+        "version": "2.1.2",
+        "timestamp": 1790681498895,
+        "metrics": [
+          {
+            "commitHash": "ca2246afdc39dcf970a96a11cf6f6290cb80c426",
+            "commitDate": "2026-09-24T09:58:08.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding async validators by validateHttp()",
+            "filePath": "src/app/domains/ticketing/data/flight-validators.ts",
+            "linesAdded": 26,
+            "linesRemoved": 1,
+            "totalLinesAtCommit": 146,
+            "mccabeComplexityAtCommit": 7,
+            "processingTimeMs": 52
+          },
+          {
+            "commitHash": "ca2246afdc39dcf970a96a11cf6f6290cb80c426",
+            "commitDate": "2026-09-24T09:58:08.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding async validators by validateHttp()",
+            "filePath": "src/app/domains/ticketing/data/flight.ts",
+            "linesAdded": 9,
+            "linesRemoved": 2,
+            "totalLinesAtCommit": 104,
+            "mccabeComplexityAtCommit": 2,
+            "processingTimeMs": 53
+          }
+        ]
+      }
+    ],
+    [
+      "24f1291c4cc1c819a9590a1da72b7a5125e7fad4:.ts,.js,.tsx,.jsx:2.1.2",
+      {
+        "commitHash": "24f1291c4cc1c819a9590a1da72b7a5125e7fad4",
+        "fileExtensions": [
+          ".ts",
+          ".js",
+          ".tsx",
+          ".jsx"
+        ],
+        "version": "2.1.2",
+        "timestamp": 1790681498895,
+        "metrics": [
+          {
+            "commitHash": "24f1291c4cc1c819a9590a1da72b7a5125e7fad4",
+            "commitDate": "2026-09-24T09:55:20.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding async validators",
+            "filePath": "src/app/domains/ticketing/data/flight-validators.ts",
+            "linesAdded": 44,
+            "linesRemoved": 1,
+            "totalLinesAtCommit": 121,
+            "mccabeComplexityAtCommit": 6,
+            "processingTimeMs": 51
+          },
+          {
+            "commitHash": "24f1291c4cc1c819a9590a1da72b7a5125e7fad4",
+            "commitDate": "2026-09-24T09:55:20.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding async validators",
+            "filePath": "src/app/domains/ticketing/data/flight.ts",
+            "linesAdded": 4,
+            "linesRemoved": 2,
+            "totalLinesAtCommit": 97,
+            "mccabeComplexityAtCommit": 2,
+            "processingTimeMs": 56
+          }
+        ]
+      }
+    ],
+    [
+      "1b8365d4132f35c12a90e84b9bb1ee9d93a3008e:.ts,.js,.tsx,.jsx:2.1.2",
+      {
+        "commitHash": "1b8365d4132f35c12a90e84b9bb1ee9d93a3008e",
+        "fileExtensions": [
+          ".ts",
+          ".js",
+          ".tsx",
+          ".jsx"
+        ],
+        "version": "2.1.2",
+        "timestamp": 1790681498895,
+        "metrics": [
+          {
+            "commitHash": "1b8365d4132f35c12a90e84b9bb1ee9d93a3008e",
+            "commitDate": "2026-09-24T09:48:58.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding Tree validator",
+            "filePath": "src/app/domains/ticketing/data/flight-validators.ts",
+            "linesAdded": 21,
+            "linesRemoved": 1,
+            "totalLinesAtCommit": 78,
+            "mccabeComplexityAtCommit": 5,
+            "processingTimeMs": 52
+          },
+          {
+            "commitHash": "1b8365d4132f35c12a90e84b9bb1ee9d93a3008e",
+            "commitDate": "2026-09-24T09:48:58.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding Tree validator",
+            "filePath": "src/app/domains/ticketing/data/flight.ts",
+            "linesAdded": 2,
+            "linesRemoved": 1,
+            "totalLinesAtCommit": 95,
+            "mccabeComplexityAtCommit": 2,
+            "processingTimeMs": 52
+          }
+        ]
+      }
+    ],
+    [
+      "a2c69bc3c910eb32628be291ed7cc9507fe81029:.ts,.js,.tsx,.jsx:2.1.2",
+      {
+        "commitHash": "a2c69bc3c910eb32628be291ed7cc9507fe81029",
+        "fileExtensions": [
+          ".ts",
+          ".js",
+          ".tsx",
+          ".jsx"
+        ],
+        "version": "2.1.2",
+        "timestamp": 1790681499012,
+        "metrics": [
+          {
+            "commitHash": "a2c69bc3c910eb32628be291ed7cc9507fe81029",
+            "commitDate": "2026-09-24T09:40:30.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding custom validators at full 'path', and child-paths (Multi-Field Validators)",
+            "filePath": "src/app/domains/ticketing/data/flight-validators.ts",
+            "linesAdded": 42,
+            "linesRemoved": 0,
+            "totalLinesAtCommit": 58,
+            "mccabeComplexityAtCommit": 4,
+            "processingTimeMs": 50
+          },
+          {
+            "commitHash": "a2c69bc3c910eb32628be291ed7cc9507fe81029",
+            "commitDate": "2026-09-24T09:40:30.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding custom validators at full 'path', and child-paths (Multi-Field Validators)",
+            "filePath": "src/app/domains/ticketing/data/flight.ts",
+            "linesAdded": 2,
+            "linesRemoved": 1,
+            "totalLinesAtCommit": 94,
+            "mccabeComplexityAtCommit": 2,
+            "processingTimeMs": 51
+          }
+        ]
+      }
+    ],
+    [
+      "28db5c4a7454377ec6420b984af4ea1483565a18:.ts,.js,.tsx,.jsx:2.1.2",
+      {
+        "commitHash": "28db5c4a7454377ec6420b984af4ea1483565a18",
+        "fileExtensions": [
+          ".ts",
+          ".js",
+          ".tsx",
+          ".jsx"
+        ],
+        "version": "2.1.2",
+        "timestamp": 1790681499012,
+        "metrics": [
+          {
+            "commitHash": "28db5c4a7454377ec6420b984af4ea1483565a18",
+            "commitDate": "2026-09-24T09:22:33.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding conditional validators to schema like appplyWhenVlue,applyWhen, and required with 'when' config",
+            "filePath": "src/app/domains/ticketing/data/flight.ts",
+            "linesAdded": 22,
+            "linesRemoved": 3,
+            "totalLinesAtCommit": 93,
+            "mccabeComplexityAtCommit": 2,
+            "processingTimeMs": 51
+          }
+        ]
+      }
+    ],
+    [
+      "c2adf1f16d2c657fb162daf894c06ae7716fddb6:.ts,.js,.tsx,.jsx:2.1.2",
+      {
+        "commitHash": "c2adf1f16d2c657fb162daf894c06ae7716fddb6",
+        "fileExtensions": [
+          ".ts",
+          ".js",
+          ".tsx",
+          ".jsx"
+        ],
+        "version": "2.1.2",
+        "timestamp": 1790681499012,
+        "metrics": []
+      }
+    ],
+    [
+      "ba65bf549c7be09d4e5762f45d793aec3c21e420:.ts,.js,.tsx,.jsx:2.1.2",
+      {
+        "commitHash": "ba65bf549c7be09d4e5762f45d793aec3c21e420",
+        "fileExtensions": [
+          ".ts",
+          ".js",
+          ".tsx",
+          ".jsx"
+        ],
+        "version": "2.1.2",
+        "timestamp": 1790681499012,
+        "metrics": [
+          {
+            "commitHash": "ba65bf549c7be09d4e5762f45d793aec3c21e420",
+            "commitDate": "2026-09-22T13:14:03.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding Validation-error-pane to handle our error messages",
+            "filePath": "src/app/domains/shared/ui-forms/validation-errors/validation-errors-pane.ts",
+            "linesAdded": 50,
+            "linesRemoved": 0,
+            "totalLinesAtCommit": 51,
+            "mccabeComplexityAtCommit": 8,
+            "processingTimeMs": 52
+          },
+          {
+            "commitHash": "ba65bf549c7be09d4e5762f45d793aec3c21e420",
+            "commitDate": "2026-09-22T13:14:03.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding Validation-error-pane to handle our error messages",
+            "filePath": "src/app/domains/ticketing/data/flight-validators.ts",
+            "linesAdded": 1,
+            "linesRemoved": 1,
+            "totalLinesAtCommit": 16,
+            "mccabeComplexityAtCommit": 2,
+            "processingTimeMs": 51
+          },
+          {
+            "commitHash": "ba65bf549c7be09d4e5762f45d793aec3c21e420",
+            "commitDate": "2026-09-22T13:14:03.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding Validation-error-pane to handle our error messages",
+            "filePath": "src/app/domains/ticketing/feature-booking/flight-edit/flight-edit.ts",
+            "linesAdded": 2,
+            "linesRemoved": 1,
+            "totalLinesAtCommit": 115,
+            "mccabeComplexityAtCommit": 3,
+            "processingTimeMs": 49
+          }
+        ]
+      }
+    ],
+    [
+      "8ca1cc6f18091a79d3672046115f0e8ceaa30110:.ts,.js,.tsx,.jsx:2.1.2",
+      {
+        "commitHash": "8ca1cc6f18091a79d3672046115f0e8ceaa30110",
+        "fileExtensions": [
+          ".ts",
+          ".js",
+          ".tsx",
+          ".jsx"
+        ],
+        "version": "2.1.2",
+        "timestamp": 1790681499012,
+        "metrics": [
+          {
+            "commitHash": "8ca1cc6f18091a79d3672046115f0e8ceaa30110",
+            "commitDate": "2026-09-22T12:59:19.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Extracting custom form validator to separate function (and file)",
+            "filePath": "src/app/domains/ticketing/data/flight-validators.ts",
+            "linesAdded": 15,
+            "linesRemoved": 0,
+            "totalLinesAtCommit": 16,
+            "mccabeComplexityAtCommit": 2,
+            "processingTimeMs": 53
+          },
+          {
+            "commitHash": "8ca1cc6f18091a79d3672046115f0e8ceaa30110",
+            "commitDate": "2026-09-22T12:59:19.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Extracting custom form validator to separate function (and file)",
+            "filePath": "src/app/domains/ticketing/data/flight.ts",
+            "linesAdded": 2,
+            "linesRemoved": 14,
+            "totalLinesAtCommit": 74,
+            "mccabeComplexityAtCommit": 2,
+            "processingTimeMs": 52
+          }
+        ]
+      }
+    ],
+    [
+      "0e3d4e0f3fb5ab945c24d260794bf8d75b6bc0ec:.ts,.js,.tsx,.jsx:2.1.2",
+      {
+        "commitHash": "0e3d4e0f3fb5ab945c24d260794bf8d75b6bc0ec",
+        "fileExtensions": [
+          ".ts",
+          ".js",
+          ".tsx",
+          ".jsx"
+        ],
+        "version": "2.1.2",
+        "timestamp": 1790681499128,
+        "metrics": [
+          {
+            "commitHash": "0e3d4e0f3fb5ab945c24d260794bf8d75b6bc0ec",
+            "commitDate": "2026-09-22T12:53:59.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding custom form validator",
+            "filePath": "src/app/domains/ticketing/data/flight.ts",
+            "linesAdded": 16,
+            "linesRemoved": 1,
+            "totalLinesAtCommit": 86,
+            "mccabeComplexityAtCommit": 3,
+            "processingTimeMs": 49
+          }
+        ]
+      }
+    ],
+    [
+      "a05d281a297dc8b57285b3da1845f7c33efb6865:.ts,.js,.tsx,.jsx:2.1.2",
+      {
+        "commitHash": "a05d281a297dc8b57285b3da1845f7c33efb6865",
+        "fileExtensions": [
+          ".ts",
+          ".js",
+          ".tsx",
+          ".jsx"
+        ],
+        "version": "2.1.2",
+        "timestamp": 1790681499128,
+        "metrics": [
+          {
+            "commitHash": "a05d281a297dc8b57285b3da1845f7c33efb6865",
+            "commitDate": "2026-09-22T12:40:11.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding a second button to submit, but with asybc submit method from form-signals with custom submission fucntions",
+            "filePath": "src/app/domains/ticketing/feature-booking/flight-edit/flight-edit.ts",
+            "linesAdded": 18,
+            "linesRemoved": 10,
+            "totalLinesAtCommit": 114,
+            "mccabeComplexityAtCommit": 3,
+            "processingTimeMs": 50
+          },
+          {
+            "commitHash": "a05d281a297dc8b57285b3da1845f7c33efb6865",
+            "commitDate": "2026-09-22T12:40:11.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding a second button to submit, but with asybc submit method from form-signals with custom submission fucntions",
+            "filePath": "src/app/domains/ticketing/feature-booking/flight-edit/simple-flight-detail-store.ts",
+            "linesAdded": 5,
+            "linesRemoved": 3,
+            "totalLinesAtCommit": 65,
+            "mccabeComplexityAtCommit": 1,
+            "processingTimeMs": 53
+          }
+        ]
+      }
+    ],
+    [
+      "e51ca3e7de4cfcbd8570e85716530bd8a618d4ca:.ts,.js,.tsx,.jsx:2.1.2",
+      {
+        "commitHash": "e51ca3e7de4cfcbd8570e85716530bd8a618d4ca",
+        "fileExtensions": [
+          ".ts",
+          ".js",
+          ".tsx",
+          ".jsx"
+        ],
+        "version": "2.1.2",
+        "timestamp": 1790681499128,
+        "metrics": [
+          {
+            "commitHash": "e51ca3e7de4cfcbd8570e85716530bd8a618d4ca",
+            "commitDate": "2026-09-22T12:17:48.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding new edit-flight form with FormRoot and custom submission functions",
+            "filePath": "src/app/domains/ticketing/data/flight-client.ts",
+            "linesAdded": 17,
+            "linesRemoved": 9,
+            "totalLinesAtCommit": 176,
+            "mccabeComplexityAtCommit": 4,
+            "processingTimeMs": 54
+          },
+          {
+            "commitHash": "e51ca3e7de4cfcbd8570e85716530bd8a618d4ca",
+            "commitDate": "2026-09-22T12:17:48.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding new edit-flight form with FormRoot and custom submission functions",
+            "filePath": "src/app/domains/ticketing/feature-booking/flight-edit/flight-edit.ts",
+            "linesAdded": 46,
+            "linesRemoved": 16,
+            "totalLinesAtCommit": 106,
+            "mccabeComplexityAtCommit": 3,
+            "processingTimeMs": 52
+          }
+        ]
+      }
+    ],
+    [
+      "398a4273892fdf477b1b1fbc421522b55d441f80:.ts,.js,.tsx,.jsx:2.1.2",
+      {
+        "commitHash": "398a4273892fdf477b1b1fbc421522b55d441f80",
+        "fileExtensions": [
+          ".ts",
+          ".js",
+          ".tsx",
+          ".jsx"
+        ],
+        "version": "2.1.2",
+        "timestamp": 1790681499128,
+        "metrics": [
+          {
+            "commitHash": "398a4273892fdf477b1b1fbc421522b55d441f80",
+            "commitDate": "2026-09-21T13:28:22.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding config provider 'provideSignalFormsConfig' to provide classic CSS classes for forms",
+            "filePath": "src/app/app.config.ts",
+            "linesAdded": 7,
+            "linesRemoved": 0,
+            "totalLinesAtCommit": 41,
+            "mccabeComplexityAtCommit": 1,
+            "processingTimeMs": 52
+          }
+        ]
+      }
+    ],
+    [
+      "04a86970a81ee12beb16d324478a06011c5c7c9d:.ts,.js,.tsx,.jsx:2.1.2",
+      {
+        "commitHash": "04a86970a81ee12beb16d324478a06011c5c7c9d",
+        "fileExtensions": [
+          ".ts",
+          ".js",
+          ".tsx",
+          ".jsx"
+        ],
+        "version": "2.1.2",
+        "timestamp": 1790681499128,
+        "metrics": [
+          {
+            "commitHash": "04a86970a81ee12beb16d324478a06011c5c7c9d",
+            "commitDate": "2026-09-21T13:25:08.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding signal form schema with conditional validation against a schema like Zod",
+            "filePath": "src/app/domains/ticketing/data/flight-zod-schema.ts",
+            "linesAdded": 15,
+            "linesRemoved": 0,
+            "totalLinesAtCommit": 25,
+            "mccabeComplexityAtCommit": 2,
+            "processingTimeMs": 52
+          },
+          {
+            "commitHash": "04a86970a81ee12beb16d324478a06011c5c7c9d",
+            "commitDate": "2026-09-21T13:25:08.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding signal form schema with conditional validation against a schema like Zod",
+            "filePath": "src/app/domains/ticketing/data/flight.ts",
+            "linesAdded": 8,
+            "linesRemoved": 1,
+            "totalLinesAtCommit": 71,
+            "mccabeComplexityAtCommit": 2,
+            "processingTimeMs": 51
+          }
+        ]
+      }
+    ],
+    [
+      "592d4c88a8a46cf639ece964d03fd1184e09e6bd:.ts,.js,.tsx,.jsx:2.1.2",
+      {
+        "commitHash": "592d4c88a8a46cf639ece964d03fd1184e09e6bd",
+        "fileExtensions": [
+          ".ts",
+          ".js",
+          ".tsx",
+          ".jsx"
+        ],
+        "version": "2.1.2",
+        "timestamp": 1790681499244,
+        "metrics": [
+          {
+            "commitHash": "592d4c88a8a46cf639ece964d03fd1184e09e6bd",
+            "commitDate": "2026-09-21T13:18:12.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding signal form schema with validation on another schema like Zod schema for example",
+            "filePath": "src/app/domains/ticketing/data/flight.ts",
+            "linesAdded": 17,
+            "linesRemoved": 1,
+            "totalLinesAtCommit": 64,
+            "mccabeComplexityAtCommit": 2,
+            "processingTimeMs": 52
+          }
+        ]
+      }
+    ],
+    [
+      "e8371336538275a3bfe23c76c9df86ba186be04c:.ts,.js,.tsx,.jsx:2.1.2",
+      {
+        "commitHash": "e8371336538275a3bfe23c76c9df86ba186be04c",
+        "fileExtensions": [
+          ".ts",
+          ".js",
+          ".tsx",
+          ".jsx"
+        ],
+        "version": "2.1.2",
+        "timestamp": 1790681499244,
+        "metrics": [
+          {
+            "commitHash": "e8371336538275a3bfe23c76c9df86ba186be04c",
+            "commitDate": "2026-09-21T13:11:12.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding signal form path debounce-blur and custom debounce function",
+            "filePath": "src/app/domains/ticketing/feature-booking/flight-search/flight-search.ts",
+            "linesAdded": 12,
+            "linesRemoved": 2,
+            "totalLinesAtCommit": 252,
+            "mccabeComplexityAtCommit": 3,
+            "processingTimeMs": 49
+          }
+        ]
+      }
+    ],
+    [
+      "401464a5ff6128c66d92a2ac3a0ba24bf0bacff6:.ts,.js,.tsx,.jsx:2.1.2",
+      {
+        "commitHash": "401464a5ff6128c66d92a2ac3a0ba24bf0bacff6",
+        "fileExtensions": [
+          ".ts",
+          ".js",
+          ".tsx",
+          ".jsx"
+        ],
+        "version": "2.1.2",
+        "timestamp": 1790681499244,
+        "metrics": []
+      }
+    ],
+    [
+      "877fe00b085b10748ed47e5ac6d9ea31c46bcfc4:.ts,.js,.tsx,.jsx:2.1.2",
+      {
+        "commitHash": "877fe00b085b10748ed47e5ac6d9ea31c46bcfc4",
+        "fileExtensions": [
+          ".ts",
+          ".js",
+          ".tsx",
+          ".jsx"
+        ],
+        "version": "2.1.2",
+        "timestamp": 1790681499244,
+        "metrics": [
+          {
+            "commitHash": "877fe00b085b10748ed47e5ac6d9ea31c46bcfc4",
+            "commitDate": "2026-09-21T12:59:59.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding signal form schema additions like disabled (with reasons), readonly and hidden",
+            "filePath": "src/app/domains/ticketing/data/flight.ts",
+            "linesAdded": 16,
+            "linesRemoved": 1,
+            "totalLinesAtCommit": 48,
+            "mccabeComplexityAtCommit": 2,
+            "processingTimeMs": 49
+          },
+          {
+            "commitHash": "877fe00b085b10748ed47e5ac6d9ea31c46bcfc4",
+            "commitDate": "2026-09-21T12:59:59.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding signal form schema additions like disabled (with reasons), readonly and hidden",
+            "filePath": "src/app/domains/ticketing/feature-booking/flight-edit/flight-edit.ts",
+            "linesAdded": 4,
+            "linesRemoved": 3,
+            "totalLinesAtCommit": 76,
+            "mccabeComplexityAtCommit": 1,
+            "processingTimeMs": 49
+          }
+        ]
+      }
+    ],
+    [
+      "6847895b908d69d5ac7be011e464ee8f5a510370:.ts,.js,.tsx,.jsx:2.1.2",
+      {
+        "commitHash": "6847895b908d69d5ac7be011e464ee8f5a510370",
+        "fileExtensions": [
+          ".ts",
+          ".js",
+          ".tsx",
+          ".jsx"
+        ],
+        "version": "2.1.2",
+        "timestamp": 1790681499244,
+        "metrics": [
+          {
+            "commitHash": "6847895b908d69d5ac7be011e464ee8f5a510370",
+            "commitDate": "2026-09-21T12:41:23.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding signal form schema",
+            "filePath": "src/app/domains/ticketing/data/flight.ts",
+            "linesAdded": 8,
+            "linesRemoved": 0,
+            "totalLinesAtCommit": 33,
+            "mccabeComplexityAtCommit": 1,
+            "processingTimeMs": 48
+          },
+          {
+            "commitHash": "6847895b908d69d5ac7be011e464ee8f5a510370",
+            "commitDate": "2026-09-21T12:41:23.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding signal form schema",
+            "filePath": "src/app/domains/ticketing/feature-booking/flight-edit/flight-edit.ts",
+            "linesAdded": 3,
+            "linesRemoved": 11,
+            "totalLinesAtCommit": 75,
+            "mccabeComplexityAtCommit": 1,
+            "processingTimeMs": 49
+          }
+        ]
+      }
+    ],
+    [
+      "b38d5ee4e9455299bb7cd5727851e1958ad8dcdd:.ts,.js,.tsx,.jsx:2.1.2",
+      {
+        "commitHash": "b38d5ee4e9455299bb7cd5727851e1958ad8dcdd",
+        "fileExtensions": [
+          ".ts",
+          ".js",
+          ".tsx",
+          ".jsx"
+        ],
+        "version": "2.1.2",
+        "timestamp": 1790681499392,
+        "metrics": [
+          {
+            "commitHash": "b38d5ee4e9455299bb7cd5727851e1958ad8dcdd",
+            "commitDate": "2026-09-21T12:38:37.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding signal form flight edit html",
+            "filePath": "src/app/domains/ticketing/feature-booking/flight-edit/flight-edit.ts",
+            "linesAdded": 9,
+            "linesRemoved": 5,
+            "totalLinesAtCommit": 83,
+            "mccabeComplexityAtCommit": 1,
+            "processingTimeMs": 56
+          }
+        ]
+      }
+    ],
+    [
+      "eae9f7879e2d4d0f22bc2c17c2a89fe949021474:.ts,.js,.tsx,.jsx:2.1.2",
+      {
+        "commitHash": "eae9f7879e2d4d0f22bc2c17c2a89fe949021474",
+        "fileExtensions": [
+          ".ts",
+          ".js",
+          ".tsx",
+          ".jsx"
+        ],
+        "version": "2.1.2",
+        "timestamp": 1790681499392,
+        "metrics": [
+          {
+            "commitHash": "eae9f7879e2d4d0f22bc2c17c2a89fe949021474",
+            "commitDate": "2026-09-21T12:24:05.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding signal form flight edit",
+            "filePath": "src/app/domains/ticketing/data/flight-client.ts",
+            "linesAdded": 137,
+            "linesRemoved": 3,
+            "totalLinesAtCommit": 168,
+            "mccabeComplexityAtCommit": 3,
+            "processingTimeMs": 59
+          },
+          {
+            "commitHash": "eae9f7879e2d4d0f22bc2c17c2a89fe949021474",
+            "commitDate": "2026-09-21T12:24:05.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding signal form flight edit",
+            "filePath": "src/app/domains/ticketing/feature-booking/flight-edit/flight-edit.ts",
+            "linesAdded": 37,
+            "linesRemoved": 16,
+            "totalLinesAtCommit": 79,
+            "mccabeComplexityAtCommit": 1,
+            "processingTimeMs": 61
+          },
+          {
+            "commitHash": "eae9f7879e2d4d0f22bc2c17c2a89fe949021474",
+            "commitDate": "2026-09-21T12:24:05.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding signal form flight edit",
+            "filePath": "src/app/domains/ticketing/feature-booking/flight-edit/simple-flight-detail-store.ts",
+            "linesAdded": 62,
+            "linesRemoved": 0,
+            "totalLinesAtCommit": 63,
+            "mccabeComplexityAtCommit": 1,
+            "processingTimeMs": 62
+          }
+        ]
+      }
+    ],
+    [
+      "044bac8088be1b6423e0da6929b1db3914e38055:.ts,.js,.tsx,.jsx:2.1.2",
+      {
+        "commitHash": "044bac8088be1b6423e0da6929b1db3914e38055",
+        "fileExtensions": [
+          ".ts",
+          ".js",
+          ".tsx",
+          ".jsx"
+        ],
+        "version": "2.1.2",
+        "timestamp": 1790681499392,
+        "metrics": [
+          {
+            "commitHash": "044bac8088be1b6423e0da6929b1db3914e38055",
+            "commitDate": "2026-09-17T15:05:27.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding angular signal debounce time on signal form paths",
+            "filePath": "src/app/domains/ticketing/feature-booking/flight-search/flight-search.ts",
+            "linesAdded": 5,
+            "linesRemoved": 3,
+            "totalLinesAtCommit": 242,
+            "mccabeComplexityAtCommit": 3,
+            "processingTimeMs": 56
+          }
+        ]
+      }
+    ],
+    [
+      "800cfa4320307163f652459d1336c5cff6cab87c:.ts,.js,.tsx,.jsx:2.1.2",
+      {
+        "commitHash": "800cfa4320307163f652459d1336c5cff6cab87c",
+        "fileExtensions": [
+          ".ts",
+          ".js",
+          ".tsx",
+          ".jsx"
+        ],
+        "version": "2.1.2",
+        "timestamp": 1790681499392,
+        "metrics": [
+          {
+            "commitHash": "800cfa4320307163f652459d1336c5cff6cab87c",
+            "commitDate": "2026-09-17T15:03:44.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding store and update flightSearch accodingly, also implement likedSignal with setter for the filter",
+            "filePath": "src/app/domains/ticketing/feature-booking/flight-search/flight-search.ts",
+            "linesAdded": 42,
+            "linesRemoved": 34,
+            "totalLinesAtCommit": 240,
+            "mccabeComplexityAtCommit": 3,
+            "processingTimeMs": 66
+          },
+          {
+            "commitHash": "800cfa4320307163f652459d1336c5cff6cab87c",
+            "commitDate": "2026-09-17T15:03:44.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding store and update flightSearch accodingly, also implement likedSignal with setter for the filter",
+            "filePath": "src/app/domains/ticketing/feature-booking/flight-search/flight-store.ts",
+            "linesAdded": 71,
+            "linesRemoved": 0,
+            "totalLinesAtCommit": 72,
+            "mccabeComplexityAtCommit": 2,
+            "processingTimeMs": 69
+          }
+        ]
+      }
+    ],
+    [
+      "b2ea850f03ec91a769b621b897804cb274bccd36:.ts,.js,.tsx,.jsx:2.1.2",
+      {
+        "commitHash": "b2ea850f03ec91a769b621b897804cb274bccd36",
+        "fileExtensions": [
+          ".ts",
+          ".js",
+          ".tsx",
+          ".jsx"
+        ],
+        "version": "2.1.2",
+        "timestamp": 1790681499392,
+        "metrics": [
+          {
+            "commitHash": "b2ea850f03ec91a769b621b897804cb274bccd36",
+            "commitDate": "2026-09-17T10:01:15.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding Lazy Service Injection with injectAsync",
+            "filePath": "src/app/domains/checkin/feature-checkin/checkin-dialog.ts",
+            "linesAdded": 25,
+            "linesRemoved": 0,
+            "totalLinesAtCommit": 26,
+            "mccabeComplexityAtCommit": 1,
+            "processingTimeMs": 68
+          },
+          {
+            "commitHash": "b2ea850f03ec91a769b621b897804cb274bccd36",
+            "commitDate": "2026-09-17T10:01:15.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding Lazy Service Injection with injectAsync",
+            "filePath": "src/app/domains/checkin/feature-checkin/checkin-page.ts",
+            "linesAdded": 204,
+            "linesRemoved": 0,
+            "totalLinesAtCommit": 205,
+            "mccabeComplexityAtCommit": 4,
+            "processingTimeMs": 66
+          },
+          {
+            "commitHash": "b2ea850f03ec91a769b621b897804cb274bccd36",
+            "commitDate": "2026-09-17T10:01:15.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding Lazy Service Injection with injectAsync",
+            "filePath": "src/app/domains/checkin/feature-checkin/upgrade-service.ts",
+            "linesAdded": 14,
+            "linesRemoved": 0,
+            "totalLinesAtCommit": 15,
+            "mccabeComplexityAtCommit": 1,
+            "processingTimeMs": 70
+          }
+        ]
+      }
+    ],
+    [
+      "4687c7e918f68d0636a1b1d4e70b148eaad8c4b3:.ts,.js,.tsx,.jsx:2.1.2",
+      {
+        "commitHash": "4687c7e918f68d0636a1b1d4e70b148eaad8c4b3",
+        "fileExtensions": [
+          ".ts",
+          ".js",
+          ".tsx",
+          ".jsx"
+        ],
+        "version": "2.1.2",
+        "timestamp": 1790681499519,
+        "metrics": [
+          {
+            "commitHash": "4687c7e918f68d0636a1b1d4e70b148eaad8c4b3",
+            "commitDate": "2026-09-17T09:49:45.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding withExperimentalAutoCleanupInjectors() to auto cleanup environment providers",
+            "filePath": "src/app/app.config.ts",
+            "linesAdded": 2,
+            "linesRemoved": 1,
+            "totalLinesAtCommit": 34,
+            "mccabeComplexityAtCommit": 1,
+            "processingTimeMs": 53
+          },
+          {
+            "commitHash": "4687c7e918f68d0636a1b1d4e70b148eaad8c4b3",
+            "commitDate": "2026-09-17T09:49:45.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding withExperimentalAutoCleanupInjectors() to auto cleanup environment providers",
+            "filePath": "src/app/domains/ticketing/ticketing.routes.ts",
+            "linesAdded": 1,
+            "linesRemoved": 0,
+            "totalLinesAtCommit": 52,
+            "mccabeComplexityAtCommit": 1,
+            "processingTimeMs": 52
+          }
+        ]
+      }
+    ],
+    [
+      "5b1da83381235c13d8cd789701dcbebe1d47f436:.ts,.js,.tsx,.jsx:2.1.2",
+      {
+        "commitHash": "5b1da83381235c13d8cd789701dcbebe1d47f436",
+        "fileExtensions": [
+          ".ts",
+          ".js",
+          ".tsx",
+          ".jsx"
+        ],
+        "version": "2.1.2",
+        "timestamp": 1790681499519,
+        "metrics": [
+          {
+            "commitHash": "5b1da83381235c13d8cd789701dcbebe1d47f436",
+            "commitDate": "2026-09-17T09:48:21.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding route-level provider ('environment provider')",
+            "filePath": "src/app/domains/ticketing/ticketing.routes.ts",
+            "linesAdded": 5,
+            "linesRemoved": 0,
+            "totalLinesAtCommit": 51,
+            "mccabeComplexityAtCommit": 1,
+            "processingTimeMs": 51
+          }
+        ]
+      }
+    ],
+    [
+      "d2212469a60308d84707184077922ba558aace4a:.ts,.js,.tsx,.jsx:2.1.2",
+      {
+        "commitHash": "d2212469a60308d84707184077922ba558aace4a",
+        "fileExtensions": [
+          ".ts",
+          ".js",
+          ".tsx",
+          ".jsx"
+        ],
+        "version": "2.1.2",
+        "timestamp": 1790681499519,
+        "metrics": [
+          {
+            "commitHash": "d2212469a60308d84707184077922ba558aace4a",
+            "commitDate": "2026-09-17T09:42:02.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Shorthand syntax example for component-level providers + same provider at different levels is still a nes instance",
+            "filePath": "src/app/domains/ticketing/feature-booking/flight-search/flight-search.ts",
+            "linesAdded": 5,
+            "linesRemoved": 2,
+            "totalLinesAtCommit": 232,
+            "mccabeComplexityAtCommit": 3,
+            "processingTimeMs": 54
+          }
+        ]
+      }
+    ],
+    [
+      "cd09764a08765ff41b109e207f44776a53b35e03:.ts,.js,.tsx,.jsx:2.1.2",
+      {
+        "commitHash": "cd09764a08765ff41b109e207f44776a53b35e03",
+        "fileExtensions": [
+          ".ts",
+          ".js",
+          ".tsx",
+          ".jsx"
+        ],
+        "version": "2.1.2",
+        "timestamp": 1790681499519,
+        "metrics": [
+          {
+            "commitHash": "cd09764a08765ff41b109e207f44776a53b35e03",
+            "commitDate": "2026-09-17T09:36:50.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding own component level provider that overrides the app-level provider",
+            "filePath": "src/app/domains/ticketing/feature-booking/flight-search/flight-search.ts",
+            "linesAdded": 10,
+            "linesRemoved": 6,
+            "totalLinesAtCommit": 229,
+            "mccabeComplexityAtCommit": 3,
+            "processingTimeMs": 52
+          }
+        ]
+      }
+    ],
+    [
+      "a74eb826552dbb1d57baaa1746d301d158903a9f:.ts,.js,.tsx,.jsx:2.1.2",
+      {
+        "commitHash": "a74eb826552dbb1d57baaa1746d301d158903a9f",
+        "fileExtensions": [
+          ".ts",
+          ".js",
+          ".tsx",
+          ".jsx"
+        ],
+        "version": "2.1.2",
+        "timestamp": 1790681499519,
+        "metrics": [
+          {
+            "commitHash": "a74eb826552dbb1d57baaa1746d301d158903a9f",
+            "commitDate": "2026-09-17T09:32:13.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding own provider function with parameters for LaguageService",
+            "filePath": "src/app/app.config.ts",
+            "linesAdded": 6,
+            "linesRemoved": 2,
+            "totalLinesAtCommit": 33,
+            "mccabeComplexityAtCommit": 1,
+            "processingTimeMs": 52
+          },
+          {
+            "commitHash": "a74eb826552dbb1d57baaa1746d301d158903a9f",
+            "commitDate": "2026-09-17T09:32:13.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding own provider function with parameters for LaguageService",
+            "filePath": "src/app/domains/shared/util-common/language.ts",
+            "linesAdded": 11,
+            "linesRemoved": 1,
+            "totalLinesAtCommit": 35,
+            "mccabeComplexityAtCommit": 2,
+            "processingTimeMs": 50
+          }
+        ]
+      }
+    ],
+    [
+      "9b5691324585ecb20dbcc93cae9a40c43450953e:.ts,.js,.tsx,.jsx:2.1.2",
+      {
+        "commitHash": "9b5691324585ecb20dbcc93cae9a40c43450953e",
+        "fileExtensions": [
+          ".ts",
+          ".js",
+          ".tsx",
+          ".jsx"
+        ],
+        "version": "2.1.2",
+        "timestamp": 1790681499631,
+        "metrics": [
+          {
+            "commitHash": "9b5691324585ecb20dbcc93cae9a40c43450953e",
+            "commitDate": "2026-09-17T09:26:51.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Shorthand sytax example for providers",
+            "filePath": "src/app/app.config.ts",
+            "linesAdded": 4,
+            "linesRemoved": 0,
+            "totalLinesAtCommit": 29,
+            "mccabeComplexityAtCommit": 1,
+            "processingTimeMs": 45
+          }
+        ]
+      }
+    ],
+    [
+      "47183027f4a0ed6b2fb71c40c44989e888ac1e9c:.ts,.js,.tsx,.jsx:2.1.2",
+      {
+        "commitHash": "47183027f4a0ed6b2fb71c40c44989e888ac1e9c",
+        "fileExtensions": [
+          ".ts",
+          ".js",
+          ".tsx",
+          ".jsx"
+        ],
+        "version": "2.1.2",
+        "timestamp": 1790681499631,
+        "metrics": [
+          {
+            "commitHash": "47183027f4a0ed6b2fb71c40c44989e888ac1e9c",
+            "commitDate": "2026-09-17T09:24:38.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding Abstract LanguageService and multiple implementations + provide it",
+            "filePath": "src/app/app.config.ts",
+            "linesAdded": 2,
+            "linesRemoved": 0,
+            "totalLinesAtCommit": 25,
+            "mccabeComplexityAtCommit": 1,
+            "processingTimeMs": 45
+          },
+          {
+            "commitHash": "47183027f4a0ed6b2fb71c40c44989e888ac1e9c",
+            "commitDate": "2026-09-17T09:24:38.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding Abstract LanguageService and multiple implementations + provide it",
+            "filePath": "src/app/domains/shared/util-common/language.ts",
+            "linesAdded": 24,
+            "linesRemoved": 0,
+            "totalLinesAtCommit": 25,
+            "mccabeComplexityAtCommit": 1,
+            "processingTimeMs": 44
+          },
+          {
+            "commitHash": "47183027f4a0ed6b2fb71c40c44989e888ac1e9c",
+            "commitDate": "2026-09-17T09:24:38.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding Abstract LanguageService and multiple implementations + provide it",
+            "filePath": "src/app/domains/ticketing/feature-booking/flight-search/flight-search.ts",
+            "linesAdded": 12,
+            "linesRemoved": 9,
+            "totalLinesAtCommit": 225,
+            "mccabeComplexityAtCommit": 3,
+            "processingTimeMs": 46
+          }
+        ]
+      }
+    ],
+    [
+      "529a055db4a83070e9af15b9d16ffa8562d93657:.ts,.js,.tsx,.jsx:2.1.2",
+      {
+        "commitHash": "529a055db4a83070e9af15b9d16ffa8562d93657",
+        "fileExtensions": [
+          ".ts",
+          ".js",
+          ".tsx",
+          ".jsx"
+        ],
+        "version": "2.1.2",
+        "timestamp": 1790681499631,
+        "metrics": [
+          {
+            "commitHash": "529a055db4a83070e9af15b9d16ffa8562d93657",
+            "commitDate": "2026-09-17T09:15:13.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Fixes to run build",
+            "filePath": "src/app/domains/ticketing/data/flight-client.ts",
+            "linesAdded": 2,
+            "linesRemoved": 4,
+            "totalLinesAtCommit": 34,
+            "mccabeComplexityAtCommit": 2,
+            "processingTimeMs": 46
+          }
+        ]
+      }
+    ],
+    [
+      "af41ef4469fc5a9b8de73f12952d579182b2789d:.ts,.js,.tsx,.jsx:2.1.2",
+      {
+        "commitHash": "af41ef4469fc5a9b8de73f12952d579182b2789d",
+        "fileExtensions": [
+          ".ts",
+          ".js",
+          ".tsx",
+          ".jsx"
+        ],
+        "version": "2.1.2",
+        "timestamp": 1790681499631,
+        "metrics": [
+          {
+            "commitHash": "af41ef4469fc5a9b8de73f12952d579182b2789d",
+            "commitDate": "2026-09-17T09:11:58.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Upgrading angular",
+            "filePath": "src/app/app.ts",
+            "linesAdded": 2,
+            "linesRemoved": 1,
+            "totalLinesAtCommit": 21,
+            "mccabeComplexityAtCommit": 1,
+            "processingTimeMs": 46
+          }
+        ]
+      }
+    ],
+    [
+      "b39871596d069b45b7f79bb7f653e95bf9a25dd1:.ts,.js,.tsx,.jsx:2.1.2",
+      {
+        "commitHash": "b39871596d069b45b7f79bb7f653e95bf9a25dd1",
+        "fileExtensions": [
+          ".ts",
+          ".js",
+          ".tsx",
+          ".jsx"
+        ],
+        "version": "2.1.2",
+        "timestamp": 1790681499631,
+        "metrics": []
+      }
+    ],
+    [
+      "c4774af7307d87a08aa671288c2decff73e95a5f:.ts,.js,.tsx,.jsx:2.1.2",
+      {
+        "commitHash": "c4774af7307d87a08aa671288c2decff73e95a5f",
+        "fileExtensions": [
+          ".ts",
+          ".js",
+          ".tsx",
+          ".jsx"
+        ],
+        "version": "2.1.2",
+        "timestamp": 1790681499744,
+        "metrics": [
+          {
+            "commitHash": "c4774af7307d87a08aa671288c2decff73e95a5f",
+            "commitDate": "2026-09-17T09:02:28.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding FlightService",
+            "filePath": "src/app/domains/shared/util-common/config-service.ts",
+            "linesAdded": 8,
+            "linesRemoved": 0,
+            "totalLinesAtCommit": 9,
+            "mccabeComplexityAtCommit": 1,
+            "processingTimeMs": 48
+          },
+          {
+            "commitHash": "c4774af7307d87a08aa671288c2decff73e95a5f",
+            "commitDate": "2026-09-17T09:02:28.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding FlightService",
+            "filePath": "src/app/domains/ticketing/data/flight-client.ts",
+            "linesAdded": 35,
+            "linesRemoved": 0,
+            "totalLinesAtCommit": 36,
+            "mccabeComplexityAtCommit": 2,
+            "processingTimeMs": 47
+          },
+          {
+            "commitHash": "c4774af7307d87a08aa671288c2decff73e95a5f",
+            "commitDate": "2026-09-17T09:02:28.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding FlightService",
+            "filePath": "src/app/domains/ticketing/feature-booking/flight-search/flight-search.ts",
+            "linesAdded": 47,
+            "linesRemoved": 23,
+            "totalLinesAtCommit": 222,
+            "mccabeComplexityAtCommit": 3,
+            "processingTimeMs": 47
+          }
+        ]
+      }
+    ],
+    [
+      "91e20c661f4920809977e9dfe634068433915d04:.ts,.js,.tsx,.jsx:2.1.2",
+      {
+        "commitHash": "91e20c661f4920809977e9dfe634068433915d04",
+        "fileExtensions": [
+          ".ts",
+          ".js",
+          ".tsx",
+          ".jsx"
+        ],
+        "version": "2.1.2",
+        "timestamp": 1790681499744,
+        "metrics": [
+          {
+            "commitHash": "91e20c661f4920809977e9dfe634068433915d04",
+            "commitDate": "2026-09-16T07:46:53.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding withHashLocation routing strategy",
+            "filePath": "src/app/app.config.ts",
+            "linesAdded": 10,
+            "linesRemoved": 4,
+            "totalLinesAtCommit": 23,
+            "mccabeComplexityAtCommit": 1,
+            "processingTimeMs": 47
+          },
+          {
+            "commitHash": "91e20c661f4920809977e9dfe634068433915d04",
+            "commitDate": "2026-09-16T07:46:53.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding withHashLocation routing strategy",
+            "filePath": "src/app/app.routes.ts",
+            "linesAdded": 0,
+            "linesRemoved": 1,
+            "totalLinesAtCommit": 26,
+            "mccabeComplexityAtCommit": 1,
+            "processingTimeMs": 49
+          }
+        ]
+      }
+    ],
+    [
+      "1788acdd1922e8a0c163e5d038c0082b8a4ef9f2:.ts,.js,.tsx,.jsx:2.1.2",
+      {
+        "commitHash": "1788acdd1922e8a0c163e5d038c0082b8a4ef9f2",
+        "fileExtensions": [
+          ".ts",
+          ".js",
+          ".tsx",
+          ".jsx"
+        ],
+        "version": "2.1.2",
+        "timestamp": 1790681499744,
+        "metrics": [
+          {
+            "commitHash": "1788acdd1922e8a0c163e5d038c0082b8a4ef9f2",
+            "commitDate": "2026-09-16T07:33:02.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding activatedRoute listeners in ts code",
+            "filePath": "src/app/domains/ticketing/feature-booking/flight-edit/flight-edit.ts",
+            "linesAdded": 17,
+            "linesRemoved": 6,
+            "totalLinesAtCommit": 58,
+            "mccabeComplexityAtCommit": 1,
+            "processingTimeMs": 48
+          }
+        ]
+      }
+    ],
+    [
+      "3b5a9c70a7040b3faaaf2a2301132ba8ccdfee87:.ts,.js,.tsx,.jsx:2.1.2",
+      {
+        "commitHash": "3b5a9c70a7040b3faaaf2a2301132ba8ccdfee87",
+        "fileExtensions": [
+          ".ts",
+          ".js",
+          ".tsx",
+          ".jsx"
+        ],
+        "version": "2.1.2",
+        "timestamp": 1790681499744,
+        "metrics": []
+      }
+    ],
+    [
+      "e4cfeb0bb5b2892c6613f0c33bafd7d19a6388e7:.ts,.js,.tsx,.jsx:2.1.2",
+      {
+        "commitHash": "e4cfeb0bb5b2892c6613f0c33bafd7d19a6388e7",
+        "fileExtensions": [
+          ".ts",
+          ".js",
+          ".tsx",
+          ".jsx"
+        ],
+        "version": "2.1.2",
+        "timestamp": 1790681499744,
+        "metrics": [
+          {
+            "commitHash": "e4cfeb0bb5b2892c6613f0c33bafd7d19a6388e7",
+            "commitDate": "2026-09-15T08:51:53.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding config 'withPreloading' to preload lazy routes and components after startup",
+            "filePath": "src/app/app.config.ts",
+            "linesAdded": 2,
+            "linesRemoved": 1,
+            "totalLinesAtCommit": 17,
+            "mccabeComplexityAtCommit": 1,
+            "processingTimeMs": 45
+          }
+        ]
+      }
+    ],
+    [
+      "df7aea2cd26d9c616de8e31d8b81f343471b10ad:.ts,.js,.tsx,.jsx:2.1.2",
+      {
+        "commitHash": "df7aea2cd26d9c616de8e31d8b81f343471b10ad",
+        "fileExtensions": [
+          ".ts",
+          ".js",
+          ".tsx",
+          ".jsx"
+        ],
+        "version": "2.1.2",
+        "timestamp": 1790681499879,
+        "metrics": [
+          {
+            "commitHash": "df7aea2cd26d9c616de8e31d8b81f343471b10ad",
+            "commitDate": "2026-09-15T08:43:48.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Exporting certain default component to lazy load the component",
+            "filePath": "src/app/app.routes.ts",
+            "linesAdded": 2,
+            "linesRemoved": 3,
+            "totalLinesAtCommit": 27,
+            "mccabeComplexityAtCommit": 1,
+            "processingTimeMs": 55
+          },
+          {
+            "commitHash": "df7aea2cd26d9c616de8e31d8b81f343471b10ad",
+            "commitDate": "2026-09-15T08:43:48.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Exporting certain default component to lazy load the component",
+            "filePath": "src/app/shell/about/about.ts",
+            "linesAdded": 2,
+            "linesRemoved": 0,
+            "totalLinesAtCommit": 12,
+            "mccabeComplexityAtCommit": 1,
+            "processingTimeMs": 56
+          }
+        ]
+      }
+    ],
+    [
+      "b32a2003c27e9870cd4cb6eb6a7ec067b22fe581:.ts,.js,.tsx,.jsx:2.1.2",
+      {
+        "commitHash": "b32a2003c27e9870cd4cb6eb6a7ec067b22fe581",
+        "fileExtensions": [
+          ".ts",
+          ".js",
+          ".tsx",
+          ".jsx"
+        ],
+        "version": "2.1.2",
+        "timestamp": 1790681499879,
+        "metrics": [
+          {
+            "commitHash": "b32a2003c27e9870cd4cb6eb6a7ec067b22fe581",
+            "commitDate": "2026-09-15T08:39:16.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Exporting certain default routes to lazy load more cleanely",
+            "filePath": "src/app/app.routes.ts",
+            "linesAdded": 1,
+            "linesRemoved": 1,
+            "totalLinesAtCommit": 28,
+            "mccabeComplexityAtCommit": 1,
+            "processingTimeMs": 53
+          },
+          {
+            "commitHash": "b32a2003c27e9870cd4cb6eb6a7ec067b22fe581",
+            "commitDate": "2026-09-15T08:39:16.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Exporting certain default routes to lazy load more cleanely",
+            "filePath": "src/app/domains/ticketing/ticketing.routes.ts",
+            "linesAdded": 2,
+            "linesRemoved": 0,
+            "totalLinesAtCommit": 46,
+            "mccabeComplexityAtCommit": 1,
+            "processingTimeMs": 55
+          }
+        ]
+      }
+    ],
+    [
+      "f048837f1f35140854178009a2275d8f0445070f:.ts,.js,.tsx,.jsx:2.1.2",
+      {
+        "commitHash": "f048837f1f35140854178009a2275d8f0445070f",
+        "fileExtensions": [
+          ".ts",
+          ".js",
+          ".tsx",
+          ".jsx"
+        ],
+        "version": "2.1.2",
+        "timestamp": 1790681499879,
+        "metrics": [
+          {
+            "commitHash": "f048837f1f35140854178009a2275d8f0445070f",
+            "commitDate": "2026-09-15T08:37:58.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding separate domain routes and lazy loaded",
+            "filePath": "src/app/app.routes.ts",
+            "linesAdded": 3,
+            "linesRemoved": 29,
+            "totalLinesAtCommit": 28,
+            "mccabeComplexityAtCommit": 1,
+            "processingTimeMs": 54
+          },
+          {
+            "commitHash": "f048837f1f35140854178009a2275d8f0445070f",
+            "commitDate": "2026-09-15T08:37:58.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding separate domain routes and lazy loaded",
+            "filePath": "src/app/domains/ticketing/ticketing.routes.ts",
+            "linesAdded": 43,
+            "linesRemoved": 0,
+            "totalLinesAtCommit": 44,
+            "mccabeComplexityAtCommit": 1,
+            "processingTimeMs": 58
+          }
+        ]
+      }
+    ],
+    [
+      "ce4fc2a63e41f4fbf32f8cd1d6d64ef0084b8a0c:.ts,.js,.tsx,.jsx:2.1.2",
+      {
+        "commitHash": "ce4fc2a63e41f4fbf32f8cd1d6d64ef0084b8a0c",
+        "fileExtensions": [
+          ".ts",
+          ".js",
+          ".tsx",
+          ".jsx"
+        ],
+        "version": "2.1.2",
+        "timestamp": 1790681499879,
+        "metrics": [
+          {
+            "commitHash": "ce4fc2a63e41f4fbf32f8cd1d6d64ef0084b8a0c",
+            "commitDate": "2026-09-15T08:27:18.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding child routes for booking",
+            "filePath": "src/app/app.routes.ts",
+            "linesAdded": 26,
+            "linesRemoved": 10,
+            "totalLinesAtCommit": 54,
+            "mccabeComplexityAtCommit": 1,
+            "processingTimeMs": 59
+          },
+          {
+            "commitHash": "ce4fc2a63e41f4fbf32f8cd1d6d64ef0084b8a0c",
+            "commitDate": "2026-09-15T08:27:18.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding child routes for booking",
+            "filePath": "src/app/domains/ticketing/feature-booking/booking-navigation.ts",
+            "linesAdded": 10,
+            "linesRemoved": 0,
+            "totalLinesAtCommit": 11,
+            "mccabeComplexityAtCommit": 1,
+            "processingTimeMs": 57
+          }
+        ]
+      }
+    ],
+    [
+      "3d997afd4dfbe3197c4b142986fdc2f51eaa412e:.ts,.js,.tsx,.jsx:2.1.2",
+      {
+        "commitHash": "3d997afd4dfbe3197c4b142986fdc2f51eaa412e",
+        "fileExtensions": [
+          ".ts",
+          ".js",
+          ".tsx",
+          ".jsx"
+        ],
+        "version": "2.1.2",
+        "timestamp": 1790681499879,
+        "metrics": [
+          {
+            "commitHash": "3d997afd4dfbe3197c4b142986fdc2f51eaa412e",
+            "commitDate": "2026-09-15T08:04:34.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding route with input bindings and matrix parameters",
+            "filePath": "src/app/app.config.ts",
+            "linesAdded": 7,
+            "linesRemoved": 3,
+            "totalLinesAtCommit": 16,
+            "mccabeComplexityAtCommit": 1,
+            "processingTimeMs": 59
+          },
+          {
+            "commitHash": "3d997afd4dfbe3197c4b142986fdc2f51eaa412e",
+            "commitDate": "2026-09-15T08:04:34.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding route with input bindings and matrix parameters",
+            "filePath": "src/app/app.routes.ts",
+            "linesAdded": 5,
+            "linesRemoved": 0,
+            "totalLinesAtCommit": 38,
+            "mccabeComplexityAtCommit": 1,
+            "processingTimeMs": 61
+          },
+          {
+            "commitHash": "3d997afd4dfbe3197c4b142986fdc2f51eaa412e",
+            "commitDate": "2026-09-15T08:04:34.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding route with input bindings and matrix parameters",
+            "filePath": "src/app/domains/ticketing/feature-booking/flight-edit/flight-edit.ts",
+            "linesAdded": 46,
+            "linesRemoved": 0,
+            "totalLinesAtCommit": 47,
+            "mccabeComplexityAtCommit": 1,
+            "processingTimeMs": 59
+          },
+          {
+            "commitHash": "3d997afd4dfbe3197c4b142986fdc2f51eaa412e",
+            "commitDate": "2026-09-15T08:04:34.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding route with input bindings and matrix parameters",
+            "filePath": "src/app/domains/ticketing/feature-booking/flight-search/flight-search.ts",
+            "linesAdded": 2,
+            "linesRemoved": 1,
+            "totalLinesAtCommit": 198,
+            "mccabeComplexityAtCommit": 4,
+            "processingTimeMs": 60
+          }
+        ]
+      }
+    ],
+    [
+      "6733434b99e79df937f7fa2dc2ef064e94923507:.ts,.js,.tsx,.jsx:2.1.2",
+      {
+        "commitHash": "6733434b99e79df937f7fa2dc2ef064e94923507",
+        "fileExtensions": [
+          ".ts",
+          ".js",
+          ".tsx",
+          ".jsx"
+        ],
+        "version": "2.1.2",
+        "timestamp": 1790681500011,
+        "metrics": [
+          {
+            "commitHash": "6733434b99e79df937f7fa2dc2ef064e94923507",
+            "commitDate": "2026-09-15T07:41:34.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding routes",
+            "filePath": "src/app/app.routes.ts",
+            "linesAdded": 31,
+            "linesRemoved": 2,
+            "totalLinesAtCommit": 33,
+            "mccabeComplexityAtCommit": 1,
+            "processingTimeMs": 54
+          },
+          {
+            "commitHash": "6733434b99e79df937f7fa2dc2ef064e94923507",
+            "commitDate": "2026-09-15T07:41:34.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding routes",
+            "filePath": "src/app/app.ts",
+            "linesAdded": 2,
+            "linesRemoved": 2,
+            "totalLinesAtCommit": 20,
+            "mccabeComplexityAtCommit": 1,
+            "processingTimeMs": 55
+          },
+          {
+            "commitHash": "6733434b99e79df937f7fa2dc2ef064e94923507",
+            "commitDate": "2026-09-15T07:41:34.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding routes",
+            "filePath": "src/app/domains/ticketing/feature-booking/passenger-search/passenger-search.ts",
+            "linesAdded": 9,
+            "linesRemoved": 0,
+            "totalLinesAtCommit": 10,
+            "mccabeComplexityAtCommit": 1,
+            "processingTimeMs": 55
+          },
+          {
+            "commitHash": "6733434b99e79df937f7fa2dc2ef064e94923507",
+            "commitDate": "2026-09-15T07:41:34.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding routes",
+            "filePath": "src/app/shell/about/about.ts",
+            "linesAdded": 9,
+            "linesRemoved": 0,
+            "totalLinesAtCommit": 10,
+            "mccabeComplexityAtCommit": 1,
+            "processingTimeMs": 55
+          },
+          {
+            "commitHash": "6733434b99e79df937f7fa2dc2ef064e94923507",
+            "commitDate": "2026-09-15T07:41:34.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding routes",
+            "filePath": "src/app/shell/home/home.ts",
+            "linesAdded": 9,
+            "linesRemoved": 0,
+            "totalLinesAtCommit": 10,
+            "mccabeComplexityAtCommit": 1,
+            "processingTimeMs": 54
+          },
+          {
+            "commitHash": "6733434b99e79df937f7fa2dc2ef064e94923507",
+            "commitDate": "2026-09-15T07:41:34.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding routes",
+            "filePath": "src/app/shell/sidebar/sidebar.ts",
+            "linesAdded": 8,
+            "linesRemoved": 3,
+            "totalLinesAtCommit": 15,
+            "mccabeComplexityAtCommit": 1,
+            "processingTimeMs": 51
+          }
+        ]
+      }
+    ],
+    [
+      "6172a028089f16c9ae84592db7b0b631a2e18813:.ts,.js,.tsx,.jsx:2.1.2",
+      {
+        "commitHash": "6172a028089f16c9ae84592db7b0b631a2e18813",
+        "fileExtensions": [
+          ".ts",
+          ".js",
+          ".tsx",
+          ".jsx"
+        ],
+        "version": "2.1.2",
+        "timestamp": 1790681500011,
+        "metrics": [
+          {
+            "commitHash": "6172a028089f16c9ae84592db7b0b631a2e18813",
+            "commitDate": "2026-09-14T14:08:06.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding flighsWitDelays (computed with pure function)",
+            "filePath": "src/app/domains/ticketing/feature-booking/flight-search/flight-search.ts",
+            "linesAdded": 57,
+            "linesRemoved": 33,
+            "totalLinesAtCommit": 197,
+            "mccabeComplexityAtCommit": 4,
+            "processingTimeMs": 53
+          }
+        ]
+      }
+    ],
+    [
+      "f2f5390abee31d5b4eb7786c4ea4e22b9c4e23c3:.ts,.js,.tsx,.jsx:2.1.2",
+      {
+        "commitHash": "f2f5390abee31d5b4eb7786c4ea4e22b9c4e23c3",
+        "fileExtensions": [
+          ".ts",
+          ".js",
+          ".tsx",
+          ".jsx"
+        ],
+        "version": "2.1.2",
+        "timestamp": 1790681500011,
+        "metrics": [
+          {
+            "commitHash": "f2f5390abee31d5b4eb7786c4ea4e22b9c4e23c3",
+            "commitDate": "2026-08-19T19:17:42.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding effect, afterRenderEffect, afterNextRender, afterEveryRender",
+            "filePath": "src/app/domains/ticketing/feature-booking/flight-search/flight-search.ts",
+            "linesAdded": 34,
+            "linesRemoved": 0,
+            "totalLinesAtCommit": 173,
+            "mccabeComplexityAtCommit": 2,
+            "processingTimeMs": 49
+          }
+        ]
+      }
+    ],
+    [
+      "bc2c8d0c300799caac7775c260733fba7ce74288:.ts,.js,.tsx,.jsx:2.1.2",
+      {
+        "commitHash": "bc2c8d0c300799caac7775c260733fba7ce74288",
+        "fileExtensions": [
+          ".ts",
+          ".js",
+          ".tsx",
+          ".jsx"
+        ],
+        "version": "2.1.2",
+        "timestamp": 1790681500011,
+        "metrics": [
+          {
+            "commitHash": "bc2c8d0c300799caac7775c260733fba7ce74288",
+            "commitDate": "2026-08-19T19:07:49.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding resourceSnapshot (and helpers)",
+            "filePath": "src/app/domains/luggage/data/luggage.ts",
+            "linesAdded": 15,
+            "linesRemoved": 0,
+            "totalLinesAtCommit": 16,
+            "mccabeComplexityAtCommit": 1,
+            "processingTimeMs": 50
+          },
+          {
+            "commitHash": "bc2c8d0c300799caac7775c260733fba7ce74288",
+            "commitDate": "2026-08-19T19:07:49.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding resourceSnapshot (and helpers)",
+            "filePath": "src/app/domains/luggage/data/with-min-weight.ts",
+            "linesAdded": 26,
+            "linesRemoved": 0,
+            "totalLinesAtCommit": 27,
+            "mccabeComplexityAtCommit": 2,
+            "processingTimeMs": 51
+          },
+          {
+            "commitHash": "bc2c8d0c300799caac7775c260733fba7ce74288",
+            "commitDate": "2026-08-19T19:07:49.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding resourceSnapshot (and helpers)",
+            "filePath": "src/app/domains/shared/util-common/with-previous-value.ts",
+            "linesAdded": 25,
+            "linesRemoved": 0,
+            "totalLinesAtCommit": 26,
+            "mccabeComplexityAtCommit": 3,
+            "processingTimeMs": 50
+          }
+        ]
+      }
+    ],
+    [
+      "d50150cc8349e6032ef00417788c5ebcb2c58cb6:.ts,.js,.tsx,.jsx:2.1.2",
+      {
+        "commitHash": "d50150cc8349e6032ef00417788c5ebcb2c58cb6",
+        "fileExtensions": [
+          ".ts",
+          ".js",
+          ".tsx",
+          ".jsx"
+        ],
+        "version": "2.1.2",
+        "timestamp": 1790681500011,
+        "metrics": [
+          {
+            "commitHash": "d50150cc8349e6032ef00417788c5ebcb2c58cb6",
+            "commitDate": "2026-08-19T18:49:34.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding low-level resource (as demonstation, rarely used in real applications)",
+            "filePath": "src/app/domains/ticketing/feature-booking/flight-search/flight-search.ts",
+            "linesAdded": 34,
+            "linesRemoved": 6,
+            "totalLinesAtCommit": 139,
+            "mccabeComplexityAtCommit": 1,
+            "processingTimeMs": 54
+          }
+        ]
+      }
+    ],
+    [
+      "f03423cf2205547ca74cfa983164da1d4e0efad2:.ts,.js,.tsx,.jsx:2.1.2",
+      {
+        "commitHash": "f03423cf2205547ca74cfa983164da1d4e0efad2",
+        "fileExtensions": [
+          ".ts",
+          ".js",
+          ".tsx",
+          ".jsx"
+        ],
+        "version": "2.1.2",
+        "timestamp": 1790681500103,
+        "metrics": [
+          {
+            "commitHash": "f03423cf2205547ca74cfa983164da1d4e0efad2",
+            "commitDate": "2026-08-19T18:38:57.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding rxResource",
+            "filePath": "src/app/domains/ticketing/feature-booking/flight-search/flight-search.ts",
+            "linesAdded": 51,
+            "linesRemoved": 20,
+            "totalLinesAtCommit": 111,
+            "mccabeComplexityAtCommit": 1,
+            "processingTimeMs": 36
+          }
+        ]
+      }
+    ],
+    [
+      "cde02258e4656f0de445243bd256e5c57c345707:.ts,.js,.tsx,.jsx:2.1.2",
+      {
+        "commitHash": "cde02258e4656f0de445243bd256e5c57c345707",
+        "fileExtensions": [
+          ".ts",
+          ".js",
+          ".tsx",
+          ".jsx"
+        ],
+        "version": "2.1.2",
+        "timestamp": 1790681500103,
+        "metrics": [
+          {
+            "commitHash": "cde02258e4656f0de445243bd256e5c57c345707",
+            "commitDate": "2026-08-19T18:26:12.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding parse option at httpResource( Zod)",
+            "filePath": "src/app/domains/ticketing/data/flight-zod-schema.ts",
+            "linesAdded": 9,
+            "linesRemoved": 0,
+            "totalLinesAtCommit": 10,
+            "mccabeComplexityAtCommit": 1,
+            "processingTimeMs": 39
+          },
+          {
+            "commitHash": "cde02258e4656f0de445243bd256e5c57c345707",
+            "commitDate": "2026-08-19T18:26:12.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding parse option at httpResource( Zod)",
+            "filePath": "src/app/domains/ticketing/feature-booking/flight-search/flight-search.ts",
+            "linesAdded": 5,
+            "linesRemoved": 1,
+            "totalLinesAtCommit": 80,
+            "mccabeComplexityAtCommit": 2,
+            "processingTimeMs": 38
+          }
+        ]
+      }
+    ],
+    [
+      "f86ea879d7ec358b35d124233832edef2016cd9f:.ts,.js,.tsx,.jsx:2.1.2",
+      {
+        "commitHash": "f86ea879d7ec358b35d124233832edef2016cd9f",
+        "fileExtensions": [
+          ".ts",
+          ".js",
+          ".tsx",
+          ".jsx"
+        ],
+        "version": "2.1.2",
+        "timestamp": 1790681500103,
+        "metrics": [
+          {
+            "commitHash": "f86ea879d7ec358b35d124233832edef2016cd9f",
+            "commitDate": "2026-08-19T12:49:33.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding computed untracked signal",
+            "filePath": "src/app/domains/ticketing/feature-booking/flight-search/flight-search.ts",
+            "linesAdded": 11,
+            "linesRemoved": 5,
+            "totalLinesAtCommit": 76,
+            "mccabeComplexityAtCommit": 2,
+            "processingTimeMs": 38
+          }
+        ]
+      }
+    ],
+    [
+      "f339d347bee3268cb26ac1dff2f06a3a22057d09:.ts,.js,.tsx,.jsx:2.1.2",
+      {
+        "commitHash": "f339d347bee3268cb26ac1dff2f06a3a22057d09",
+        "fileExtensions": [
+          ".ts",
+          ".js",
+          ".tsx",
+          ".jsx"
+        ],
+        "version": "2.1.2",
+        "timestamp": 1790681500103,
+        "metrics": [
+          {
+            "commitHash": "f339d347bee3268cb26ac1dff2f06a3a22057d09",
+            "commitDate": "2026-08-19T11:20:37.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding computed signal flightRoute",
+            "filePath": "src/app/domains/ticketing/feature-booking/flight-search/flight-search.ts",
+            "linesAdded": 5,
+            "linesRemoved": 1,
+            "totalLinesAtCommit": 70,
+            "mccabeComplexityAtCommit": 2,
+            "processingTimeMs": 39
+          }
+        ]
+      }
+    ],
+    [
+      "cbfb0a85a3378db1e82b2e7293dc513bb2902549:.ts,.js,.tsx,.jsx:2.1.2",
+      {
+        "commitHash": "cbfb0a85a3378db1e82b2e7293dc513bb2902549",
+        "fileExtensions": [
+          ".ts",
+          ".js",
+          ".tsx",
+          ".jsx"
+        ],
+        "version": "2.1.2",
+        "timestamp": 1790681500103,
+        "metrics": [
+          {
+            "commitHash": "cbfb0a85a3378db1e82b2e7293dc513bb2902549",
+            "commitDate": "2026-08-19T07:24:07.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Cleaning up compiling warnings",
+            "filePath": "src/app/domains/ticketing/feature-booking/flight-search/flight-search.ts",
+            "linesAdded": 3,
+            "linesRemoved": 3,
+            "totalLinesAtCommit": 66,
+            "mccabeComplexityAtCommit": 2,
+            "processingTimeMs": 37
+          }
+        ]
+      }
+    ],
+    [
+      "1fa27e1ae83e3fb652ff3f373b479d72bdc706ec:.ts,.js,.tsx,.jsx:2.1.2",
+      {
+        "commitHash": "1fa27e1ae83e3fb652ff3f373b479d72bdc706ec",
+        "fileExtensions": [
+          ".ts",
+          ".js",
+          ".tsx",
+          ".jsx"
+        ],
+        "version": "2.1.2",
+        "timestamp": 1790681500191,
+        "metrics": []
+      }
+    ],
+    [
+      "78d4d5854084a38389357b2d72e92e5af86b36a0:.ts,.js,.tsx,.jsx:2.1.2",
+      {
+        "commitHash": "78d4d5854084a38389357b2d72e92e5af86b36a0",
+        "fileExtensions": [
+          ".ts",
+          ".js",
+          ".tsx",
+          ".jsx"
+        ],
+        "version": "2.1.2",
+        "timestamp": 1790681500191,
+        "metrics": [
+          {
+            "commitHash": "78d4d5854084a38389357b2d72e92e5af86b36a0",
+            "commitDate": "2026-08-19T07:06:41.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Updating the modal to banana in a box props+event binding",
+            "filePath": "src/app/domains/shared/ui-common/delay-stepper/delay-stepper.ts",
+            "linesAdded": 27,
+            "linesRemoved": 0,
+            "totalLinesAtCommit": 28,
+            "mccabeComplexityAtCommit": 1,
+            "processingTimeMs": 41
+          },
+          {
+            "commitHash": "78d4d5854084a38389357b2d72e92e5af86b36a0",
+            "commitDate": "2026-08-19T07:06:41.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Updating the modal to banana in a box props+event binding",
+            "filePath": "src/app/domains/ticketing/feature-booking/flight-search/flight-search.ts",
+            "linesAdded": 3,
+            "linesRemoved": 1,
+            "totalLinesAtCommit": 66,
+            "mccabeComplexityAtCommit": 2,
+            "processingTimeMs": 38
+          }
+        ]
+      }
+    ],
+    [
+      "6cf8c914d1b5074601bd9450eee4986b799ae3b1:.ts,.js,.tsx,.jsx:2.1.2",
+      {
+        "commitHash": "6cf8c914d1b5074601bd9450eee4986b799ae3b1",
+        "fileExtensions": [
+          ".ts",
+          ".js",
+          ".tsx",
+          ".jsx"
+        ],
+        "version": "2.1.2",
+        "timestamp": 1790681500191,
+        "metrics": [
+          {
+            "commitHash": "6cf8c914d1b5074601bd9450eee4986b799ae3b1",
+            "commitDate": "2026-08-19T06:57:11.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding writeable signals by using model() signal and the xChange event",
+            "filePath": "src/app/domains/ticketing/ui/flight-card/flight-card.ts",
+            "linesAdded": 4,
+            "linesRemoved": 5,
+            "totalLinesAtCommit": 23,
+            "mccabeComplexityAtCommit": 1,
+            "processingTimeMs": 38
+          }
+        ]
+      }
+    ],
+    [
+      "92e1233d1b19942db32f535b1c5f82eb5957789f:.ts,.js,.tsx,.jsx:2.1.2",
+      {
+        "commitHash": "92e1233d1b19942db32f535b1c5f82eb5957789f",
+        "fileExtensions": [
+          ".ts",
+          ".js",
+          ".tsx",
+          ".jsx"
+        ],
+        "version": "2.1.2",
+        "timestamp": 1790681500191,
+        "metrics": []
+      }
+    ],
+    [
+      "0d0468b646ba8e8e2e575a2842669db2466450e9:.ts,.js,.tsx,.jsx:2.1.2",
+      {
+        "commitHash": "0d0468b646ba8e8e2e575a2842669db2466450e9",
+        "fileExtensions": [
+          ".ts",
+          ".js",
+          ".tsx",
+          ".jsx"
+        ],
+        "version": "2.1.2",
+        "timestamp": 1790681500191,
+        "metrics": [
+          {
+            "commitHash": "0d0468b646ba8e8e2e575a2842669db2466450e9",
+            "commitDate": "2026-08-18T18:55:50.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding FlightCard ui component",
+            "filePath": "src/app/domains/ticketing/feature-booking/flight-search/flight-search.ts",
+            "linesAdded": 2,
+            "linesRemoved": 1,
+            "totalLinesAtCommit": 64,
+            "mccabeComplexityAtCommit": 2,
+            "processingTimeMs": 38
+          },
+          {
+            "commitHash": "0d0468b646ba8e8e2e575a2842669db2466450e9",
+            "commitDate": "2026-08-18T18:55:50.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding FlightCard ui component",
+            "filePath": "src/app/domains/ticketing/ui/flight-card/flight-card.ts",
+            "linesAdded": 23,
+            "linesRemoved": 0,
+            "totalLinesAtCommit": 24,
+            "mccabeComplexityAtCommit": 1,
+            "processingTimeMs": 37
+          }
+        ]
+      }
+    ],
+    [
+      "0fa84742a19555f269bfbd5e15d75623acfc4c55:.ts,.js,.tsx,.jsx:2.1.2",
+      {
+        "commitHash": "0fa84742a19555f269bfbd5e15d75623acfc4c55",
+        "fileExtensions": [
+          ".ts",
+          ".js",
+          ".tsx",
+          ".jsx"
+        ],
+        "version": "2.1.2",
+        "timestamp": 1790681500287,
+        "metrics": [
+          {
+            "commitHash": "0fa84742a19555f269bfbd5e15d75623acfc4c55",
+            "commitDate": "2026-08-18T18:38:45.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding simple basket",
+            "filePath": "src/app/domains/ticketing/feature-booking/flight-search/flight-search.ts",
+            "linesAdded": 12,
+            "linesRemoved": 0,
+            "totalLinesAtCommit": 63,
+            "mccabeComplexityAtCommit": 2,
+            "processingTimeMs": 45
+          }
+        ]
+      }
+    ],
+    [
+      "3edcebf8bf463ae294e6c1fdd641178d71270796:.ts,.js,.tsx,.jsx:2.1.2",
+      {
+        "commitHash": "3edcebf8bf463ae294e6c1fdd641178d71270796",
+        "fileExtensions": [
+          ".ts",
+          ".js",
+          ".tsx",
+          ".jsx"
+        ],
+        "version": "2.1.2",
+        "timestamp": 1790681500287,
+        "metrics": [
+          {
+            "commitHash": "3edcebf8bf463ae294e6c1fdd641178d71270796",
+            "commitDate": "2026-08-18T18:32:43.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding httpResource to fetch flights",
+            "filePath": "src/app/domains/ticketing/feature-booking/flight-search/flight-search.ts",
+            "linesAdded": 25,
+            "linesRemoved": 41,
+            "totalLinesAtCommit": 51,
+            "mccabeComplexityAtCommit": 2,
+            "processingTimeMs": 47
+          }
+        ]
+      }
+    ],
+    [
+      "558775f2a23367e472761fdc4f0dbbec28df10a0:.ts,.js,.tsx,.jsx:2.1.2",
+      {
+        "commitHash": "558775f2a23367e472761fdc4f0dbbec28df10a0",
+        "fileExtensions": [
+          ".ts",
+          ".js",
+          ".tsx",
+          ".jsx"
+        ],
+        "version": "2.1.2",
+        "timestamp": 1790681500287,
+        "metrics": [
+          {
+            "commitHash": "558775f2a23367e472761fdc4f0dbbec28df10a0",
+            "commitDate": "2026-08-18T18:18:23.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding httpClient to fetch flights",
+            "filePath": "src/app/domains/ticketing/feature-booking/flight-search/flight-search.ts",
+            "linesAdded": 38,
+            "linesRemoved": 32,
+            "totalLinesAtCommit": 67,
+            "mccabeComplexityAtCommit": 1,
+            "processingTimeMs": 43
+          }
+        ]
+      }
+    ],
+    [
+      "f8fd52884395548083647cf206c4deb1ee05b7db:.ts,.js,.tsx,.jsx:2.1.2",
+      {
+        "commitHash": "f8fd52884395548083647cf206c4deb1ee05b7db",
+        "fileExtensions": [
+          ".ts",
+          ".js",
+          ".tsx",
+          ".jsx"
+        ],
+        "version": "2.1.2",
+        "timestamp": 1790681500287,
+        "metrics": []
+      }
+    ],
+    [
+      "67a5eb0a23756923972731f6a41b257eb23fff66:.ts,.js,.tsx,.jsx:2.1.2",
+      {
+        "commitHash": "67a5eb0a23756923972731f6a41b257eb23fff66",
+        "fileExtensions": [
+          ".ts",
+          ".js",
+          ".tsx",
+          ".jsx"
+        ],
+        "version": "2.1.2",
+        "timestamp": 1790681500287,
+        "metrics": [
+          {
+            "commitHash": "67a5eb0a23756923972731f6a41b257eb23fff66",
+            "commitDate": "2026-08-18T08:16:02.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Updating FlightSearchComponent to search for flights",
+            "filePath": "src/app/app.ts",
+            "linesAdded": 2,
+            "linesRemoved": 1,
+            "totalLinesAtCommit": 20,
+            "mccabeComplexityAtCommit": 1,
+            "processingTimeMs": 45
+          },
+          {
+            "commitHash": "67a5eb0a23756923972731f6a41b257eb23fff66",
+            "commitDate": "2026-08-18T08:16:02.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Updating FlightSearchComponent to search for flights",
+            "filePath": "src/app/domains/ticketing/feature-booking/flight-search/flight-search.ts",
+            "linesAdded": 3,
+            "linesRemoved": 2,
+            "totalLinesAtCommit": 61,
+            "mccabeComplexityAtCommit": 1,
+            "processingTimeMs": 42
+          }
+        ]
+      }
+    ],
+    [
+      "2ce1a0330585c22c227f129ea0f7396586065aea:.ts,.js,.tsx,.jsx:2.1.2",
+      {
+        "commitHash": "2ce1a0330585c22c227f129ea0f7396586065aea",
+        "fileExtensions": [
+          ".ts",
+          ".js",
+          ".tsx",
+          ".jsx"
+        ],
+        "version": "2.1.2",
+        "timestamp": 1790681500387,
+        "metrics": []
+      }
+    ],
+    [
+      "126850a89399b6dfcff1f2ee41767e8450145a00:.ts,.js,.tsx,.jsx:2.1.2",
+      {
+        "commitHash": "126850a89399b6dfcff1f2ee41767e8450145a00",
+        "fileExtensions": [
+          ".ts",
+          ".js",
+          ".tsx",
+          ".jsx"
+        ],
+        "version": "2.1.2",
+        "timestamp": 1790681500387,
+        "metrics": [
+          {
+            "commitHash": "126850a89399b6dfcff1f2ee41767e8450145a00",
+            "commitDate": "2026-08-17T19:00:59.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Updating FlightSearchComponent",
+            "filePath": "src/app/domains/ticketing/feature-booking/flight-search/flight-search.ts",
+            "linesAdded": 52,
+            "linesRemoved": 2,
+            "totalLinesAtCommit": 60,
+            "mccabeComplexityAtCommit": 1,
+            "processingTimeMs": 43
+          }
+        ]
+      }
+    ],
+    [
+      "0ee989b4993b10a94444a63960effdc18eb08cce:.ts,.js,.tsx,.jsx:2.1.2",
+      {
+        "commitHash": "0ee989b4993b10a94444a63960effdc18eb08cce",
+        "fileExtensions": [
+          ".ts",
+          ".js",
+          ".tsx",
+          ".jsx"
+        ],
+        "version": "2.1.2",
+        "timestamp": 1790681500387,
+        "metrics": []
+      }
+    ],
+    [
+      "063c60646d8b84a820b6cba9a907213dbc65e53d:.ts,.js,.tsx,.jsx:2.1.2",
+      {
+        "commitHash": "063c60646d8b84a820b6cba9a907213dbc65e53d",
+        "fileExtensions": [
+          ".ts",
+          ".js",
+          ".tsx",
+          ".jsx"
+        ],
+        "version": "2.1.2",
+        "timestamp": 1790681500387,
+        "metrics": [
+          {
+            "commitHash": "063c60646d8b84a820b6cba9a907213dbc65e53d",
+            "commitDate": "2026-08-17T18:38:25.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding interfaces flight, aircraft and price",
+            "filePath": "src/app/domains/ticketing/data/aircraft.ts",
+            "linesAdded": 9,
+            "linesRemoved": 0,
+            "totalLinesAtCommit": 10,
+            "mccabeComplexityAtCommit": 1,
+            "processingTimeMs": 42
+          },
+          {
+            "commitHash": "063c60646d8b84a820b6cba9a907213dbc65e53d",
+            "commitDate": "2026-08-17T18:38:25.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding interfaces flight, aircraft and price",
+            "filePath": "src/app/domains/ticketing/data/flight.ts",
+            "linesAdded": 24,
+            "linesRemoved": 0,
+            "totalLinesAtCommit": 25,
+            "mccabeComplexityAtCommit": 1,
+            "processingTimeMs": 41
+          },
+          {
+            "commitHash": "063c60646d8b84a820b6cba9a907213dbc65e53d",
+            "commitDate": "2026-08-17T18:38:25.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding interfaces flight, aircraft and price",
+            "filePath": "src/app/domains/ticketing/data/price.ts",
+            "linesAdded": 4,
+            "linesRemoved": 0,
+            "totalLinesAtCommit": 5,
+            "mccabeComplexityAtCommit": 1,
+            "processingTimeMs": 40
+          }
+        ]
+      }
+    ],
+    [
+      "2763beeb5fa83b01b3dd8357127bbff9aff93ade:.ts,.js,.tsx,.jsx:2.1.2",
+      {
+        "commitHash": "2763beeb5fa83b01b3dd8357127bbff9aff93ade",
+        "fileExtensions": [
+          ".ts",
+          ".js",
+          ".tsx",
+          ".jsx"
+        ],
+        "version": "2.1.2",
+        "timestamp": 1790681500387,
+        "metrics": [
+          {
+            "commitHash": "2763beeb5fa83b01b3dd8357127bbff9aff93ade",
+            "commitDate": "2026-08-17T18:30:19.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding FlightSearchComponent in new domain 'ticketing'",
+            "filePath": "src/app/domains/ticketing/feature-booking/flight-search/flight-search.ts",
+            "linesAdded": 9,
+            "linesRemoved": 0,
+            "totalLinesAtCommit": 10,
+            "mccabeComplexityAtCommit": 1,
+            "processingTimeMs": 40
+          }
+        ]
+      }
+    ],
+    [
+      "9e94b055ac75e41f69c17d2e84bf0c35a8b9b7a5:.ts,.js,.tsx,.jsx:2.1.2",
+      {
+        "commitHash": "9e94b055ac75e41f69c17d2e84bf0c35a8b9b7a5",
+        "fileExtensions": [
+          ".ts",
+          ".js",
+          ".tsx",
+          ".jsx"
+        ],
+        "version": "2.1.2",
+        "timestamp": 1790681500480,
+        "metrics": [
+          {
+            "commitHash": "9e94b055ac75e41f69c17d2e84bf0c35a8b9b7a5",
+            "commitDate": "2026-08-17T18:21:19.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Adding eslint",
+            "filePath": "eslint.config.js",
+            "linesAdded": 41,
+            "linesRemoved": 0,
+            "totalLinesAtCommit": 42,
+            "mccabeComplexityAtCommit": 1,
+            "processingTimeMs": 39
+          }
+        ]
+      }
+    ],
+    [
+      "67b7aa0b63b689ef044c7663d5daece6284a50d6:.ts,.js,.tsx,.jsx:2.1.2",
+      {
+        "commitHash": "67b7aa0b63b689ef044c7663d5daece6284a50d6",
+        "fileExtensions": [
+          ".ts",
+          ".js",
+          ".tsx",
+          ".jsx"
+        ],
+        "version": "2.1.2",
+        "timestamp": 1790681500480,
+        "metrics": []
+      }
+    ],
+    [
+      "f81d2f4bfacb1bd6bc0aa6ef3ac936153b7d30dd:.ts,.js,.tsx,.jsx:2.1.2",
+      {
+        "commitHash": "f81d2f4bfacb1bd6bc0aa6ef3ac936153b7d30dd",
+        "fileExtensions": [
+          ".ts",
+          ".js",
+          ".tsx",
+          ".jsx"
+        ],
+        "version": "2.1.2",
+        "timestamp": 1790681500480,
+        "metrics": [
+          {
+            "commitHash": "f81d2f4bfacb1bd6bc0aa6ef3ac936153b7d30dd",
+            "commitDate": "2026-08-17T11:57:41.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Patching html and css with example files",
+            "filePath": "src/app/app.ts",
+            "linesAdded": 4,
+            "linesRemoved": 3,
+            "totalLinesAtCommit": 19,
+            "mccabeComplexityAtCommit": 1,
+            "processingTimeMs": 41
+          },
+          {
+            "commitHash": "f81d2f4bfacb1bd6bc0aa6ef3ac936153b7d30dd",
+            "commitDate": "2026-08-17T11:57:41.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Patching html and css with example files",
+            "filePath": "src/app/shell/navbar/navbar.ts",
+            "linesAdded": 30,
+            "linesRemoved": 0,
+            "totalLinesAtCommit": 31,
+            "mccabeComplexityAtCommit": 2,
+            "processingTimeMs": 39
+          },
+          {
+            "commitHash": "f81d2f4bfacb1bd6bc0aa6ef3ac936153b7d30dd",
+            "commitDate": "2026-08-17T11:57:41.000Z",
+            "author": "Axel Pauwels",
+            "commitMessage": "Patching html and css with example files",
+            "filePath": "src/app/shell/sidebar/sidebar.ts",
+            "linesAdded": 9,
+            "linesRemoved": 0,
+            "totalLinesAtCommit": 10,
+            "mccabeComplexityAtCommit": 1,
+            "processingTimeMs": 37
+          }
+        ]
+      }
+    ],
+    [
+      "667fe223a5beb144c88a1a914e9ed85d1508b9de:.ts,.js,.tsx,.jsx:2.1.2",
+      {
+        "commitHash": "667fe223a5beb144c88a1a914e9ed85d1508b9de",
+        "fileExtensions": [
+          ".ts",
+          ".js",
+          ".tsx",
+          ".jsx"
+        ],
+        "version": "2.1.2",
+        "timestamp": 1790681500480,
+        "metrics": []
+      }
+    ],
+    [
+      "a80c7d96f886dee497ab6b5cb49323074818ddd4:.ts,.js,.tsx,.jsx:2.1.2",
+      {
+        "commitHash": "a80c7d96f886dee497ab6b5cb49323074818ddd4",
+        "fileExtensions": [
+          ".ts",
+          ".js",
+          ".tsx",
+          ".jsx"
+        ],
+        "version": "2.1.2",
+        "timestamp": 1790681500480,
+        "metrics": []
+      }
+    ]
+  ]
+}
