@@ -3,7 +3,7 @@ import { FlightDomainModel } from '../../data/flight-model';
 import { FlightClient } from '../../data/flight-client';
 
 @Service()
-export class FlightStore {
+export class SimpleFlightStore {
   private flightClient = inject(FlightClient);
   // From
   private readonly _from = signal('Graz');

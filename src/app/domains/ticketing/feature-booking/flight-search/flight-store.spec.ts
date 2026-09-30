@@ -1,6 +1,6 @@
 import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
-import { FlightStore } from './flight-store';
+import { SimpleFlightStore } from './simple-flight-store';
 import { provideTestConfig } from '../../../../testing/provide-test-config';
 import { createTestFlight } from '../../../../testing/create-test-flight';
 
@@ -10,7 +10,7 @@ describe('flight-store', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       providers: [
-        FlightStore,
+        SimpleFlightStore,
         provideHttpClientTesting(),
         provideTestConfig()
       ],
@@ -21,7 +21,7 @@ describe('flight-store', () => {
 
   it('loads flights when from and to given', async () => {
     // Arrange
-    const store = TestBed.inject(FlightStore);
+    const store = TestBed.inject(SimpleFlightStore);
 
     // Act
     store.updateFilter('Paris', 'London');

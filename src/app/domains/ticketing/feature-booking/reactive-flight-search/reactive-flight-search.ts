@@ -12,7 +12,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { RouterLink } from '@angular/router';
 
 import { FlightCard } from '../../ui/flight-card/flight-card';
-import { FlightStore } from '../flight-search/flight-store';
+import { SimpleFlightStore } from '../flight-search/simple-flight-store';
 import { appSettings } from '../../../shared/ui-common/app-settings';
 
 @Component({
@@ -22,7 +22,7 @@ import { appSettings } from '../../../shared/ui-common/app-settings';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ReactiveFlightSearch {
-  private readonly store = inject(FlightStore);
+  private readonly store = inject(SimpleFlightStore);
   private readonly snackBar = inject(MatSnackBar);
 
   protected readonly from = this.store.from;

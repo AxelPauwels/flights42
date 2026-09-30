@@ -8,7 +8,7 @@ import { TestOptions } from 'vitest';
 import { provideTestConfig } from '../../../../testing/provide-test-config';
 import { DefaultLanguageService, LanguageService } from '../../../shared/util-common/language';
 import { FlightCard } from '../../ui/flight-card/flight-card';
-import { FlightStore } from './flight-store';
+import { SimpleFlightStore } from './simple-flight-store';
 import { createTestFlight } from '../../../../testing/create-test-flight';
 import { FlightEdit } from '../flight-edit/flight-edit';
 import { RouterTestingHarness } from '@angular/router/testing';
@@ -118,7 +118,7 @@ describe('flight-search', () => {
 
   it('searches for flights when from and to are given', async () => {
     // Arrange
-    const flightStore = TestBed.inject(FlightStore);
+    const flightStore = TestBed.inject(SimpleFlightStore);
     vi.spyOn(flightStore, 'updateFilter');
     // When a service is provided at component level, we should access it via the fixture's debugElement:
     // flightStore = fixture.debugElement.injector.get(FlightStore);
