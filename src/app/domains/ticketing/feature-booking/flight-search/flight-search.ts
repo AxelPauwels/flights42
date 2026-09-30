@@ -26,6 +26,7 @@ import { FlightClient } from '../../data/flight-client';
 import { DefaultLanguageService, LanguageService } from '../../../shared/util-common/language';
 import { SimpleFlightStore } from './simple-flight-store';
 import { appSettings } from '../../../shared/ui-common/app-settings';
+import { FlightStore } from '@flights/ticketing/feature-booking/flight-search/flight-store';
 
 @Component({
   selector: 'app-flight-search',
@@ -46,7 +47,7 @@ export class FlightSearch {
   private readonly snackBar = inject(MatSnackBar);
   private languageService = inject(LanguageService);
   protected injector = inject(Injector);
-  protected store = inject(SimpleFlightStore);
+  protected store = inject(FlightStore);
 
   // Linked signals are like computed signals, but they have a local working copy that can be
   // updated. However, such an update does not affect the original signal (from store).
