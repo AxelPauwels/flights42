@@ -1,5 +1,5 @@
-import { computed, inject } from '@angular/core';
-import { withDevtools, withResource } from '@angular-architects/ngrx-toolkit';
+import { computed, inject, isDevMode } from '@angular/core';
+import { withDevtools, withDevToolsStub, withResource } from '@angular-architects/ngrx-toolkit';
 import {
   patchState,
   signalStore,
@@ -62,7 +62,8 @@ export const FlightStore = signalStore(
   // }),
 
   // A community extension provided by the NgRx Toolkit
-  withResource((store) => ({
+  withResource(
+    (store) => ({
       flights: store._flightClient.findResource(store.from, store.to),
     }),
     { errorHandling: 'previous value' },
@@ -101,7 +102,9 @@ export const FlightStore = signalStore(
     },
   })),
 
-  withDevtools('flight'),
+  isDevMode()
+    ? withDevtools('flight')
+    : withDevToolsStub('flight'),
 
   withHooks((store) => ({
     onInit() {
