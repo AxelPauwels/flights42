@@ -1,1 +1,5 @@
-export const environment = {};
+import { withDevtools } from '@angular-architects/ngrx-toolkit';
+
+export const environment = {
+  withDevtools: withDevtools,
+};

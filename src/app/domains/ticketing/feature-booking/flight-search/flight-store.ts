@@ -3,7 +3,8 @@ import { withDevtools, withDevToolsStub, withResource } from '@angular-architect
 import {
   patchState,
   signalStore,
-  withComputed, withHooks,
+  withComputed,
+  withHooks,
   withMethods,
   withProps,
   withState
@@ -11,6 +12,7 @@ import {
 
 import { FlightClient } from '../../data/flight-client';
 import { FlightDomainModel } from '@flights/ticketing/data/flight-model';
+import { withDevToolsForDebugMode } from '@flights/shared/util-common/with-dev-tools-for-debug-mode';
 
 export interface FlightFilter {
   from: string;
@@ -102,9 +104,11 @@ export const FlightStore = signalStore(
     },
   })),
 
-  isDevMode()
-    ? withDevtools('flight')
-    : withDevToolsStub('flight'),
+  // isDevMode()
+  //   ? withDevtools('flight')
+  //   : withDevToolsStub('flight'),
+
+  withDevToolsForDebugMode('flight'),
 
   withHooks((store) => ({
     onInit() {
