@@ -8,3 +8,5 @@ export const nextFlightRoutes: Routes = [
     component: NextFlightsOverview,
   },
 ];
+
+// export default nextFlightRoutes;

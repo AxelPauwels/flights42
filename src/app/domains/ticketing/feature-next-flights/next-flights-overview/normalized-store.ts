@@ -53,47 +53,47 @@ export const NormalizedStore = signalStore(
     onInit(state) {
       const date = new Date().toISOString();
 
-      patchState(
-        state,
-        setEntities(
-          [
-            {
-              id: 10,
-              from: 'London',
-              to: 'New York',
-              date,
-              delayed: false,
-              delay: 0,
-              aircraft: initialAircraft,
-              prices: [] as Price[],
-              passengerIds: [1, 3],
-            },
-            {
-              id: 20,
-              from: 'London',
-              to: 'New York',
-              date,
-              delayed: false,
-              delay: 0,
-              aircraft: initialAircraft,
-              prices: [] as Price[],
-              passengerIds: [1, 2],
-            },
-            {
-              id: 30,
-              from: 'London',
-              to: 'New York',
-              date,
-              delayed: false,
-              delay: 0,
-              aircraft: initialAircraft,
-              prices: [] as Price[],
-              passengerIds: [2, 3],
-            },
-          ],
-          { collection: 'flight' },
-        ),
-      );
+      // patchState(
+      //   state,
+      //   setEntities(
+      //     [
+      //       {
+      //         id: 10,
+      //         from: 'London',
+      //         to: 'New York',
+      //         date,
+      //         delayed: false,
+      //         delay: 0,
+      //         aircraft: initialAircraft,
+      //         prices: [] as Price[],
+      //         passengerIds: [1, 3],
+      //       },
+      //       {
+      //         id: 20,
+      //         from: 'London',
+      //         to: 'New York',
+      //         date,
+      //         delayed: false,
+      //         delay: 0,
+      //         aircraft: initialAircraft,
+      //         prices: [] as Price[],
+      //         passengerIds: [1, 2],
+      //       },
+      //       {
+      //         id: 30,
+      //         from: 'London',
+      //         to: 'New York',
+      //         date,
+      //         delayed: false,
+      //         delay: 0,
+      //         aircraft: initialAircraft,
+      //         prices: [] as Price[],
+      //         passengerIds: [2, 3],
+      //       },
+      //     ],
+      //     { collection: 'flight' },
+      //   ),
+      // );
 
       patchState(
         state,

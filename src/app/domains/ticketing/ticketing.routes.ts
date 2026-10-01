@@ -4,6 +4,9 @@ import { FlightSearch } from './feature-booking/flight-search/flight-search';
 import { PassengerSearch } from './feature-booking/passenger-search/passenger-search';
 import { BookingNavigation } from './feature-booking/booking-navigation';
 import { DefaultLanguageService, LanguageService } from '../shared/util-common/language';
+import {
+  NextFlightsOverview
+} from '@flights/ticketing/feature-next-flights/next-flights-overview/next-flights-overview';
 export const ticketingRoutes: Routes = [
   {
     path: '',
@@ -35,6 +38,10 @@ export const ticketingRoutes: Routes = [
       {
         path: 'passenger-search',
         component: PassengerSearch,
+      },
+      {
+        path: 'next-flights',
+        component: NextFlightsOverview,
       },
       {
         path: '**',
