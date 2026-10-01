@@ -87,9 +87,13 @@ export const LuggageStore = signalStore(
     loadLuggage$: store._events.on(luggageEvents.loadLuggageTriggered).pipe(
       switchMap(() =>
         store._luggageClient.find().pipe(
+          // the mapResponse operator from @ngrx/operators maps the next and error case of the HTTP request to the corresponding events.
+          // It can be seen as a shortcut for the RxJS operators 'map' and 'catchError'.
           mapResponse({
-            next: (luggage: Luggage[]) => luggageEvents.loadLuggageSucceeded({ luggage }),
-            error: (error: unknown) => luggageEvents.loadLuggageFailed({ error: String(error) }),
+            next: (luggage: Luggage[]) =>
+              luggageEvents.loadLuggageSucceeded({ luggage }),
+            error: (error: unknown) =>
+              luggageEvents.loadLuggageFailed({ error: String(error) }),
           }),
         ),
       ),
