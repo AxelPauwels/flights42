@@ -5,6 +5,7 @@ import { map, Observable } from 'rxjs';
 import { ConfigService } from '../../shared/util-common/config-service';
 import { initialAircraft } from './aircraft';
 import { FlightDomainModel, initialFlight } from './flight-model';
+import { concatOp, httpMutation, HttpMutationOptions } from '@angular-architects/ngrx-toolkit';
 
 @Service()
 export class FlightClient {
@@ -165,6 +166,21 @@ export class FlightClient {
   //     }),
   //   });
   // }
+
+  createSaveMutation(options: Partial<HttpMutationOptions<FlightDomainModel, FlightDomainModel>>) {
+    return httpMutation({
+      ...options,
+      request: (flight: FlightDomainModel) => ({
+        url: `${this.configService.baseUrl}/flight/${flight.id}`,
+        method: 'PUT',
+        body: flight,
+        headers: {
+          Accept: 'application/json',
+        },
+      }),
+      operator: concatOp,
+    });
+  }
 }
 function initializeFlight(raw: unknown) {
   const flight = raw as FlightDomainModel;
