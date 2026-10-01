@@ -21,12 +21,18 @@ export class PassengerSearch {
     firstName: this.firstName(),
   }));
   protected readonly filterForm = form(this.filter);
-
   constructor() {
-    this._store.updateFilter(this.filter);
+    // the rxMethod tracks it, and the pipe runs whenever it changes.
+    //
+    // Saving the rxMethod reference allows us to destroy it later, if needed. But it is not necessary, as the rxMethod will be destroyed when the store is destroyed.
+    const rxMethodRef = this._store.updateFilter(this.filter);
+
+    setTimeout(() => {
+      rxMethodRef.destroy();
+    }, 5000);
   }
 
   protected search(): void {
-    this._store.updateFilter(this.filter());
+    this._store.updateFilter(this.filter()); // Note this is a value, not a signal. The rxMethod can handle both.
   }
 }
