@@ -21,6 +21,19 @@ import { switchMap } from 'rxjs';
 import { Luggage } from '../../data/luggage';
 import { LuggageClient } from '../../data/luggage-client';
 
+// Note: In this example, the source property points to an entire domain and
+// hence is quite coarse-grained. The NgRx team recommends a more fine-grained
+// approach, where the source points to the consuming component, service, or store.
+//   For instance, we could put the loadLuggageTriggered event in an event group
+// luggageOverviewEvents with the source LuggageOverview, while the other two
+// events could be in a luggageApiEvents with the source LuggageApi. The first
+// one is used by the LuggageOverview component to trigger the loading, while the
+//   second one is used by the event handlers and reducers in the store.
+//   This way, we can easily see which events are triggered by the component and
+// which ones are triggered inside the store.
+//
+// For asynchronous operations, it is a common pattern to define three events: one for
+//   triggering the operation, one for the success case, and one for the error case.
 export const luggageEvents = eventGroup({
   source: 'Luggage Store',
   events: {
