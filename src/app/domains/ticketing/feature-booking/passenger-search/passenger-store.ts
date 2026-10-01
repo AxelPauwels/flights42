@@ -4,6 +4,7 @@ import { inject } from '@angular/core';
 import { PassengerClient } from '@flights/ticketing/data/passenger-client';
 import { Passenger } from '@flights/ticketing/data/passenger';
 import { catchError, of, pipe, switchMap, tap } from 'rxjs';
+import { setLoading, withCallState } from '@flights/shared/util-common/call-state.feature';
 interface PassengerStoreState {
   name: string;
     firstName: string;
@@ -35,6 +36,11 @@ export const PassengerStore = signalStore(
     isLoading: false,
     error: null,
   }),
+  // Call Custom Feature
+
+  withCallState(), // this must before withMethods, because functions in that file,
+  // like 'setLoading()', are using state from this 'withCallState' function
+
   withProps(() => ({
     _passengerClient: inject(PassengerClient),
   })),
@@ -46,12 +52,19 @@ export const PassengerStore = signalStore(
       updateFilter: rxMethod<PassengerFilter>(
         pipe(
           tap((filter: PassengerFilter) =>
-            patchState(store, {
-              name: filter.name,
-              firstName: filter.firstName,
-              isLoading: true,
-              error: null,
-            }),
+            patchState(
+              store,
+              {
+                name: filter.name,
+                firstName: filter.firstName,
+                isLoading: true,
+                error: null,
+              },
+              // Let's track this: This store has state from withCallState() feature, lets look at computed property 'loading'
+              // first here, when updateFilter is called, setLoading() is called, which sets the callState to 'loading',
+              // and then the computed property 'loading' will return true, which can be used in the component to show a loading spinner or something similar.
+              setLoading(),
+            ),
           ),
           switchMap((filter) =>
             store._passengerClient.find(filter.name, filter.firstName).pipe(
