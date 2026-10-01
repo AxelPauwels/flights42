@@ -37,7 +37,7 @@ import { LuggageClient } from '../../data/luggage-client';
 export const luggageEvents = eventGroup({
   source: 'Luggage Store',
   events: {
-    loadLuggageTriggered: type<void>(),
+    loadLuggageTriggered: type<{ passengerId: number }>(),
     loadLuggageSucceeded: type<{ luggage: Luggage[] }>(),
     loadLuggageFailed: type<{ error: string }>(),
   },
@@ -60,7 +60,7 @@ export const LuggageStore = signalStore(
 
   // Reducers specify how the state should be updated in reaction to specific events.
   withReducer(
-    on(luggageEvents.loadLuggageTriggered, () => ({
+    on(luggageEvents.loadLuggageTriggered, ({ payload }) => ({
       error: null,
       isLoading: true,
     })),
@@ -80,7 +80,6 @@ export const LuggageStore = signalStore(
     //     error: null,
     //   }),
     // ),
-
   ),
 
   withEventHandlers((store) => ({
@@ -90,10 +89,8 @@ export const LuggageStore = signalStore(
           // the mapResponse operator from @ngrx/operators maps the next and error case of the HTTP request to the corresponding events.
           // It can be seen as a shortcut for the RxJS operators 'map' and 'catchError'.
           mapResponse({
-            next: (luggage: Luggage[]) =>
-              luggageEvents.loadLuggageSucceeded({ luggage }),
-            error: (error: unknown) =>
-              luggageEvents.loadLuggageFailed({ error: String(error) }),
+            next: (luggage: Luggage[]) => luggageEvents.loadLuggageSucceeded({ luggage }),
+            error: (error: unknown) => luggageEvents.loadLuggageFailed({ error: String(error) }),
           }),
         ),
       ),
