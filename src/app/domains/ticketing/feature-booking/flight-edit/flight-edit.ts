@@ -30,7 +30,9 @@ export class FlightEdit {
   private readonly route = inject(ActivatedRoute);
   private readonly activatedRoute = inject(ActivatedRoute);
   private readonly store = inject(FlightDetailStore);
-  protected readonly flightDomainModel = linkedSignal(() => normalizeFlight(this.store.flightValue()));
+  protected readonly flightDomainModel = linkedSignal(() =>
+    normalizeFlight(this.store.flightValue()),
+  );
   protected readonly flightFormModel = linkedSignal(() =>
     toFlightFormModel(this.flightDomainModel()),
   );
@@ -40,11 +42,19 @@ export class FlightEdit {
   protected readonly isPending = this.store.saveFlightIsPending;
   protected readonly error = this.store.saveFlightError;
 
+  protected readonly id = input.required({
+    transform: numberAttribute,
+  });
+  protected readonly showDetails = input({
+    transform: booleanAttribute,
+  });
+
   constructor() {
-    this.route.paramMap.subscribe((paramsMap) => {
-      const flightId = parseInt(paramsMap.get('id') ?? '0');
-      this.store.setFlightId(flightId);
-    });
+    // this.route.paramMap.subscribe((paramsMap) => {
+    //   const flightId = parseInt(paramsMap.get('id') ?? '0');
+    //   this.store.setFlightId(flightId);
+    // });
+    this.store.connectFlightId(this.id);
   }
 
   // Set up the Signal Form with validation rules
@@ -67,13 +77,6 @@ export class FlightEdit {
       onInvalid: (form) => this.reportValidationError(form),
     });
   }
-
-  protected readonly id = input.required({
-    transform: numberAttribute,
-  });
-  protected readonly showDetails = input({
-    transform: booleanAttribute,
-  });
 
   // constructor() {
   // effect(() => {

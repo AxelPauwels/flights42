@@ -64,6 +64,10 @@ export const FlightDetailStore = signalStore(
       patchState(store, { flightId: id });
     },
 
+    // signalMethod instead of rxMethod, as we don't need to handle Observables here
+    // Please keep in mind that, aside from RxJS with its flattening operators or the Resource
+    // API using switchMap semantics, signalMethod does not have any built-in
+    // mechanism for handling overlapping calls.
     connectFlightId: signalMethod<number>((id) => {
       patchState(store, { flightId: id });
     }),
