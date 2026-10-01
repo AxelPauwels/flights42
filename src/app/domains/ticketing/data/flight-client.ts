@@ -5,7 +5,7 @@ import { map, Observable } from 'rxjs';
 import { ConfigService } from '../../shared/util-common/config-service';
 import { initialAircraft } from './aircraft';
 import { FlightDomainModel, initialFlight } from './flight-model';
-import { concatOp, httpMutation, HttpMutationOptions } from '@angular-architects/ngrx-toolkit';
+import { concatOp, httpMutation, HttpMutationOptions, rxMutation, RxMutationOptions } from '@angular-architects/ngrx-toolkit';
 
 @Service()
 export class FlightClient {
@@ -178,6 +178,14 @@ export class FlightClient {
           Accept: 'application/json',
         },
       }),
+      operator: concatOp,
+    });
+  }
+
+  createSaveRxMutation(options: Partial<RxMutationOptions<FlightDomainModel, FlightDomainModel>>) {
+    return rxMutation({
+      ...options,
+      operation: (flight: FlightDomainModel) => this.update(flight),
       operator: concatOp,
     });
   }

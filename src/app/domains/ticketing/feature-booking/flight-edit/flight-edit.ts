@@ -6,12 +6,10 @@ import {
   inject,
   input,
   linkedSignal,
-  numberAttribute, signal,
+  numberAttribute,
 } from '@angular/core';
-import { JsonPipe } from '@angular/common';
-import { SimpleFlightDetailStore } from './simple-flight-detail-store';
-import { FlightDomainModel, FlightFormModel } from '../../data/flight-model';
-import { FieldTree, form, FormField, FormRoot, submit } from '@angular/forms/signals';
+import { FlightDomainModel } from '../../data/flight-model';
+import { FieldTree, form, submit } from '@angular/forms/signals';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ValidationErrorsPane } from '../../../shared/ui-forms/validation-errors/validation-errors-pane';
 import { flightFormSchema } from '../../data/flight-schema';
@@ -19,7 +17,7 @@ import { initialPrice } from '../../data/price';
 import { FlightForm } from './flight-form/flight-form';
 import { AircraftForm } from './aircraft-form/aircraft-form';
 import { PricesForm } from './prices-form/prices-form';
-import { toFlightDomainModel, toFlightFormModel } from '../../data/flight-mapper';
+import { toFlightFormModel } from '../../data/flight-mapper';
 import { FlightDetailStore } from '@flights/ticketing/feature-booking/flight-edit/flight-detail-store';
 
 @Component({
@@ -52,7 +50,7 @@ export class FlightEdit {
   // Set up the Signal Form with validation rules
   protected readonly flightForm = form(this.flightFormModel, flightFormSchema, {
     submission: {
-      action: async (form) => this.save(form),
+      action: async () => this.save(),
       ignoreValidators: 'none',
       onInvalid: (form) => this.reportValidationError(form),
     },
