@@ -182,6 +182,7 @@ export class FlightClient {
     });
   }
 }
+
 function initializeFlight(raw: unknown) {
   const flight = raw as FlightDomainModel;
   flight.aircraft = initialAircraft;

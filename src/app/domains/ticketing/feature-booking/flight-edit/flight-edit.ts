@@ -20,6 +20,7 @@ import { FlightForm } from './flight-form/flight-form';
 import { AircraftForm } from './aircraft-form/aircraft-form';
 import { PricesForm } from './prices-form/prices-form';
 import { toFlightDomainModel, toFlightFormModel } from '../../data/flight-mapper';
+import { FlightDetailStore } from '@flights/ticketing/feature-booking/flight-edit/flight-detail-store';
 
 @Component({
   selector: 'app-flight-edit',
@@ -30,12 +31,16 @@ import { toFlightDomainModel, toFlightFormModel } from '../../data/flight-mapper
 export class FlightEdit {
   private readonly route = inject(ActivatedRoute);
   private readonly activatedRoute = inject(ActivatedRoute);
-  private readonly store = inject(SimpleFlightDetailStore);
-  protected readonly flightDomainModel = linkedSignal(() => normalizeFlight(this.store.flight()));
+  private readonly store = inject(FlightDetailStore);
+  protected readonly flightDomainModel = linkedSignal(() => normalizeFlight(this.store.flightValue()));
   protected readonly flightFormModel = linkedSignal(() =>
     toFlightFormModel(this.flightDomainModel()),
   );
   private readonly snackBar = inject(MatSnackBar);
+
+  // Properties added by withMutations
+  protected readonly isPending = this.store.saveFlightIsPending;
+  protected readonly error = this.store.saveFlightError;
 
   constructor() {
     this.route.paramMap.subscribe((paramsMap) => {
@@ -57,7 +62,8 @@ export class FlightEdit {
     await submit(this.flightForm, {
       action: async (form) => {
         console.log('Requesting approval for flight:', form().value());
-        await this.store.requestApproval(form().value());
+        // Note: this is a method on SimpleFlightDetailStore not on FlightDetailStore
+        // await this.store.requestApproval(form().value());
       },
       ignoreValidators: 'none',
       onInvalid: (form) => this.reportValidationError(form),
@@ -88,16 +94,28 @@ export class FlightEdit {
   // });
   // }
 
-  protected async save(form: FieldTree<FlightFormModel>) {
-    try {
-      const formModel = form().value();
-      await this.store.saveFlight(toFlightDomainModel(formModel));
-      return null;
-    } catch (error) {
-      return {
-        kind: 'processing_error',
-        error: error,
-      };
+  // protected async save(form: FieldTree<FlightFormModel>) {
+  //   try {
+  //     const formModel = form().value();
+  //     await this.store.saveFlight(toFlightDomainModel(formModel));
+  //     return null;
+  //   } catch (error) {
+  //     return {
+  //       kind: 'processing_error',
+  //       error: error,
+  //     };
+  //   }
+  // }
+
+  protected async save(): Promise<void> {
+    const result = await this.store.saveFlight(this.flightDomainModel());
+
+    if (result.status === 'success') {
+      console.log('Flight saved successfully', result.value);
+    } else if (result.status === 'error') {
+      console.error('Failed to save flight', result.error);
+    } else {
+      console.warn('Mutation was cancelled');
     }
   }
 
@@ -127,6 +145,7 @@ export class FlightEdit {
 
 function normalizeFlight(flight: FlightDomainModel): FlightDomainModel {
   const localDate = flight.date.substring(0, 16);
+
   return {
     ...flight,
     date: localDate,

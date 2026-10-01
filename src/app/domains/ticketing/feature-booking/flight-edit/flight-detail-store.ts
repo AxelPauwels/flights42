@@ -17,10 +17,16 @@ import {
 import { FlightClient } from '../../data/flight-client';
 import { FlightDomainModel } from '@flights/ticketing/data/flight-model';
 
+type FlightDetailId = number;
+
+interface FlightDetailState {
+  flightId: FlightDetailId;
+}
+
 export const FlightDetailStore = signalStore(
   { providedIn: 'root' },
 
-  withState({
+  withState<FlightDetailState>({
     flightId: 0,
   }),
 
