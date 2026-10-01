@@ -38,6 +38,9 @@ export const PassengerStore = signalStore(
   withProps(() => ({
     _passengerClient: inject(PassengerClient),
   })),
+  // Note the caller can pass a PassengerFilter as a plain value, a Signal<PassengerFilter>, or an Observable<PassengerFilter>.
+  // Whenever a passed Signal or Observable provides a new filter, the rxMethod automatically
+  // runs the provided pipe, which in turn updates the state and triggers the passenger search.
   withMethods((store) => {
     return {
       updateFilter: rxMethod<PassengerFilter>(
