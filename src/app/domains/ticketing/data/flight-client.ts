@@ -4,7 +4,7 @@ import { map, Observable } from 'rxjs';
 
 import { ConfigService } from '../../shared/util-common/config-service';
 import { initialAircraft } from './aircraft';
-import { FlightDomainModel, initialFlight } from './flight-model';
+import { Flight, initialFlight } from './flight-model';
 import { concatOp, httpMutation, HttpMutationOptions, rxMutation, RxMutationOptions } from '@angular-architects/ngrx-toolkit';
 
 @Service()
@@ -12,7 +12,7 @@ export class FlightClient {
   private http = inject(HttpClient);
   private configService = inject(ConfigService);
 
-  find(from: string, to: string, urgent = false): Observable<FlightDomainModel[]> {
+  find(from: string, to: string, urgent = false): Observable<Flight[]> {
     const url = `${this.configService.baseUrl}/flight`;
 
     const headers = {
@@ -22,12 +22,12 @@ export class FlightClient {
     const params = { from, to, urgent };
 
     return this.http
-      .get<FlightDomainModel[]>(url, { headers, params })
+      .get<Flight[]>(url, { headers, params })
       .pipe(map((flights) => flights.map(initializeFlight)));
   }
 
   findResource(from: Signal<string>, to: Signal<string>) {
-    return httpResource<FlightDomainModel[]>(
+    return httpResource<Flight[]>(
       () => {
         if (!from() || !to()) {
           return undefined;
@@ -48,7 +48,7 @@ export class FlightClient {
         defaultValue: [],
         // parse: (raw) => FlightZodSchema.array().parse(raw) as Flight[]
         parse: (raw) => {
-          const flights = raw as FlightDomainModel[];
+          const flights = raw as Flight[];
           return flights.map((flight) => initializeFlight(flight));
         },
       },
@@ -85,7 +85,7 @@ export class FlightClient {
   //   });
   // }
 
-  findById(id: string): Observable<FlightDomainModel> {
+  findById(id: string): Observable<Flight> {
     const url = `${this.configService.baseUrl}/flight`;
 
     const headers = {
@@ -94,11 +94,11 @@ export class FlightClient {
 
     const params = { id };
 
-    return this.http.get<FlightDomainModel>(url, { headers, params });
+    return this.http.get<Flight>(url, { headers, params });
   }
 
   findResourceById(id: Signal<number>) {
-    return httpResource<FlightDomainModel>(
+    return httpResource<Flight>(
       () => {
         const current = id();
         // Do not call the backend when no valid id is set (e.g., initial 0)
@@ -126,24 +126,24 @@ export class FlightClient {
     );
   }
 
-  create(flight: FlightDomainModel): Observable<FlightDomainModel> {
+  create(flight: Flight): Observable<Flight> {
     const url = `${this.configService.baseUrl}/flight`;
 
     const headers = {
       Accept: 'application/json',
     };
 
-    return this.http.post<FlightDomainModel>(url, flight, { headers });
+    return this.http.post<Flight>(url, flight, { headers });
   }
 
-  update(flight: FlightDomainModel): Observable<FlightDomainModel> {
+  update(flight: Flight): Observable<Flight> {
     const url = `${this.configService.baseUrl}/flight/${flight.id}`;
 
     const headers = {
       Accept: 'application/json',
     };
 
-    return this.http.put<FlightDomainModel>(url, flight, { headers });
+    return this.http.put<Flight>(url, flight, { headers });
   }
 
   // createSaveNxMutation(options: Partial<RxMutationOptions<Flight, Flight>>) {
@@ -167,10 +167,10 @@ export class FlightClient {
   //   });
   // }
 
-  createSaveMutation(options: Partial<HttpMutationOptions<FlightDomainModel, FlightDomainModel>>) {
+  createSaveMutation(options: Partial<HttpMutationOptions<Flight, Flight>>) {
     return httpMutation({
       ...options,
-      request: (flight: FlightDomainModel) => ({
+      request: (flight: Flight) => ({
         url: `${this.configService.baseUrl}/flight/${flight.id}`,
         method: 'PUT',
         body: flight,
@@ -182,17 +182,17 @@ export class FlightClient {
     });
   }
 
-  createSaveRxMutation(options: Partial<RxMutationOptions<FlightDomainModel, FlightDomainModel>>) {
+  createSaveRxMutation(options: Partial<RxMutationOptions<Flight, Flight>>) {
     return rxMutation({
       ...options,
-      operation: (flight: FlightDomainModel) => this.update(flight),
+      operation: (flight: Flight) => this.update(flight),
       operator: concatOp,
     });
   }
 }
 
 function initializeFlight(raw: unknown) {
-  const flight = raw as FlightDomainModel;
+  const flight = raw as Flight;
   flight.aircraft = initialAircraft;
   flight.prices = [];
   flight.delay = flight.delayed ? 15 : 0;

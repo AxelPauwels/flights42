@@ -14,7 +14,7 @@ import {
 } from '@angular/core';
 import { FormField, form, debounce, required, minLength } from '@angular/forms/signals';
 import { RouterLink } from '@angular/router';
-import { FlightDomainModel } from '../../data/flight-model';
+import { Flight } from '../../data/flight-model';
 import { HttpClient } from '@angular/common/http';
 import { FlightCard } from '../../ui/flight-card/flight-card';
 import { DelayStepper } from '../../../shared/ui-common/delay-stepper/delay-stepper';
@@ -167,7 +167,7 @@ export class FlightSearch {
   protected readonly basket = this.store.basket;
 
   protected readonly maxDelay = signal(0);
-  protected readonly selectedFlight = signal<FlightDomainModel | null>(null);
+  protected readonly selectedFlight = signal<Flight | null>(null);
 
   constructor() {
     this.showError();
@@ -179,7 +179,7 @@ export class FlightSearch {
     this.store.reload();
   }
 
-  protected select(f: FlightDomainModel): void {
+  protected select(f: Flight): void {
     this.selectedFlight.set(f);
   }
 
@@ -191,16 +191,16 @@ export class FlightSearch {
     this.store.delay();
   }
 
-  private _find(from: string, to: string, urgent = false): Observable<FlightDomainModel[]> {
+  private _find(from: string, to: string, urgent = false): Observable<Flight[]> {
     const url = `https://demo.angulararchitects.io/api/flight`;
     const headers = {
       Accept: 'application/json',
     };
     const params = { from, to, urgent };
-    return this.http.get<FlightDomainModel[]>(url, { headers, params });
+    return this.http.get<Flight[]>(url, { headers, params });
   }
 
-  private _findPromise(from: string, to: string, abortSignal?: AbortSignal): Promise<FlightDomainModel[]> {
+  private _findPromise(from: string, to: string, abortSignal?: AbortSignal): Promise<Flight[]> {
     const aborted = new Subject<void>();
     abortSignal?.addEventListener('abort', () => {
       aborted.next();

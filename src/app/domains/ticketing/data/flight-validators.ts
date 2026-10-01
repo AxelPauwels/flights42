@@ -7,7 +7,7 @@ import {
   validateHttp,
   validateTree
 } from '@angular/forms/signals';
-import { FlightDomainModel } from './flight-model';
+import { Flight } from './flight-model';
 import { delay, map, Observable, of } from 'rxjs';
 import { rxResource } from '@angular/core/rxjs-interop';
 import { Price } from './price';
@@ -28,7 +28,7 @@ export const validateCity = (path: SchemaPathTree<string>, allowed: string[])=> 
 }
 
 // here we are validating against the full path. so errors will be at top level -> [errors]="flightForm().errorSummary()"
-export const validateRoundTrip = (path: SchemaPathTree<FlightDomainModel>) => {
+export const validateRoundTrip = (path: SchemaPathTree<Flight>) => {
   validate(path, (ctx) => {
     const from = ctx.fieldTree.from().value();
     const to = ctx.fieldTree.to().value();
@@ -49,7 +49,7 @@ export const validateRoundTrip = (path: SchemaPathTree<FlightDomainModel>) => {
   });
 }
 
-export const validateRoundTrip2 = (path: SchemaPathTree<FlightDomainModel>) => {
+export const validateRoundTrip2 = (path: SchemaPathTree<Flight>) => {
   // Now, we are validating the 'from' field only
   // In this case, the error message appears in the from field’s errors array -> [errors]="flightForm.from().errors()"
   validate(path.from, (ctx) => {
@@ -70,7 +70,7 @@ export const validateRoundTrip2 = (path: SchemaPathTree<FlightDomainModel>) => {
 
 // Tree validators are special multi-field validators that can define error messages for all levels of a field tree.
 // To do so, they store the affected field in the ValidationError object
-export const validateRoundTripTree = (path: SchemaPathTree<FlightDomainModel>) => {
+export const validateRoundTripTree = (path: SchemaPathTree<Flight>) => {
   validateTree(path, (ctx) => {
     const from = ctx.fieldTree.from().value();
     const to = ctx.fieldTree.to().value();
@@ -138,7 +138,7 @@ export const validateCityHttp = (path: SchemaPathTree<string>) => {
         from: ctx.value(),
       },
     }),
-    onSuccess: (result: FlightDomainModel[], _ctx) => {
+    onSuccess: (result: Flight[], _ctx) => {
       if (result.length === 0) {
         return {
           kind: 'airport_not_found_http',

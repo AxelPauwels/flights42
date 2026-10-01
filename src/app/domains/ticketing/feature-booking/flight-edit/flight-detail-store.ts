@@ -15,7 +15,7 @@ import {
 } from '@ngrx/signals';
 
 import { FlightClient } from '../../data/flight-client';
-import { FlightDomainModel } from '@flights/ticketing/data/flight-model';
+import { Flight } from '@flights/ticketing/data/flight-model';
 
 type FlightDetailId = number;
 
@@ -72,7 +72,7 @@ export const FlightDetailStore = signalStore(
       patchState(store, { flightId: id });
     }),
 
-    updateLocalFlight(flight: Partial<FlightDomainModel>): void {
+    updateLocalFlight(flight: Partial<Flight>): void {
       patchState(store, (state) => ({
         flightValue: {
           ...state.flightValue,

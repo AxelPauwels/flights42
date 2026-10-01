@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, input, model, output } from '@angular/core';
 import { DatePipe } from '@angular/common';
-import { FlightDomainModel } from '@flights/ticketing/data/flight-model';
+import { Flight } from '@flights/ticketing/data/flight-model';
 
 @Component({
   selector: 'app-flight-card',
@@ -9,7 +9,7 @@ import { FlightDomainModel } from '@flights/ticketing/data/flight-model';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FlightCard {
-  readonly item = input.required<FlightDomainModel>();
+  readonly item = input.required<Flight>();
   readonly selected = model(false);
 
   protected select() {

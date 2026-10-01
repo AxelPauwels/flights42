@@ -1,7 +1,8 @@
 import { Aircraft, initialAircraft } from './aircraft';
 import { Price } from './price';
 
-export interface FlightDomainModel {
+// Flight aka FlightDomainModel;
+export interface Flight {
   id: number;
   from: string;
   to: string;
@@ -23,7 +24,7 @@ export interface FlightFormModel {
   prices: Price[];
 }
 
-export const initialFlight: FlightDomainModel = {
+export const initialFlight: Flight = {
   id: 0,
   from: '',
   to: '',

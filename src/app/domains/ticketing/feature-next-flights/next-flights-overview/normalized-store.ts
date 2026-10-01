@@ -10,7 +10,7 @@ import {
 import { setEntities, withEntities } from '@ngrx/signals/entities';
 
 import { initialAircraft } from '../../data/aircraft';
-import { Flight } from '../../data/flight';
+import { Flight } from '../../data/flight-model';
 import { Passenger } from '../../data/passenger';
 import { Price } from '../../data/price';
 

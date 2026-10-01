@@ -11,7 +11,7 @@ import {
 } from '@ngrx/signals';
 
 import { FlightClient } from '../../data/flight-client';
-import { FlightDomainModel } from '@flights/ticketing/data/flight-model';
+import { Flight } from '@flights/ticketing/data/flight-model';
 import { withDevToolsForDebugMode } from '@flights/shared/util-common/with-dev-tools-for-debug-mode';
 
 export interface FlightFilter {
@@ -120,7 +120,7 @@ export const FlightStore = signalStore(
   })),
 );
 
-const toFlightsWithDelays = (flights: FlightDomainModel[], delay: number): FlightDomainModel[] => {
+const toFlightsWithDelays = (flights: Flight[], delay: number): Flight[] => {
   if (flights.length === 0) {
     return [];
   }

@@ -12,16 +12,22 @@ import {
 import { setAllEntities, withEntities } from '@ngrx/signals/entities';
 import { catchError, finalize, firstValueFrom, tap, throwError } from 'rxjs';
 
-import { Flight } from '../../data/flight';
+import { Flight } from '../../data/flight-model';
 import { TicketClient } from '../../data/ticket-client';
+
+interface NextFlightsState {
+  selected: Record<number, boolean>;
+  isLoading: boolean;
+  error: string | null;
+}
 
 export const NextFlightsStore = signalStore(
   { providedIn: 'root' },
 
-  withState({
-    selected: {} as Record<number, boolean>,
+  withState<NextFlightsState>({
+    selected: {},
     isLoading: false,
-    error: null as string | null,
+    error: null,
   }),
 
   withEntities({ entity: type<Flight>() }),
@@ -31,9 +37,7 @@ export const NextFlightsStore = signalStore(
   })),
 
   withComputed(({ entities, selected }) => ({
-    selectedTickets: computed(() =>
-      entities().filter((ticket) => selected()[ticket.id]),
-    ),
+    selectedTickets: computed(() => entities().filter((ticket) => selected()[ticket.id])),
   })),
 
   withMethods((store) => ({

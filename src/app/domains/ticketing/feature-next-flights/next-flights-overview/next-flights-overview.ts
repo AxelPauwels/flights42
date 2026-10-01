@@ -12,14 +12,15 @@ import { NormalizedStore } from './normalized-store';
   providers: [NextFlightsStore],
 })
 export class NextFlightsOverview {
-  private readonly store = inject(NextFlightsStore);
-  protected readonly tickets = this.store.entities;
-  protected readonly selected = this.store.selected;
+  private readonly _store = inject(NextFlightsStore);
+  protected readonly flights = this._store.entities;
+  // protected readonly tickets = this._store.entities;
+  protected readonly selected = this._store.selected;
 
   private readonly normalizedStore = inject(NormalizedStore);
 
   constructor() {
-    this.store.load();
+    this._store.load();
 
     console.log(
       'flightsWithPassengers',
@@ -32,6 +33,6 @@ export class NextFlightsOverview {
   }
 
   protected updateSelected(ticketId: number, selected: boolean): void {
-    this.store.updateSelected(ticketId, selected);
+    this._store.updateSelected(ticketId, selected);
   }
 }

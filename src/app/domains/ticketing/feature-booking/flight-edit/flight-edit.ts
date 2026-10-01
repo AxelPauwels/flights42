@@ -8,7 +8,7 @@ import {
   linkedSignal,
   numberAttribute,
 } from '@angular/core';
-import { FlightDomainModel } from '../../data/flight-model';
+import { Flight } from '../../data/flight-model';
 import { FieldTree, form, submit } from '@angular/forms/signals';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ValidationErrorsPane } from '../../../shared/ui-forms/validation-errors/validation-errors-pane';
@@ -131,12 +131,12 @@ export class FlightEdit {
     });
   }
 
-  private reportValidationError(form: FieldTree<FlightDomainModel>): void {
+  private reportValidationError(form: FieldTree<Flight>): void {
     this.snackBar.open('Please correct the validation errors', 'OK');
     this.focusInvalid(form);
   }
 
-  private focusInvalid(form: FieldTree<FlightDomainModel>) {
+  private focusInvalid(form: FieldTree<Flight>) {
     const errors = form().errorSummary();
     if (errors.length > 0) {
       errors[0].fieldTree().focusBoundControl();
@@ -144,7 +144,7 @@ export class FlightEdit {
   }
 }
 
-function normalizeFlight(flight: FlightDomainModel): FlightDomainModel {
+function normalizeFlight(flight: Flight): Flight {
   const localDate = flight.date.substring(0, 16);
 
   return {
