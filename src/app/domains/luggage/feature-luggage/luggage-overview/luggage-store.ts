@@ -58,10 +58,11 @@ export const LuggageStore = signalStore(
     _events: inject(Events),
   })),
 
+  // Reducers specify how the state should be updated in reaction to specific events.
   withReducer(
     on(luggageEvents.loadLuggageTriggered, () => ({
-      isLoading: true,
       error: null,
+      isLoading: true,
     })),
     on(luggageEvents.loadLuggageSucceeded, ({ payload }) => ({
       luggage: payload.luggage,
@@ -71,6 +72,15 @@ export const LuggageStore = signalStore(
       error: payload.error,
       isLoading: false,
     })),
+    // Example to associate an array of events with the same reducer function
+    // on(
+    //   [luggageEvents.loadLuggageTriggered, luggageEvents.loadPassengerWithLuggageTriggered],
+    //   () => ({
+    //     isLoading: true,
+    //     error: null,
+    //   }),
+    // ),
+
   ),
 
   withEventHandlers((store) => ({
@@ -78,10 +88,8 @@ export const LuggageStore = signalStore(
       switchMap(() =>
         store._luggageClient.find().pipe(
           mapResponse({
-            next: (luggage: Luggage[]) =>
-              luggageEvents.loadLuggageSucceeded({ luggage }),
-            error: (error: unknown) =>
-              luggageEvents.loadLuggageFailed({ error: String(error) }),
+            next: (luggage: Luggage[]) => luggageEvents.loadLuggageSucceeded({ luggage }),
+            error: (error: unknown) => luggageEvents.loadLuggageFailed({ error: String(error) }),
           }),
         ),
       ),
