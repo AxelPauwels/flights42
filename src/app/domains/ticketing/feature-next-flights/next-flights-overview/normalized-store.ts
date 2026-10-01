@@ -7,93 +7,107 @@ import {
   withComputed,
   withHooks,
 } from '@ngrx/signals';
-import { setEntities, withEntities } from '@ngrx/signals/entities';
+import { entityConfig, setEntities, withEntities } from '@ngrx/signals/entities';
 
 import { initialAircraft } from '../../data/aircraft';
 import { Flight } from '../../data/flight-model';
 import { Passenger } from '../../data/passenger';
 import { Price } from '../../data/price';
 
-export type FlightState = Flight & {
+type FlightState = Flight & {
   passengerIds: number[];
 };
 
-export type PassengerState = Passenger & {
+type PassengerState = Passenger & {
   flightIds: number[];
 };
 
-export type FlightsWithPassengers = Flight & {
+const flightEntityConfig =  entityConfig({
+  entity: type<FlightState>(),
+  collection: 'flight'
+});
+
+const passengerEntityConfig = entityConfig({
+  entity: type<PassengerState>(),
+  collection: 'passenger'
+});
+
+type FlightsWithPassengers = Flight & {
   passengers: Passenger[];
 };
 
-export type PassengersWithFlights = Passenger & {
+type PassengersWithFlights = Passenger & {
   flights: Flight[];
 };
 
 export const NormalizedStore = signalStore(
   { providedIn: 'root' },
 
-  withEntities({ entity: type<FlightState>(), collection: 'flight' }),
-  withEntities({ entity: type<PassengerState>(), collection: 'passenger' }),
+  // withEntities({ entity: type<FlightState>(), collection: 'flight' }),
+  // withEntities({ entity: type<PassengerState>(), collection: 'passenger' }),
+  withEntities(flightEntityConfig),
+  withEntities(passengerEntityConfig),
+
   withComputed((store) => ({
     flightsWithPassengers: computed<FlightsWithPassengers[]>(() =>
-      store.flightEntities().map((f) => ({
-        ...f,
-        passengers: f.passengerIds.map((p) => store.passengerEntityMap()[p]),
+      store.flightEntities().map((flight) => ({
+        ...flight,
+        passengers: flight.passengerIds.map((id) => store.passengerEntityMap()[id]),
       })),
     ),
     passengersWithFlights: computed<PassengersWithFlights[]>(() =>
-      store.passengerEntities().map((p) => ({
-        ...p,
-        flights: p.flightIds.map((f) => store.flightEntityMap()[f]),
+      store.passengerEntities().map((passenger) => ({
+        ...passenger,
+        flights: passenger.flightIds.map((id) => store.flightEntityMap()[id]),
       })),
     ),
   })),
   withHooks({
     onInit(state) {
       const date = new Date().toISOString();
-
-      // patchState(
-      //   state,
-      //   setEntities(
-      //     [
-      //       {
-      //         id: 10,
-      //         from: 'London',
-      //         to: 'New York',
-      //         date,
-      //         delayed: false,
-      //         delay: 0,
-      //         aircraft: initialAircraft,
-      //         prices: [] as Price[],
-      //         passengerIds: [1, 3],
-      //       },
-      //       {
-      //         id: 20,
-      //         from: 'London',
-      //         to: 'New York',
-      //         date,
-      //         delayed: false,
-      //         delay: 0,
-      //         aircraft: initialAircraft,
-      //         prices: [] as Price[],
-      //         passengerIds: [1, 2],
-      //       },
-      //       {
-      //         id: 30,
-      //         from: 'London',
-      //         to: 'New York',
-      //         date,
-      //         delayed: false,
-      //         delay: 0,
-      //         aircraft: initialAircraft,
-      //         prices: [] as Price[],
-      //         passengerIds: [2, 3],
-      //       },
-      //     ],
-      //     { collection: 'flight' },
-      //   ),
-      // );
+      const flights: FlightState[] = [
+          {
+            id: 10,
+            from: 'London',
+            to: 'New York',
+            date,
+            delayed: false,
+            delay: 0,
+            aircraft: initialAircraft,
+            prices: [],
+            passengerIds: [1, 3],
+          },
+          {
+            id: 20,
+            from: 'London',
+            to: 'New York',
+            date,
+            delayed: false,
+            delay: 0,
+            aircraft: initialAircraft,
+            prices: [],
+            passengerIds: [1, 2],
+          },
+          {
+            id: 30,
+            from: 'London',
+            to: 'New York',
+            date,
+            delayed: false,
+            delay: 0,
+            aircraft: initialAircraft,
+            prices: [],
+            passengerIds: [2, 3],
+          },
+      ];
+      patchState(
+        state,
+        setEntities(
+          flights,
+          // { collection: 'flight'}
+          flightEntityConfig, // for 'collection'
+        ),
+      );
 
       patchState(
         state,
@@ -124,7 +138,8 @@ export const NormalizedStore = signalStore(
               flightIds: [10, 30],
             },
           ],
-          { collection: 'passenger' },
+          // { collection: 'passenger'}
+          passengerEntityConfig, // for 'collection'
         ),
       );
     },
