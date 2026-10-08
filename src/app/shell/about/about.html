@@ -1,6 +1,6 @@
 <h1>About</h1>
 
-<app-tabbed-pane>
+<app-tabbed-pane #paneTemplateVariable>
 	<app-tab title="Upcoming Flights">
 		<p>No upcoming flights!</p>
 	</app-tab>
@@ -11,3 +11,5 @@
 		<p>No cancelled flights!</p>
 	</app-tab>
 </app-tabbed-pane>
+
+<button (click)="paneTemplateVariable.activate(1)">Activate 2nd tab</button>
