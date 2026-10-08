@@ -14,7 +14,7 @@ export function createChartResource(
   const config = inject(ConfigService);
 
   return structuredCompletionResource({
-    model: config.model,
+    // model: config.model,
     input,
     system: `
       You are Report42, an UI assistent that help passengers with creating and displaying

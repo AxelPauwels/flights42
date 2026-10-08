@@ -6,6 +6,9 @@ import { firstValueFrom } from 'rxjs';
 import { FlightClient } from '../../data/flight-client';
 import { FlightSchema } from '../../data/flight-info';
 import { DataItem } from '../chart/data-item';
+import { Flight } from '@flights/ticketing/data/flight-model';
+
+interface Input { from: string; to: string };
 
 export function createChartingRuntime(data: WritableSignal<DataItem[]>) {
   return createRuntime({
@@ -14,7 +17,7 @@ export function createChartingRuntime(data: WritableSignal<DataItem[]>) {
         name: 'loadFlights',
         description: `
         Searches for flights and returns them.
-  
+
         ## Rules
         - For the search parameters, airport codes are NOT used but the city name. First letter in upper case.
         `,
@@ -22,11 +25,11 @@ export function createChartingRuntime(data: WritableSignal<DataItem[]>) {
           from: s.string('airport of departure'),
           to: s.string('airport of destination'),
         }),
-        result: s.array(`loaded flights`, FlightSchema),
+        // result: s.array(`loaded flights`, FlightSchema),
         handler: async (input) => {
           const flightClient = inject(FlightClient);
-          const result = flightClient.find(input.from, input.to);
-          return await firstValueFrom(result);
+          const result = flightClient.find(input?.from || '', input?.to || '');
+          return Promise.resolve();
         },
       }),
       createRuntimeFunction({
