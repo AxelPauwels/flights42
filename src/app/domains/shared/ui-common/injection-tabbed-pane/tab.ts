@@ -35,13 +35,14 @@ import { TabbedPane } from './tabbed-pane';
   `,
 })
 export class Tab {
-  // private pane = inject(TabbedPane, { optional: true });
-  private pane = inject(TabbedPane);
+  // To ensure that the Tab also works without a parent TabbedPane, inject with optional: true
+  // If Angular cannot find an implementation for the token, it returns undefined.
+  private pane = inject(TabbedPane, { optional: true });
   readonly title = input.required<string>();
 
-  protected readonly visible = computed(() => this.pane.currentTab() === this);
+  protected readonly visible = computed(() => this.pane?.currentTab() === this);
 
   constructor() {
-    this.pane.registerTab(this);
+    this.pane?.registerTab(this);
   }
 }
