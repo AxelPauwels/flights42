@@ -7,6 +7,7 @@ import { DefaultLanguageService, LanguageService } from '../shared/util-common/l
 import {
   NextFlightsOverview
 } from '@flights/ticketing/feature-next-flights/next-flights-overview/next-flights-overview';
+import { ReportingPage } from '@flights/ticketing/feature-reporting/reporting-page/reporting-page';
 export const ticketingRoutes: Routes = [
   {
     path: '',
@@ -42,6 +43,10 @@ export const ticketingRoutes: Routes = [
       {
         path: 'next-flights',
         component: NextFlightsOverview,
+      },
+      {
+        path: 'reporting',
+        component: ReportingPage,
       },
       {
         path: '**',
