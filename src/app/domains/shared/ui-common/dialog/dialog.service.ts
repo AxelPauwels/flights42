@@ -12,7 +12,7 @@ export class DialogService {
   readonly dialogEvents$ = this.dialogEvents.asObservable();
 
   show(comp: Type<unknown>, data: unknown): void {
-    // this.dialogOutletService.ensureOutlet();
+    this.dialogOutletService.ensureOutlet();
     this.dialogEvents.next({
       component: comp,
       data,
