@@ -25,3 +25,12 @@
 <!--template (e.g., to skip confirmation when another button is clicked):-->
 <button (appClickWithWarning)="deleteAll()" #cww="clickWithWarning">Delete All (with template variable)</button>
 <button (click)="cww.handleClick(true)">Don't ask questions! (trigger button with template variable)</button>
+
+
+<div>
+	<button
+		appSimpleTooltip="Click here to book the flight"
+		class="btn btn-default">
+		Book Flight
+	</button>
+</div>
