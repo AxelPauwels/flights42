@@ -53,3 +53,16 @@
 		<p>{{ body }}</p>
 	</div>
 </ng-template>
+
+<app-data-table [data]="flights()">
+	<div *appTableField="let data; provide: 'id'; title: 'Flight Id'">
+		{{ data }}
+	</div>
+	<div *appTableField="let data; provide: 'from'; title: 'From'">
+		{{ data }}
+	</div>
+	<div *appTableField="let data; provide: 'to'; title: 'To'">{{ data }}</div>
+	<div *appTableField="let data; provide: 'date'; title: 'Departure Date'">
+		{{ data | date: 'dd.MM.yyyy HH:mm' }}
+	</div>
+</app-data-table>
