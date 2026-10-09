@@ -12,6 +12,7 @@
 	</app-tab>
 </app-tabbed-pane>
 
+<h2>[Directive Buttons]</h2>
 <button (click)="paneTemplateVariable.activate(1)">Activate 2nd tab</button>
 
 <!--<button appClickWithWarning>Delete All!</button>-->
@@ -39,7 +40,7 @@
 	<input
 		[appTooltip]="tmpl"
 		tooltipTitle="tooltip title"
-		placeholder="Passenger Name" style="max-width: 200px;display: block;" />
+		placeholder="Passenger Name" style="max-width: 200px;display: block; margin-top:10px;" />
 </div>
 <!--let-title defines a variable title that gets the value of the $implicit parameter.-->
 <!--Consequently, let-body defines a variable body that gets the value of the text-->
@@ -54,6 +55,7 @@
 	</div>
 </ng-template>
 
+<h2>[Structural Directives]</h2>
 <app-data-table [data]="flights()">
 	<div *appTableField="let data; provide: 'id'; title: 'Flight Id'">
 		{{ data }}
@@ -66,3 +68,36 @@
 		{{ data | date: 'dd.MM.yyyy HH:mm' }}
 	</div>
 </app-data-table>
+<!-- Example without structural directive (*) -->
+<!--
+<app-data-table [data]="flights()">
+  <ng-template appTableField appTableFieldProvide="id" appTableFieldTitle="Flight Id" let-data>
+    <div>{{ data }}</div>
+  </ng-template>
+  <ng-template appTableField appTableFieldProvide="from" appTableFieldTitle="From" let-data>
+    <div>{{ data }}</div>
+  </ng-template>
+  <ng-template appTableField appTableFieldProvide="to" appTableFieldTitle="To" let-data>
+    <div>{{ data }}</div>
+  </ng-template>
+  <ng-template appTableField appTableFieldProvide="date" appTableFieldTitle="Departure Date" let-data>
+    <div>{{ data | date: 'dd.MM.yyyy HH:mm' }}</div>
+  </ng-template>
+</app-data-table>
+-->
+
+<br/>
+<br/>
+
+<app-advanced-data-table [data]="flights()">
+	<div *appTableField="let data; provide: 'id'; title: 'Flight Id'">
+		{{ data }}
+	</div>
+	<div *appTableField="let data; provide: 'from'; title: 'From'">
+		{{ data }}
+	</div>
+	<div *appTableField="let data; provide: 'to'; title: 'To'">{{ data }}</div>
+	<div *appTableField="let data; provide: 'date'; title: 'Departure Date'">
+		{{ data | date: 'dd.MM.yyyy HH:mm' }}
+	</div>
+</app-advanced-data-table>
