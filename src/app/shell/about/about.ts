@@ -3,10 +3,11 @@ import { TabbedPane } from '@flights/shared/ui-common/query-tabbed-pane/tabbed-p
 import { Tab } from '@flights/shared/ui-common/query-tabbed-pane/tab';
 import { ClickWithWarning } from '@flights/shared/ui-common/click-with-warning.directive';
 import { SimpleTooltip } from '@flights/shared/ui-common/simple-tooltip';
+import { Tooltip } from '@flights/shared/ui-common/tooltip';
 
 @Component({
   selector: 'app-about',
-  imports: [TabbedPane, Tab, ClickWithWarning, SimpleTooltip],
+  imports: [TabbedPane, Tab, ClickWithWarning, SimpleTooltip, Tooltip],
   templateUrl: './about.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

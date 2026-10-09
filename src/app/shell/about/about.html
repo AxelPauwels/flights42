@@ -34,3 +34,13 @@
 		Book Flight
 	</button>
 </div>
+
+<div>
+	<input [appTooltip]="tmpl" placeholder="Passenger Name" style="max-width: 200px;display: block;" />
+</div>
+<ng-template #tmpl>
+	<div class="tooltip">
+		<h4>Important Input</h4>
+		<p>Enter values with care!</p>
+	</div>
+</ng-template>
