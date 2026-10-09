@@ -14,4 +14,14 @@
 
 <button (click)="paneTemplateVariable.activate(1)">Activate 2nd tab</button>
 
-<button appClickWithWarning>Delete All!</button>
+<!--<button appClickWithWarning>Delete All!</button>-->
+
+<!--since appClickWithWarning is both selector AND output Angular can instantiate the directive-->
+<button (appClickWithWarning)="deleteAll()">Delete All (by output)</button>
+<!--would the selector be 'appClickWithWarning' and the output be 'appClickWithWarningEmitter', then we need: -->
+<!--<button appClickWithWarning (appClickWithWarningEmitter)="deleteAll()">Delete All2!</button>-->
+
+<!--Alternatively, you can expose the directive via exportAs and call methods from the-->
+<!--template (e.g., to skip confirmation when another button is clicked):-->
+<button (appClickWithWarning)="deleteAll()" #cww="clickWithWarning">Delete All (with template variable)</button>
+<button (click)="cww.handleClick(true)">Don't ask questions! (trigger button with template variable)</button>

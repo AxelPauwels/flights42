@@ -9,6 +9,10 @@ import { ClickWithWarning } from '@flights/shared/ui-common/click-with-warning.d
   templateUrl: './about.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class About {}
+export class About {
+  deleteAll(): void {
+    console.log('Delete all clicked');
+  };
+}
 
 export default About;
