@@ -11,7 +11,7 @@ import {
 } from '@angular/core';
 
 // if you assign the name $implicit, the property will hold a “default” value
-// that can be used without knowing the actual property name.
+// that can be used without knowing the actual property name. (let-title instead of let-title="$implicit")
 interface TooltipContext {
   $implicit: string;
   text: string;
@@ -32,6 +32,8 @@ export class Tooltip {
   private host = inject(ElementRef<HTMLElement>);
   private readonly destroyRef = inject(DestroyRef);
 
+  readonly tooltipTitle = input<string>('Tooltip!');
+  readonly tooltipText = input<string>('Important Information!');
   readonly template = input<TemplateRef<TooltipContext> | undefined>(undefined, {
     alias: 'appTooltip',
   });
@@ -65,11 +67,9 @@ export class Tooltip {
     // Using its createEmbeddedView method, we add the template to the container.
     // This can be seen as code-based content projection.
     // You can call createEmbeddedView multiple times to get several instances of the template.
-    this.viewRef = this.viewContainer.createEmbeddedView(
-      template,
-      {
-      $implicit: 'Tooltip!',
-      text: 'Important Information!',
+    this.viewRef = this.viewContainer.createEmbeddedView(template, {
+      $implicit: this.tooltipTitle(),
+      text: this.tooltipText(),
     });
 
     this.viewRef?.rootNodes.forEach((nativeElement) => {

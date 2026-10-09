@@ -36,11 +36,20 @@
 </div>
 
 <div>
-	<input [appTooltip]="tmpl" placeholder="Passenger Name" style="max-width: 200px;display: block;" />
+	<input
+		[appTooltip]="tmpl"
+		tooltipTitle="tooltip title"
+		placeholder="Passenger Name" style="max-width: 200px;display: block;" />
 </div>
-<ng-template #tmpl>
+<!--let-title defines a variable title that gets the value of the $implicit parameter.-->
+<!--Consequently, let-body defines a variable body that gets the value of the text-->
+<!--parameter. You can read this as a function that receives some values passed.-->
+<!--As the $implicit parameter acts as the “default” value, we can omit the parameter-->
+<!--name: Instead of let-title="$implicit" we can just type let-title-->
+<ng-template #tmpl let-title="$implicit" let-body="text">
+<!--<ng-template #tmpl let-title let-body="text">-->
 	<div class="tooltip">
-		<h4>Important Input</h4>
-		<p>Enter values with care!</p>
+		<h4>{{ title }}</h4>
+		<p>{{ body }}</p>
 	</div>
 </ng-template>
