@@ -11,6 +11,8 @@ import { ReportingPage } from '@flights/ticketing/feature-reporting/reporting-pa
 import { provideEnvironmentInitializer } from '@angular/core';
 import { authGuard } from '@flights/shared/util-auth/auth.guard';
 import { exitGuard } from '@flights/shared/util-common/exit.guard';
+import { PassengerEdit } from '@flights/ticketing/feature-booking/passenger-edit/passenger-edit';
+import { passengerResolver } from '@flights/ticketing/feature-booking/passenger-edit/passenger-resolver';
 export const ticketingRoutes: Routes = [
   {
     path: '',
@@ -47,6 +49,13 @@ export const ticketingRoutes: Routes = [
       {
         path: 'passenger-search',
         component: PassengerSearch,
+      },
+      {
+        path: 'passenger-edit/:id',
+        component: PassengerEdit,
+        resolve: {
+          passenger: passengerResolver,
+        },
       },
       {
         path: 'next-flights',
