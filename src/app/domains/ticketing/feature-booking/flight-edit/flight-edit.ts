@@ -19,6 +19,7 @@ import { AircraftForm } from './aircraft-form/aircraft-form';
 import { PricesForm } from './prices-form/prices-form';
 import { toFlightFormModel } from '../../data/flight-mapper';
 import { FlightDetailStore } from '@flights/ticketing/feature-booking/flight-edit/flight-detail-store';
+import { FormComponent } from '@flights/shared/util-common/exit.guard';
 
 @Component({
   selector: 'app-flight-edit',
@@ -26,7 +27,7 @@ import { FlightDetailStore } from '@flights/ticketing/feature-booking/flight-edi
   templateUrl: './flight-edit.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class FlightEdit {
+export class FlightEdit implements FormComponent {
   private readonly route = inject(ActivatedRoute);
   private readonly activatedRoute = inject(ActivatedRoute);
   private readonly store = inject(FlightDetailStore);
@@ -55,6 +56,10 @@ export class FlightEdit {
     //   this.store.setFlightId(flightId);
     // });
     this.store.connectFlightId(this.id);
+  }
+
+  isDirty(): boolean {
+    return this.flightForm().dirty();
   }
 
   // Set up the Signal Form with validation rules

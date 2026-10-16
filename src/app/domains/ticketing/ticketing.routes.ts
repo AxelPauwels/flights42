@@ -10,6 +10,7 @@ import {
 import { ReportingPage } from '@flights/ticketing/feature-reporting/reporting-page/reporting-page';
 import { provideEnvironmentInitializer } from '@angular/core';
 import { authGuard } from '@flights/shared/util-auth/auth.guard';
+import { exitGuard } from '@flights/shared/util-common/exit.guard';
 export const ticketingRoutes: Routes = [
   {
     path: '',
@@ -41,6 +42,7 @@ export const ticketingRoutes: Routes = [
         path: 'flight-edit/:id',
         component: FlightEdit,
         canActivate: [authGuard],
+        canDeactivate: [exitGuard],
       },
       {
         path: 'passenger-search',
