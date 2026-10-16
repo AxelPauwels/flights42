@@ -1,4 +1,4 @@
-import { ApplicationConfig, provideBrowserGlobalErrorListeners } from '@angular/core';
+import { ApplicationConfig, inject, provideAppInitializer, provideBrowserGlobalErrorListeners } from '@angular/core';
 import {
   PreloadAllModules,
   provideRouter,
@@ -11,10 +11,12 @@ import { routes } from './app.routes';
 import { provideLanguageService } from './domains/shared/util-common/language';
 import { NG_STATUS_CLASSES } from '@angular/forms/signals/compat';
 import { provideSignalFormsConfig } from '@angular/forms/signals';
+import { ConfigService } from '@flights/shared/util-common/config-service';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
+    provideAppInitializer(() => inject(ConfigService).load()),
     provideRouter(
       routes,
       withComponentInputBinding(), // Enable automatic input binding:

@@ -1,9 +1,16 @@
-import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { inject, Service } from '@angular/core';
+import { firstValueFrom } from 'rxjs';
 
-@Injectable({
-  providedIn: 'root',
-})
+export interface Config {
+  readonly baseUrl: string;
+  readonly model: string;
+}
+
+@Service()
 export class ConfigService {
+  private readonly http = inject(HttpClient);
+
   private _baseUrl = 'https://demo.angulararchitects.io/api';
   private _model = 'gpt-5-chat-latest';
 
@@ -13,5 +20,11 @@ export class ConfigService {
 
   get model() {
     return this._model;
+  }
+
+  async load(configPath = '/config.json'): Promise<void> {
+    const config = await firstValueFrom(this.http.get<Config>(configPath));
+    this._baseUrl = config.baseUrl;
+    this._model = config.model;
   }
 }
