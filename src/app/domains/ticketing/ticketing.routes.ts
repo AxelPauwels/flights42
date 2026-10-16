@@ -9,6 +9,7 @@ import {
 } from '@flights/ticketing/feature-next-flights/next-flights-overview/next-flights-overview';
 import { ReportingPage } from '@flights/ticketing/feature-reporting/reporting-page/reporting-page';
 import { provideEnvironmentInitializer } from '@angular/core';
+import { authGuard } from '@flights/shared/util-auth/auth.guard';
 export const ticketingRoutes: Routes = [
   {
     path: '',
@@ -39,6 +40,7 @@ export const ticketingRoutes: Routes = [
       {
         path: 'flight-edit/:id',
         component: FlightEdit,
+        canActivate: [authGuard],
       },
       {
         path: 'passenger-search',
