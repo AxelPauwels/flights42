@@ -14,6 +14,7 @@ import { provideSignalFormsConfig } from '@angular/forms/signals';
 import { ConfigService } from '@flights/shared/util-common/config-service';
 import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { authInterceptor } from '@flights/shared/util-auth/auth.interceptor';
+import { provideHashbrown } from '@hashbrownai/angular';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -26,11 +27,13 @@ export const appConfig: ApplicationConfig = {
       withHashLocation(), // Activate HashLocationStrategy
       withExperimentalAutoCleanupInjectors(), // Automatically clean up route-level providers when the user navigates away from a route.
     ),
-    provideHttpClient(withInterceptors(
-      // The array’s order determines the chain’s order. You can register multiple interceptors;
-      // each receives the request (possibly modified by previous interceptors) and passes it to the next.
-      [authInterceptor]
-    )),
+    provideHttpClient(
+      withInterceptors(
+        // The array’s order determines the chain’s order. You can register multiple interceptors;
+        // each receives the request (possibly modified by previous interceptors) and passes it to the next.
+        [authInterceptor],
+      ),
+    ),
 
     // { provide: LanguageService, useClass: BrowserLanguageService }, // use own provider function below instead
     provideLanguageService('browser'), // Note: we don't need to spread this array, Angular will automatically flatten
@@ -44,6 +47,15 @@ export const appConfig: ApplicationConfig = {
     // Add classic CSS classes for new signal-based forms like ng-valid, ng-invalid, ng-dirty, ng-pristine, and ng-pending
     provideSignalFormsConfig({
       classes: NG_STATUS_CLASSES,
+    }),
+    provideHashbrown({
+      baseUrl: 'http://localhost:4444/api/chat',
+      middleware: [
+        (req) => {
+          console.log('[Hashbrown Request]', req);
+          return req;
+        },
+      ],
     }),
   ],
 };
