@@ -4,6 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --port 4444",
+    "start-de": "ng serve --port 4445 --configuration de",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
@@ -11,10 +12,11 @@
     "lint": "ng lint",
     "sheriff": "npx sheriff list src/main.ts",
     "detective": "npx detective",
-    "extract-i18n": "ng extract-i18n",
-    "extract-i18n-default-xml-inLocalization-interchange-file-format": "ng extract-i18n --format xlf",
-    "extract-i18n-xml-message-bundle": "ng extract-i18n --format xmb",
-    "extract-i18n-application-resource-bundle": "ng extract-i18n --format arb"
+    "i18n:extract": "ng extract-i18n",
+    "i18n:extract-default-xml-inLocalization-interchange-file-format": "ng extract-i18n --format xlf",
+    "i18n:extract-xml-message-bundle": "ng extract-i18n --format xmb",
+    "i18n:extract-application-resource-bundle": "ng extract-i18n --format arb",
+    "i18n:build": "ng build --localize"
   },
   "private": true,
   "packageManager": "npm@11.6.1",

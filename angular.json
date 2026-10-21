@@ -28,6 +28,12 @@
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
+      "i18n": {
+        "locales": {
+          "de": "compiler-i18n/messages.de.xlf"
+        },
+        "sourceLocale": "en-US"
+      },
       "architect": {
         "build": {
           "builder": "@angular/build:application",
@@ -69,6 +75,9 @@
                   "with": "src/environments/environment.development.ts"
                 }
               ]
+            },
+            "de": {
+              "localize": ["de"]
             }
           },
           "defaultConfiguration": "production"
@@ -81,6 +90,9 @@
             },
             "development": {
               "buildTarget": "flights42:build:development"
+            },
+            "de": {
+              "buildTarget": "flights42y:build:de"
             }
           },
           "defaultConfiguration": "development"
