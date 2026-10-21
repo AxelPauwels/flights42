@@ -4,7 +4,7 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": "./out-tsc/spec",
-    "types": ["vitest/globals", "@vitest/browser-playwright"]
+    "types": ["vitest/globals", "@vitest/browser-playwright", "@angular/localize"]
   },
   "include": ["src/**/*.d.ts", "src/**/*.spec.ts"]
 }
