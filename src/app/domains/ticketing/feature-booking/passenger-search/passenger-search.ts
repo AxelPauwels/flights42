@@ -21,6 +21,12 @@ export class PassengerSearch {
     firstName: this.firstName(),
   }));
   protected readonly filterForm = form(this.filter);
+
+  passenger = {
+    name: 'Max',
+    gender: 'male',
+  };
+
   constructor() {
     // the rxMethod tracks it, and the pipe runs whenever it changes.
     //

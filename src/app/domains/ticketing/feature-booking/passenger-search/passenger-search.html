@@ -1,1 +1,12 @@
-<p>passenger-search works!</p>
+<!-- Add -->
+<p i18n="@@passenger-bookedTicket">
+	You've booked a ticket for {{passenger.name}}
+</p>
+<p i18n="@@passenger-forward">
+	{
+    passenger.gender, select,
+		male {Forward it to him.}
+		female {Forward it to her.}
+		other {Forward it to them.}
+		}
+</p>
