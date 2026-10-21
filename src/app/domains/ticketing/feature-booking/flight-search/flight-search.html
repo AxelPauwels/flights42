@@ -4,13 +4,30 @@
 <h1 i18n="meaning|description@@flightSearch-title">Flight Search</h1>
 
 <div i18n="@@flightSearch-flightsFound">
-	{flights.length, plural, =1 {1 flight found} other {several flights found}}
+	{flights.length, plural, =1 {1 flight found} other {# flights found}}
 </div>
 
 <!--<img src="img.png" alt="Super Bild" i18n-src="@@bildname" i18n-alt="@@alt-text">-->
 
 <h2>Search Route: {{ flightRoute() }}</h2>
 
+@defer (on hover) {
+	<div>main content</div>
+} @placeholder {
+	<div>placeholder content</div>
+}
+
+<br/>
+
+@defer (on viewport) {
+	<p>recommendations</p>
+} @placeholder (minimum 300ms) {
+	<p>placeholder</p>
+} @loading (after 100ms; minimum 300ms) {
+	<p>loading-spinner</p>
+} @error {
+	<p>Could not load recommendations.</p>
+}
 
 <form>
   <div>
