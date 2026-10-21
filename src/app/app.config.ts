@@ -12,7 +12,7 @@ import { provideLanguageService } from './domains/shared/util-common/language';
 import { NG_STATUS_CLASSES } from '@angular/forms/signals/compat';
 import { provideSignalFormsConfig } from '@angular/forms/signals';
 import { ConfigService } from '@flights/shared/util-common/config-service';
-import { provideHttpClient, withInterceptors } from '@angular/common/http';
+import { provideHttpClient, withInterceptors, withXsrfConfiguration } from '@angular/common/http';
 import { authInterceptor } from '@flights/shared/util-auth/auth.interceptor';
 import { provideHashbrown } from '@hashbrownai/angular';
 
@@ -33,6 +33,10 @@ export const appConfig: ApplicationConfig = {
         // each receives the request (possibly modified by previous interceptors) and passes it to the next.
         [authInterceptor],
       ),
+      withXsrfConfiguration({
+        cookieName: 'My-Xsrf-Cookie',
+        headerName: 'My-Xsrf-Header',
+      }),
     ),
 
     // { provide: LanguageService, useClass: BrowserLanguageService }, // use own provider function below instead
