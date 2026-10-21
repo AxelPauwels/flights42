@@ -1,0 +1,7 @@
+{
+  "locale": "en-US",
+  "translations": {
+    "flightSearch-title": "Flight Search",
+    "flightSearch-info": "Hello World!"
+  }
+}
