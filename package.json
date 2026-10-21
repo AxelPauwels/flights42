@@ -10,7 +10,11 @@
     "test-coverage": "ng test --coverage",
     "lint": "ng lint",
     "sheriff": "npx sheriff list src/main.ts",
-    "detective": "npx detective"
+    "detective": "npx detective",
+    "extract-i18n": "ng extract-i18n",
+    "extract-i18n-default-xml-inLocalization-interchange-file-format": "ng extract-i18n --format xlf",
+    "extract-i18n-xml-message-bundle": "ng extract-i18n --format xmb",
+    "extract-i18n-application-resource-bundle": "ng extract-i18n --format arb"
   },
   "private": true,
   "packageManager": "npm@11.6.1",

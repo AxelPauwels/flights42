@@ -78,7 +78,6 @@ export class FlightSearch {
     });
     required(path.from);
     minLength(path.from, 3);
-
   });
   // Only tracks 'from', not 'to'
   protected readonly flightRoute = computed(() => {
@@ -169,9 +168,14 @@ export class FlightSearch {
   protected readonly maxDelay = signal(0);
   protected readonly selectedFlight = signal<Flight | null>(null);
 
+  // ($localize does NOT need to be imported since it's globally provided)
+  // the metadata must be placed between two colons, followed by the default value.
+  info = $localize`:meaning|description@@flightSearch-info:Hello World!`;
+
   constructor() {
-    this.showError();
     console.log('languageService', this.languageService.getUserLang());
+    console.log('info', this.info);
+    this.showError();
   }
 
   protected search(): void {
