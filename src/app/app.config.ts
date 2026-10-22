@@ -1,10 +1,16 @@
-import { ApplicationConfig, inject, provideAppInitializer, provideBrowserGlobalErrorListeners } from '@angular/core';
+import {
+  ApplicationConfig,
+  inject,
+  provideAppInitializer,
+  provideBrowserGlobalErrorListeners,
+} from '@angular/core';
 import {
   PreloadAllModules,
   provideRouter,
-  withComponentInputBinding, withExperimentalAutoCleanupInjectors,
+  withComponentInputBinding,
+  withExperimentalAutoCleanupInjectors,
   withHashLocation,
-  withPreloading
+  withPreloading,
 } from '@angular/router';
 
 import { routes } from './app.routes';
@@ -15,6 +21,7 @@ import { ConfigService } from '@flights/shared/util-common/config-service';
 import { provideHttpClient, withInterceptors, withXsrfConfiguration } from '@angular/common/http';
 import { authInterceptor } from '@flights/shared/util-auth/auth.interceptor';
 import { provideHashbrown } from '@hashbrownai/angular';
+import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -38,6 +45,7 @@ export const appConfig: ApplicationConfig = {
         headerName: 'My-Xsrf-Header',
       }),
     ),
+    provideClientHydration(withEventReplay()),
 
     // { provide: LanguageService, useClass: BrowserLanguageService }, // use own provider function below instead
     provideLanguageService('browser'), // Note: we don't need to spread this array, Angular will automatically flatten
