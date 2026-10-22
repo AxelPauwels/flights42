@@ -47,7 +47,7 @@ export const appConfig: ApplicationConfig = {
     ),
     provideClientHydration(withEventReplay()),
 
-    // { provide: LanguageService, useClass: BrowserLanguageService }, // use own provider function below instead
+    // { provide: LanguageService, useClass: ClientLanguageService }, // use own provider function below instead
     provideLanguageService('browser'), // Note: we don't need to spread this array, Angular will automatically flatten
     // nested arrays during configuration processing.
 

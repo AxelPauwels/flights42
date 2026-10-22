@@ -1,10 +1,10 @@
-import { Provider, Service } from '@angular/core';
+import { inject, Provider, REQUEST, Service } from '@angular/core';
 
 export type LanguageConfig = 'default' | 'browser';
 
 export function provideLanguageService(config: LanguageConfig = 'default'): Provider[] {
   if (config === 'browser') {
-    return [{ provide: LanguageService, useClass: BrowserLanguageService }];
+    return [{ provide: LanguageService, useClass: ClientLanguageService }];
   } else {
     return [{ provide: LanguageService, useClass: DefaultLanguageService }];
   }
@@ -27,8 +27,16 @@ export class DefaultLanguageService implements LanguageService {
 }
 
 @Service({ autoProvided: false })
-export class BrowserLanguageService implements LanguageService {
+export class ClientLanguageService implements LanguageService {
   getUserLang(): string {
     return navigator.language + ' (browser)';
+  }
+}
+
+@Service({ autoProvided: false })
+export class ServerLanguageService implements LanguageService {
+  private request = inject(REQUEST);
+  getUserLang(): string {
+    return this.request?.headers.get('accept-language') ?? 'en';
   }
 }
