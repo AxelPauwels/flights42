@@ -1,4 +1,4 @@
-import { Component, signal, ChangeDetectionStrategy, inject } from '@angular/core';
+import { Component, signal, ChangeDetectionStrategy, inject, PLATFORM_ID } from '@angular/core';
 import {
   NavigationCancel,
   NavigationEnd,
@@ -10,6 +10,7 @@ import {
 
 import { Navbar } from './shell/navbar/navbar';
 import { Sidebar } from './shell/sidebar/sidebar';
+import { isPlatformBrowser, isPlatformServer } from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -21,8 +22,18 @@ export class App {
   private readonly router = inject(Router);
   protected readonly isLoading = signal(false);
   protected readonly title = signal('Flights');
+  private readonly platformId = inject(PLATFORM_ID);
+
 
   constructor() {
+    if (isPlatformBrowser(this.platformId)) {
+      console.log('Running in the browser');
+    }
+
+    if (isPlatformServer(this.platformId)) {
+      console.log('Running in the server');
+    }
+
     this.router.events.subscribe((events) => {
       if (events instanceof NavigationStart) {
         this.isLoading.set(true);
