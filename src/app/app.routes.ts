@@ -1,5 +1,8 @@
+import { isPlatformBrowser } from '@angular/common';
+import { inject, PLATFORM_ID } from '@angular/core';
 import { Routes } from '@angular/router';
 import { Home } from './shell/home/home';
+import { loadRemoteModule } from '@angular-architects/native-federation';
 export const routes: Routes = [
   {
     path: '',
@@ -17,6 +20,14 @@ export const routes: Routes = [
   {
     path: 'about',
     loadComponent: () => import('./shell/about/about'),
+  },
+  {
+    path: 'miles',
+    // loadComponent: () => loadRemoteModule('miles', './Component'),
+    loadChildren: () =>
+      isPlatformBrowser(inject(PLATFORM_ID))
+        ? loadRemoteModule('miles', './Routes')
+        : Promise.resolve([]),
   },
   {
     path: '**',

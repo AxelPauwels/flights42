@@ -8,3 +8,4 @@ export const routes: Routes = [
   { path: 'home', component: MilesOverview },
   { path: 'next-level', component: NextLevelPage },
 ];
+export default routes;

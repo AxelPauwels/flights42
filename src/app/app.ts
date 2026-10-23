@@ -27,11 +27,11 @@ export class App {
 
   constructor() {
     if (isPlatformBrowser(this.platformId)) {
-      console.log('Running in the browser');
+      // console.log('Running in the browser');
     }
 
     if (isPlatformServer(this.platformId)) {
-      console.log('Running in the server');
+      // console.log('Running in the server');
     }
 
     this.router.events.subscribe((events) => {

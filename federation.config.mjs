@@ -23,7 +23,11 @@ export default withNativeFederation({
 
   //sharedMappings: mappingsFromWorkspace({ singleton: true }).filter(['@my-org/*']).get(),
 
-  skip: ['rxjs/ajax', 'rxjs/fetch', 'rxjs/testing', 'rxjs/webSocket'],
+  skip: [
+    'rxjs/ajax', 'rxjs/fetch', 'rxjs/testing', 'rxjs/webSocket',
+    '@hashbrownai/angular', '@hashbrownai/core',
+    '@ag-ui/core'
+  ],
 
   // Please read our docs about configuring native federation:
   // https://native-federation.com/docs/v4/angular-adapter/configuration/

@@ -8,6 +8,7 @@ export default withNativeFederation({
 
   exposes: {
     './Component': './projects/miles/src/app/app.ts',
+    './Routes': './projects/miles/src/app/app.routes.ts',
   },
 
   //shareScope: autoShareScope({level: 'minor'}),

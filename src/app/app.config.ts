@@ -30,7 +30,7 @@ export const appConfig: ApplicationConfig = {
     provideRouter(
       routes,
       withComponentInputBinding(), // Enable automatic input binding:
-      withPreloading(PreloadAllModules), // Preload all lazy-loaded modules after initial load
+      // withPreloading(PreloadAllModules), // Preload all lazy-loaded modules after initial load
       // withHashLocation(), // Activate HashLocationStrategy
       withExperimentalAutoCleanupInjectors(), // Automatically clean up route-level providers when the user navigates away from a route.
     ),
