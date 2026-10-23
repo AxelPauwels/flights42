@@ -7,7 +7,7 @@ export const serverRoutes: ServerRoute[] = [
   },
   {
     path: 'ticketing/booking/flight-edit/:id',
-    renderMode: RenderMode.Prerender,
+    renderMode: RenderMode.Server,
     // The fallback option applies when a requested parameter value was not prerendered,
     // e.g., a link to flight-edit/17 when only 1, 2, and 3 were prerendered.
     fallback: PrerenderFallback.Server,
@@ -17,10 +17,10 @@ export const serverRoutes: ServerRoute[] = [
   },
   {
     path: 'about',
-    renderMode: RenderMode.Prerender,
+    renderMode: RenderMode.Server,
   },
   {
     path: '**',
-    renderMode: RenderMode.Prerender,
+    renderMode: RenderMode.Server,
   },
 ];

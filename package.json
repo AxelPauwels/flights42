@@ -17,7 +17,7 @@
     "i18n:extract-xml-message-bundle": "ng extract-i18n --format xmb",
     "i18n:extract-application-resource-bundle": "ng extract-i18n --format arb",
     "i18n:build": "ng build --localize",
-    "serve:ssr:flights42": "node dist/flights42/server/server.mjs"
+    "serve:ssr:flights42": "node --import @angular-architects/native-federation/node-preload dist/flights42/server/server.mjs"
   },
   "private": true,
   "packageManager": "npm@11.6.1",
@@ -46,7 +46,8 @@
     "ngx-markdown": "^22.1.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
-    "es-module-shims": "^2.8.0"
+    "es-module-shims": "^2.8.0",
+    "cors": "^2.8.5"
   },
   "devDependencies": {
     "@angular/build": "^22.2.3",

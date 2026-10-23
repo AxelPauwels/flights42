@@ -36,6 +36,55 @@
       },
       "architect": {
         "build": {
+          "builder": "@angular-architects/native-federation:build",
+          "options": {
+            "cacheExternalArtifacts": true,
+            "tsConfig": "tsconfig.federation.json",
+            "ssr": true
+          },
+          "configurations": {
+            "production": {
+              "target": "flights42:esbuild:production"
+            },
+            "development": {
+              "target": "flights42:esbuild:development",
+              "dev": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-architects/native-federation:build",
+          "options": {
+            "target": "flights42:serve-original:development",
+            "tsConfig": "tsconfig.federation.json",
+            "rebuildDelay": 500,
+            "cacheExternalArtifacts": true,
+            "dev": true,
+            "devServer": true,
+            "port": 0
+          }
+        },
+        "test": {
+          "builder": "@angular/build:unit-test",
+          "options": {
+            "browsers": ["Chromium"]
+          },
+          "configurations": {
+            "ci": {
+              "watch": false,
+              "browsers": ["ChromiumHeadless"],
+              "setupFiles": ["src/vitest-setup.ts"]
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": ["src/**/*.ts", "src/**/*.html"]
+          }
+        },
+        "esbuild": {
           "builder": "@angular/build:application",
           "options": {
             "browser": "src/main.ts",
@@ -47,11 +96,11 @@
               }
             ],
             "styles": ["src/material-theme.scss", "src/styles.css"],
-            "polyfills": ["@angular/localize/init"],
+            "polyfills": ["@angular/localize/init", "es-module-shims"],
             "server": "src/main.server.ts",
             "outputMode": "server",
             "security": {
-              "allowedHosts": []
+              "allowedHosts": ["localhost"]
             },
             "ssr": {
               "entry": "src/server.ts"
@@ -90,38 +139,22 @@
           },
           "defaultConfiguration": "production"
         },
-        "serve": {
+        "serve-original": {
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "flights42:build:production"
+              "buildTarget": "flights42:esbuild:production"
             },
             "development": {
-              "buildTarget": "flights42:build:development"
+              "buildTarget": "flights42:esbuild:development"
             },
             "de": {
               "buildTarget": "flights42y:build:de"
             }
           },
-          "defaultConfiguration": "development"
-        },
-        "test": {
-          "builder": "@angular/build:unit-test",
+          "defaultConfiguration": "development",
           "options": {
-            "browsers": ["Chromium"]
-          },
-          "configurations": {
-            "ci": {
-              "watch": false,
-              "browsers": ["ChromiumHeadless"],
-              "setupFiles": ["src/vitest-setup.ts"]
-            }
-          }
-        },
-        "lint": {
-          "builder": "@angular-eslint/builder:lint",
-          "options": {
-            "lintFilePatterns": ["src/**/*.ts", "src/**/*.html"]
+            "port": 4200
           }
         }
       }
