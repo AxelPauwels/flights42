@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, input, model, output } from '@angular/core';
 import { DatePipe } from '@angular/common';
-import { Flight } from '@flights/ticketing/data/flight-model';
+import { Flight } from '../../data/flight-model';
 
 @Component({
   selector: 'app-flight-card',

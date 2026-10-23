@@ -1,16 +1,16 @@
 import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
-import { TabbedPane } from '@flights/shared/ui-common/query-tabbed-pane/tabbed-pane';
-import { Tab } from '@flights/shared/ui-common/query-tabbed-pane/tab';
-import { ClickWithWarning } from '@flights/shared/ui-common/click-with-warning.directive';
-import { SimpleTooltip } from '@flights/shared/ui-common/simple-tooltip';
-import { Tooltip } from '@flights/shared/ui-common/tooltip';
-import { DataTable } from '@flights/shared/ui-common/data-table/data-table';
-import { TableField } from '@flights/shared/ui-common/data-table/table-field';
+import { Tab } from '../../domains/shared/ui-common/query-tabbed-pane/tab';
+import { ClickWithWarning } from '../../domains/shared/ui-common/click-with-warning.directive';
+import { SimpleTooltip } from '../../domains/shared/ui-common/simple-tooltip';
+import { Tooltip } from '../../domains/shared/ui-common/tooltip';
+import { DataTable } from '../../domains/shared/ui-common/data-table/data-table';
+import { TableField } from '../../domains/shared/ui-common/data-table/table-field';
 import { DatePipe } from '@angular/common';
-import { Flight } from '@flights/ticketing/data/flight-model';
-import { AdvancedDataTable } from '@flights/shared/ui-common/advanced-data-table/advanced-data-table';
 import { DemoDialog } from './demo-dialog';
-import { DialogService } from '@flights/shared/ui-common/dialog/dialog.service';
+import { Flight } from '../../domains/ticketing/data/flight-model';
+import { TabbedPane } from '../../domains/shared/ui-common/query-tabbed-pane/tabbed-pane';
+import { AdvancedDataTable } from '../../domains/shared/ui-common/advanced-data-table/advanced-data-table';
+import { DialogService } from '../../domains/shared/ui-common/dialog/dialog.service';
 
 const initialFlights: Flight[] = [
   {

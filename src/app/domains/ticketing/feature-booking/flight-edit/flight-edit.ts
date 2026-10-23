@@ -18,8 +18,8 @@ import { FlightForm } from './flight-form/flight-form';
 import { AircraftForm } from './aircraft-form/aircraft-form';
 import { PricesForm } from './prices-form/prices-form';
 import { toFlightFormModel } from '../../data/flight-mapper';
-import { FlightDetailStore } from '@flights/ticketing/feature-booking/flight-edit/flight-detail-store';
-import { FormComponent } from '@flights/shared/util-common/exit.guard';
+import { FlightDetailStore } from './flight-detail-store';
+import { FormComponent } from '../../../shared/util-common/exit.guard';
 
 @Component({
   selector: 'app-flight-edit',

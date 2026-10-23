@@ -15,7 +15,6 @@
     "target": "ES2022",
     "module": "preserve",
     "paths": {
-      "@flights/*": ["./src/app/domains/*"],
       "@flights42/ui-common": ["./projects/ui-common/src/public-api.ts"]
     }
   },

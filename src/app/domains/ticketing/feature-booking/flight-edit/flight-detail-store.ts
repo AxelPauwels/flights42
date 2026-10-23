@@ -15,7 +15,7 @@ import {
 } from '@ngrx/signals';
 
 import { FlightClient } from '../../data/flight-client';
-import { Flight } from '@flights/ticketing/data/flight-model';
+import { Flight } from '../../data/flight-model';
 
 type FlightDetailId = number;
 

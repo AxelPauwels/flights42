@@ -3,7 +3,7 @@ import { ChangeDetectionStrategy, Component, inject, Signal } from '@angular/cor
 
 import { NextFlightsState, NextFlightsStore } from './next-flights-store';
 import { NormalizedStore } from './normalized-store';
-import { Flight } from '@flights/ticketing/data/flight-model';
+import { Flight } from '../../data/flight-model';
 
 @Component({
   selector: 'app-next-flights',

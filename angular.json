@@ -96,6 +96,9 @@
               }
             ],
             "styles": ["src/material-theme.scss", "src/styles.css"],
+            "stylePreprocessorOptions": {
+              "includePaths": ["node_modules"]
+            },
             "polyfills": ["@angular/localize/init", "es-module-shims"],
             "server": "src/main.server.ts",
             "outputMode": "server",

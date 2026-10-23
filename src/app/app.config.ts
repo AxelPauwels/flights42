@@ -17,11 +17,11 @@ import { routes } from './app.routes';
 import { provideLanguageService } from './domains/shared/util-common/language';
 import { NG_STATUS_CLASSES } from '@angular/forms/signals/compat';
 import { provideSignalFormsConfig } from '@angular/forms/signals';
-import { ConfigService } from '@flights/shared/util-common/config-service';
 import { provideHttpClient, withInterceptors, withXsrfConfiguration } from '@angular/common/http';
-import { authInterceptor } from '@flights/shared/util-auth/auth.interceptor';
 import { provideHashbrown } from '@hashbrownai/angular';
 import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
+import { ConfigService } from './domains/shared/util-common/config-service';
+import { authInterceptor } from './domains/shared/util-auth/auth.interceptor';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -31,7 +31,7 @@ export const appConfig: ApplicationConfig = {
       routes,
       withComponentInputBinding(), // Enable automatic input binding:
       withPreloading(PreloadAllModules), // Preload all lazy-loaded modules after initial load
-      withHashLocation(), // Activate HashLocationStrategy
+      // withHashLocation(), // Activate HashLocationStrategy
       withExperimentalAutoCleanupInjectors(), // Automatically clean up route-level providers when the user navigates away from a route.
     ),
     provideHttpClient(

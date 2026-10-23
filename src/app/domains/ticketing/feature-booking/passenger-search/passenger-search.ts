@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, inject, linkedSignal } from '@angular/core';
-import { PassengerStore } from '@flights/ticketing/feature-booking/passenger-search/passenger-store';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { form } from '@angular/forms/signals';
+import { PassengerStore } from './passenger-store';
 
 @Component({
   selector: 'app-passenger-search',

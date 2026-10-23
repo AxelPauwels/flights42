@@ -6,13 +6,14 @@ import { BookingNavigation } from './feature-booking/booking-navigation';
 import { DefaultLanguageService, LanguageService } from '../shared/util-common/language';
 import {
   NextFlightsOverview
-} from '@flights/ticketing/feature-next-flights/next-flights-overview/next-flights-overview';
-import { ReportingPage } from '@flights/ticketing/feature-reporting/reporting-page/reporting-page';
+} from './feature-next-flights/next-flights-overview/next-flights-overview';
+import { ReportingPage } from './feature-reporting/reporting-page/reporting-page';
 import { provideEnvironmentInitializer } from '@angular/core';
-import { authGuard } from '@flights/shared/util-auth/auth.guard';
-import { exitGuard } from '@flights/shared/util-common/exit.guard';
-import { PassengerEdit } from '@flights/ticketing/feature-booking/passenger-edit/passenger-edit';
-import { passengerResolver } from '@flights/ticketing/feature-booking/passenger-edit/passenger-resolver';
+import { authGuard } from '../shared/util-auth/auth.guard';
+import { exitGuard } from '../shared/util-common/exit.guard';
+import { PassengerEdit } from './feature-booking/passenger-edit/passenger-edit';
+import { passengerResolver } from './feature-booking/passenger-edit/passenger-resolver';
+
 export const ticketingRoutes: Routes = [
   {
     path: '',

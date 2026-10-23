@@ -11,8 +11,8 @@ import {
 } from '@ngrx/signals';
 
 import { FlightClient } from '../../data/flight-client';
-import { Flight } from '@flights/ticketing/data/flight-model';
-import { withDevToolsForDebugMode } from '@flights/shared/util-common/with-dev-tools-for-debug-mode';
+import { withDevToolsForDebugMode } from '../../../shared/util-common/with-dev-tools-for-debug-mode';
+import { Flight } from '../../data/flight-model';
 
 export interface FlightFilter {
   from: string;

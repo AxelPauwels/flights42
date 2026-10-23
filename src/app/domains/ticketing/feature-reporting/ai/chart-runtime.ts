@@ -6,7 +6,6 @@ import { firstValueFrom } from 'rxjs';
 import { FlightClient } from '../../data/flight-client';
 import { FlightSchema } from '../../data/flight-info';
 import { DataItem } from '../chart/data-item';
-import { Flight } from '@flights/ticketing/data/flight-model';
 
 interface Input { from: string; to: string };
 

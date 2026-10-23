@@ -6,9 +6,9 @@ import {
 export default withNativeFederation({
   name: 'flights42',
 
-  exposes: {
-    './Component': './src/app/app.ts',
-  },
+  // exposes: {
+  //   './Component': './src/app/app.ts',
+  // },
 
   //shareScope: autoShareScope({level: 'minor'}),
 
@@ -29,8 +29,6 @@ export default withNativeFederation({
   // https://native-federation.com/docs/v4/angular-adapter/configuration/
 
   features: {
-    denseChunking: true,
-    denseExternals: true,
-    strictImports: false,
+    ignoreUnusedDeps: true,
   },
 });

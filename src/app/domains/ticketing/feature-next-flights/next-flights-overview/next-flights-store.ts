@@ -14,7 +14,7 @@ import { catchError, finalize, firstValueFrom, tap, throwError } from 'rxjs';
 
 import { Flight } from '../../data/flight-model';
 import { TicketClient } from '../../data/ticket-client';
-import { Passenger } from '@flights/ticketing/data/passenger';
+import { Passenger } from '../../data/passenger';
 
 export interface NextFlightsState {
   selected: Record<number, boolean>;

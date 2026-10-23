@@ -1,10 +1,10 @@
 import { patchState, signalStore, withMethods, withProps, withState } from '@ngrx/signals';
 import { rxMethod } from '@ngrx/signals/rxjs-interop';
 import { inject } from '@angular/core';
-import { PassengerClient } from '@flights/ticketing/data/passenger-client';
-import { Passenger } from '@flights/ticketing/data/passenger';
+import { PassengerClient } from '../../data/passenger-client';
+import { Passenger } from '../../data/passenger';
 import { catchError, of, pipe, switchMap, tap } from 'rxjs';
-import { setLoading, withCallState } from '@flights/shared/util-common/call-state.feature';
+import { setLoading, withCallState } from '../../../shared/util-common/call-state.feature';
 interface PassengerStoreState {
   name: string;
     firstName: string;
