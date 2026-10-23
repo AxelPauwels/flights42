@@ -23,6 +23,7 @@
   "packageManager": "npm@11.6.1",
   "dependencies": {
     "@ag-ui/core": "^1.0.3",
+    "@angular-architects/native-federation": "^22.2.3",
     "@angular-architects/ngrx-toolkit": "^22.0.0",
     "@angular/cdk": "^21.2.14",
     "@angular/common": "^22.2.3",
@@ -44,7 +45,8 @@
     "express": "^5.1.0",
     "ngx-markdown": "^22.1.1",
     "rxjs": "~7.8.0",
-    "tslib": "^2.3.0"
+    "tslib": "^2.3.0",
+    "es-module-shims": "^2.8.0"
   },
   "devDependencies": {
     "@angular/build": "^22.2.3",
@@ -68,6 +70,7 @@
     "prettier": "^3.8.1",
     "typescript": "~6.0.3",
     "typescript-eslint": "8.59.2",
-    "vitest": "^4.0.8"
+    "vitest": "^4.0.8",
+    "@softarc/native-federation-orchestrator": "^4.8.0"
   }
 }

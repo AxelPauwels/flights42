@@ -125,6 +125,140 @@
           }
         }
       }
+    },
+    "miles": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/miles",
+      "sourceRoot": "projects/miles/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-architects/native-federation:build",
+          "options": {
+            "cacheExternalArtifacts": true,
+            "tsConfig": "projects/miles/tsconfig.federation.json"
+          },
+          "configurations": {
+            "production": {
+              "target": "miles:esbuild:production"
+            },
+            "development": {
+              "target": "miles:esbuild:development",
+              "dev": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-architects/native-federation:build",
+          "options": {
+            "target": "miles:serve-original:development",
+            "tsConfig": "projects/miles/tsconfig.federation.json",
+            "rebuildDelay": 500,
+            "cacheExternalArtifacts": true,
+            "dev": true,
+            "devServer": true,
+            "port": 0
+          }
+        },
+        "test": {
+          "builder": "@angular/build:unit-test"
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": ["projects/miles/**/*.ts", "projects/miles/**/*.html"],
+            "eslintConfig": "projects/miles/eslint.config.js"
+          }
+        },
+        "esbuild": {
+          "builder": "@angular/build:application",
+          "options": {
+            "browser": "projects/miles/src/main.ts",
+            "tsConfig": "projects/miles/tsconfig.app.json",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "projects/miles/public"
+              }
+            ],
+            "styles": ["projects/miles/src/styles.css"],
+            "polyfills": ["es-module-shims"]
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kB",
+                  "maximumError": "1MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "4kB",
+                  "maximumError": "8kB"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve-original": {
+          "builder": "@angular/build:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "miles:esbuild:production"
+            },
+            "development": {
+              "buildTarget": "miles:esbuild:development"
+            }
+          },
+          "defaultConfiguration": "development",
+          "options": {
+            "port": 4201
+          }
+        }
+      }
+    },
+    "ui-common": {
+      "projectType": "library",
+      "root": "projects/ui-common",
+      "sourceRoot": "projects/ui-common/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ui-common/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/ui-common/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular/build:unit-test",
+          "options": {
+            "tsConfig": "projects/ui-common/tsconfig.spec.json"
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": ["projects/ui-common/**/*.ts", "projects/ui-common/**/*.html"],
+            "eslintConfig": "projects/ui-common/eslint.config.js"
+          }
+        }
+      }
     }
   }
 }
