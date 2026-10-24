@@ -5,7 +5,7 @@ import { UserService } from './user-service';
 @Component({
   selector: 'lib-user-panel',
   imports: [],
-  changeDetection: ChangeDetectionStrategy.Eager,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   template: `<p class="mb-30">
     <b>Current User:</b> {{ userService.userName() }}
   </p> `,

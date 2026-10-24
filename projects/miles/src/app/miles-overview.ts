@@ -1,10 +1,10 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { UserPanel } from '@flights42/ui-common';
+import { UserPanel } from '@mfe/ui-common';
 
 @Component({
   selector: 'app-miles',
   imports: [UserPanel],
-  changeDetection: ChangeDetectionStrategy.Eager,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <h1>Your Bonus Miles</h1>
 
