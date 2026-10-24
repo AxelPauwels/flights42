@@ -14,8 +14,10 @@
     "importHelpers": true,
     "target": "ES2022",
     "module": "preserve",
+    "rootDir": ".",
     "paths": {
-      "@flights42/ui-common": ["./projects/ui-common/src/public-api.ts"]
+      "@mfe/ui-common": ["./projects/ui-common/src/public-api.ts"],
+      "@mfe/util-auth": ["./projects/util-auth/src/public-api.ts"]
     }
   },
   "angularCompilerOptions": {
@@ -31,6 +33,12 @@
     },
     {
       "path": "./tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/util-auth/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/util-auth/tsconfig.spec.json"
     }
   ]
 }
