@@ -1,3 +1,505 @@
+"Axel Pauwels <axel.pauwels@ravago.be>,Sat Oct 24 13:43:25 2026 +0200	b85cdeea207981f30bc4eb980871849043b4724e,Adding mfe remote 'svelte-app' by federation and use wrapper that injects that webComponent into angular"
+2	1	public/federation.manifest.json
+12	0	src/app/app.routes.ts
+3	0	src/app/domains/shared/ui-federation/wrapper.css
+4	0	src/app/domains/shared/ui-federation/wrapper.html
+50	0	src/app/domains/shared/ui-federation/wrapper.ts
+3	0	src/app/shell/sidebar/sidebar.html
+
+"Axel Pauwels <axel.pauwels@ravago.be>,Sat Oct 24 13:29:22 2026 +0200	e1da95c03c0a30e9d00d4053d03721747be1ce62,Installing @angular/elements to create webcomponents"
+17	0	package-lock.json
+1	0	package.json
+
+"Axel Pauwels <axel.pauwels@ravago.be>,Sat Oct 24 13:19:25 2026 +0200	6c9defeddcb3de1b48a14ef590893d2ff001679e,Fixing imports and sherrif issues"
+1	1	projects/miles/src/app/app.ts
+2	2	projects/miles/src/app/miles-overview.ts
+1	1	projects/miles/src/app/next-leve-page.ts
+1	1	projects/miles/src/main.ts
+1	1	projects/ui-common/src/lib/user-panel.ts
+
+"Axel Pauwels <axel.pauwels@ravago.be>,Sat Oct 24 13:19:11 2026 +0200	b5821cc165da6e7b6a8ae87770c52eedcc5ed723,Adding mfe util-auth"
+33	0	angular.json
+723	1	package-lock.json
+1	0	package.json
+64	0	projects/util-auth/README.md
+32	0	projects/util-auth/eslint.config.js
+7	0	projects/util-auth/ng-package.json
+12	0	projects/util-auth/package.json
+9	0	projects/util-auth/src/lib/auth.service.ts
+21	0	projects/util-auth/src/lib/util-auth.spec.ts
+9	0	projects/util-auth/src/lib/util-auth.ts
+6	0	projects/util-auth/src/public-api.ts
+13	0	projects/util-auth/tsconfig.lib.json
+11	0	projects/util-auth/tsconfig.lib.prod.json
+10	0	projects/util-auth/tsconfig.spec.json
+9	1	tsconfig.json
+
+"Axel Pauwels <axel.pauwels@ravago.be>,Fri Oct 23 20:22:34 2026 +0200	64e3d80f3cb2c00ccf6863ff66bb484ea4197d4c,Fixing build to make micro frontend work"
+5	1	federation.config.mjs
+1	0	package.json
+1	0	projects/miles/federation.config.mjs
+1	0	projects/miles/src/app/app.routes.ts
+1	1	src/app/app.config.ts
+14	10	src/app/app.routes.server.ts
+11	0	src/app/app.routes.ts
+2	2	src/app/app.ts
+6	0	src/app/shell/sidebar/sidebar.html
+1	1	src/main.ts
+
+"Axel Pauwels <axel.pauwels@ravago.be>,Fri Oct 23 17:29:07 2026 +0200	55576eeafdadbde0decf969a6a943a00395bade5,Fixing build"
+3	0	angular.json
+4	6	federation.config.mjs
+733	472	package-lock.json
+8	7	package.json
+1	1	projects/miles/src/styles.css
+1	1	src/app/app.config.server.ts
+3	3	src/app/app.config.ts
+6	5	src/app/app.routes.server.ts
+1	1	src/app/domains/ticketing/feature-booking/flight-edit/flight-detail-store.ts
+2	2	src/app/domains/ticketing/feature-booking/flight-edit/flight-edit.ts
+1	1	src/app/domains/ticketing/feature-booking/flight-search/flight-search.html
+1	2	src/app/domains/ticketing/feature-booking/flight-search/flight-search.ts
+2	2	src/app/domains/ticketing/feature-booking/flight-search/flight-store.ts
+1	1	src/app/domains/ticketing/feature-booking/passenger-search/passenger-search.ts
+3	3	src/app/domains/ticketing/feature-booking/passenger-search/passenger-store.ts
+1	1	src/app/domains/ticketing/feature-next-flights/next-flights-overview/next-flights-overview.ts
+1	1	src/app/domains/ticketing/feature-next-flights/next-flights-overview/next-flights-store.ts
+0	1	src/app/domains/ticketing/feature-reporting/ai/chart-runtime.ts
+7	6	src/app/domains/ticketing/ticketing.routes.ts
+1	1	src/app/domains/ticketing/ui/flight-card/flight-card.ts
+10	10	src/app/shell/about/about.ts
+0	1	tsconfig.json
+
+"Axel Pauwels <axel.pauwels@ravago.be>,Fri Oct 23 14:01:22 2026 +0200	3bebe0149be3a5b300198cfc8a4e63591d7f84fc,Adding host Micro Frontend Shell as project flights42"
+56	23	angular.json
+36	0	federation.config.mjs
+1	0	package-lock.json
+3	2	package.json
+3	0	public/federation.manifest.json
+3	3	src/app/app.routes.server.ts
+14	0	src/bootstrap.ts
+10	13	src/main.ts
+4	0	src/server.ts
+4	0	tsconfig.federation.json
+
+"Axel Pauwels <axel.pauwels@ravago.be>,Fri Oct 23 13:42:56 2026 +0200	09b15623226c7c212978caea624303af5f00160f,Adding Native Federation to Angular project 'miles'"
+36	0	projects/miles/federation.config.mjs
+6	0	projects/miles/src/bootstrap.ts
+4	0	projects/miles/tsconfig.federation.json
+2	1	tsconfig.json
+
+"Axel Pauwels <axel.pauwels@ravago.be>,Fri Oct 23 13:42:06 2026 +0200	ba43a058d7c54f11d7e64be131c537994d95093a,Adding missing project 'miles'"
+134	0	angular.json
+334	407	package-lock.json
+5	2	package.json
+32	0	projects/miles/eslint.config.js
+-	-	projects/miles/public/favicon.ico
+11	0	projects/miles/src/app/app.config.ts
+10	0	projects/miles/src/app/app.routes.ts
+17	0	projects/miles/src/app/app.ts
+37	0	projects/miles/src/app/miles-overview.ts
+12	0	projects/miles/src/app/next-leve-page.ts
+13	0	projects/miles/src/index.html
+11	0	projects/miles/src/main.ts
+6	0	projects/miles/src/styles.css
+19	0	projects/miles/tsconfig.app.json
+10	0	projects/miles/tsconfig.spec.json
+64	0	projects/ui-common/README.md
+32	0	projects/ui-common/eslint.config.js
+7	0	projects/ui-common/ng-package.json
+12	0	projects/ui-common/package.json
+15	0	projects/ui-common/src/lib/user-panel.ts
+6	0	projects/ui-common/src/lib/user-service.ts
+6	0	projects/ui-common/src/public-api.ts
+21	0	projects/ui-common/tsconfig.lib.json
+17	0	projects/ui-common/tsconfig.lib.prod.json
+18	0	projects/ui-common/tsconfig.spec.json
+
+"Axel Pauwels <axel.pauwels@ravago.be>,Thu Oct 22 11:17:00 2026 +0200	ddddf974d3ffcf24781eb1aff3d1cc47a6b6d18c,Adding PrerenderFallback to serverRoutes"
+7	1	src/app/app.routes.server.ts
+
+"Axel Pauwels <axel.pauwels@ravago.be>,Thu Oct 22 11:14:33 2026 +0200	04fe5d268dd3a73a037919fd4bccbd7c1980df94,Adding server routes with different renderModes"
+12	0	src/app/app.routes.server.ts
+
+"Axel Pauwels <axel.pauwels@ravago.be>,Thu Oct 22 10:59:35 2026 +0200	8bf81d1f3c8ed5cb7e87263355833b8e3ae82caf,Adding typeGuards isPlatformBrowser and isPlatformServer to execute specific code for that platform"
+12	1	src/app/app.ts
+
+"Axel Pauwels <axel.pauwels@ravago.be>,Thu Oct 22 10:52:15 2026 +0200	0d3240027e786f31b1178f3d07cff47c21362780,Updating ServiceAppConfig with different languageprovider"
+5	1	src/app/app.config.server.ts
+1	1	src/app/app.config.ts
+11	3	src/app/domains/shared/util-common/language.ts
+
+"Axel Pauwels <axel.pauwels@ravago.be>,Thu Oct 22 09:10:02 2026 +0200	3962a68654ceda3a7780e41ec00c956fd3aa4ff9,Adding SSR"
+9	1	angular.json
+62	24	package-lock.json
+7	2	package.json
+10	0	src/app/app.config.server.ts
+11	3	src/app/app.config.ts
+8	0	src/app/app.routes.server.ts
+7	0	src/main.server.ts
+66	0	src/server.ts
+1	1	tsconfig.app.json
+
+"Axel Pauwels <axel.pauwels@ravago.be>,Wed Oct 21 15:22:55 2026 +0200	4f4095c725265fa87b0ebbaef76105f92a724e73,Adding @defer blocks with placeholder, loading and error"
+18	1	src/app/domains/ticketing/feature-booking/flight-search/flight-search.html
+
+"Axel Pauwels <axel.pauwels@ravago.be>,Wed Oct 21 13:22:35 2026 +0200	2b4359a331d3b2ec0f0cea74e838b266800b0a27,Adding XsrfConfiguration to appConfig provider)"
+5	1	src/app/app.config.ts
+
+"Axel Pauwels <axel.pauwels@ravago.be>,Wed Oct 21 12:45:56 2026 +0200	cf6a2d1ad59f69136064d3c4188070e844df4d09,Adding grammatical translations (plurals, gender based,...)"
+4	0	src/app/domains/ticketing/feature-booking/flight-search/flight-search.html
+12	1	src/app/domains/ticketing/feature-booking/passenger-search/passenger-search.html
+6	0	src/app/domains/ticketing/feature-booking/passenger-search/passenger-search.ts
+
+"Axel Pauwels <axel.pauwels@ravago.be>,Wed Oct 21 12:37:03 2026 +0200	aeb28ca3b44cecf4d46cd79a8f1c785340eee323,Adding main.ts translations"
+7	0	messages.json
+8	1	src/main.ts
+
+"Axel Pauwels <axel.pauwels@ravago.be>,Wed Oct 21 12:34:06 2026 +0200	fda1c2f93b7af858642570411e97d65bdb058490,Configuring deutch translations and run separately"
+12	0	angular.json
+27	0	compiler-i18n/messages.de.xlf
+0	0	messages.xlf => compiler-i18n/messages.xlf
+6	4	package.json
+
+"Axel Pauwels <axel.pauwels@ravago.be>,Wed Oct 21 12:20:07 2026 +0200	40760e6b32e252252a316ddcdbc5c378a0d27cb1,extracting trans keys to file"
+25	0	messages.xlf
+5	1	package.json
+7	1	src/app/domains/ticketing/feature-booking/flight-search/flight-search.html
+6	2	src/app/domains/ticketing/feature-booking/flight-search/flight-search.ts
+
+"Axel Pauwels <axel.pauwels@ravago.be>,Wed Oct 21 12:05:27 2026 +0200	d763479bfc43767ae432a79ec0ce35060ced7064,Update angular core and install angular localize"
+2	1	angular.json
+148	84	package-lock.json
+10	9	package.json
+3	2	src/main.ts
+1	1	tsconfig.app.json
+1	1	tsconfig.spec.json
+
+"Axel Pauwels <axel.pauwels@ravago.be>,Tue Oct 20 14:08:29 2026 +0200	a9d61a7c104e18c051871fed8f8c9106de34c5e2,Adding first parts of Agentic UI"
+1420	337	package-lock.json
+7	0	package.json
+100	0	server-google.ts
+70	0	sheriff.config.simple.ts
+17	5	src/app/app.config.ts
+237	0	src/app/domains/shared/ui-assistent/assistant-chat/assistant-chat.css
+88	0	src/app/domains/shared/ui-assistent/assistant-chat/assistant-chat.html
+66	0	src/app/domains/shared/ui-assistent/assistant-chat/assistant-chat.ts
+39	0	src/app/domains/shared/ui-assistent/chat-messages/chat-messages.css
+49	0	src/app/domains/shared/ui-assistent/chat-messages/chat-messages.html
+76	0	src/app/domains/shared/ui-assistent/chat-messages/chat-messages.ts
+25	0	src/app/domains/shared/ui-assistent/chat-registry.ts
+12	0	src/app/domains/shared/ui-assistent/message-widget.ts
+12	0	src/app/domains/shared/ui-assistent/message.ts
+27	0	src/app/domains/shared/ui-assistent/tool-status.ts
+
+"Axel Pauwels <axel.pauwels@ravago.be>,Fri Oct 16 10:49:37 2026 +0200	6f6e955ad801968e36b0bd95081ea20d17239d50,Adding http interceptor"
+7	0	src/app/app.config.ts
+
+"Axel Pauwels <axel.pauwels@ravago.be>,Fri Oct 16 10:35:34 2026 +0200	49ab84f65c408b647c002342cf50b417a5cf1e63,Adding router resolver that updates the store before activating the route"
+6	0	src/app/domains/shared/util-common/extract-error.ts
+83	0	src/app/domains/ticketing/feature-booking/passenger-edit/passenger-detail-store.ts
+61	0	src/app/domains/ticketing/feature-booking/passenger-edit/passenger-edit.html
+74	0	src/app/domains/ticketing/feature-booking/passenger-edit/passenger-edit.ts
+34	0	src/app/domains/ticketing/feature-booking/passenger-edit/passenger-resolver.ts
+9	0	src/app/domains/ticketing/ticketing.routes.ts
+
+"Axel Pauwels <axel.pauwels@ravago.be>,Fri Oct 16 10:19:48 2026 +0200	361c4ba0422a762f951067d7bfb6bb43f3306804,Adding router events"
+6	0	src/app/app.html
+28	3	src/app/app.ts
+
+"Axel Pauwels <axel.pauwels@ravago.be>,Fri Oct 16 10:11:47 2026 +0200	4b43f7b412de861c34c07e68181f8427750033d3,Fixing missing config file for runtime issue"
+4	0	public/config.json
+
+"Axel Pauwels <axel.pauwels@ravago.be>,Fri Oct 16 10:00:27 2026 +0200	b730f81c281cb8cfe2ef240b9cb97979e2e189c6,Adding Route Guard canDeactivate"
+35	0	src/app/domains/shared/util-common/exit.guard.ts
+6	1	src/app/domains/ticketing/feature-booking/flight-edit/flight-edit.ts
+2	0	src/app/domains/ticketing/ticketing.routes.ts
+
+"Axel Pauwels <axel.pauwels@ravago.be>,Fri Oct 16 09:33:42 2026 +0200	bb3f0a99c2276dc5f79bc4a705b3a3863fa5d729,Adding Route Guard canActivate"
+23	0	src/app/domains/shared/util-auth/auth.guard.ts
+28	0	src/app/domains/shared/util-auth/auth.interceptor.ts
+10	0	src/app/domains/shared/util-auth/auth.service.ts
+2	0	src/app/domains/ticketing/ticketing.routes.ts
+
+"Axel Pauwels <axel.pauwels@ravago.be>,Fri Oct 16 09:13:34 2026 +0200	f63aeec04e6bc685a1b88d4c6089d845060ccfc4,Adding Environment Initializers"
+4	0	src/app/domains/ticketing/ticketing.routes.ts
+
+"Axel Pauwels <axel.pauwels@ravago.be>,Fri Oct 16 09:11:11 2026 +0200	1fe07b2dad01d85216936d338e52b5ad2982f9a5,Adding Application Initializers"
+3	1	src/app/app.config.ts
+17	4	src/app/domains/shared/util-common/config-service.ts
+
+"Axel Pauwels <axel.pauwels@ravago.be>,Fri Oct 9 14:55:10 2026 +0200	a5fda7af23c8e89b7cda96491869f58e3ab3ed4a,Adding dynamic components via code"
+1	1	src/app/app.html
+1	2	src/app/app.ts
+1	1	src/app/domains/shared/ui-common/dialog/dialog.service.ts
+
+"Axel Pauwels <axel.pauwels@ravago.be>,Fri Oct 9 14:47:30 2026 +0200	3005b3a6e6fa7f180f59b626dbae44e8f0132647,Adding dynamic components"
+2	0	src/app/app.html
+2	1	src/app/app.ts
+6	0	src/app/domains/shared/ui-common/dialog/dialog-event.ts
+29	0	src/app/domains/shared/ui-common/dialog/dialog-outlet.css
+12	0	src/app/domains/shared/ui-common/dialog/dialog-outlet.html
+39	0	src/app/domains/shared/ui-common/dialog/dialog-outlet.service.ts
+59	0	src/app/domains/shared/ui-common/dialog/dialog-outlet.ts
+28	0	src/app/domains/shared/ui-common/dialog/dialog.service.ts
+3	0	src/app/domains/shared/ui-common/dialog/dialog.token.ts
+7	0	src/app/shell/about/about.html
+82	73	src/app/shell/about/about.ts
+28	0	src/app/shell/about/demo-dialog.ts
+
+"Axel Pauwels <axel.pauwels@ravago.be>,Fri Oct 9 14:18:48 2026 +0200	ef03369831b26c1204f9b62279da5b58b6b3a0f0,Adding custom template outlet"
+47	0	src/app/domains/shared/ui-common/custom-template-outlet.ts
+
+"Axel Pauwels <axel.pauwels@ravago.be>,Fri Oct 9 13:56:24 2026 +0200	52a0d596a57a531d5faa648fe41f833ea32136d3,Adding structural directive DataTable with pagination and sorting"
+23	0	src/app/domains/shared/ui-common/advanced-data-table/advanced-data-table.css
+45	0	src/app/domains/shared/ui-common/advanced-data-table/advanced-data-table.html
+134	0	src/app/domains/shared/ui-common/advanced-data-table/advanced-data-table.ts
+36	1	src/app/shell/about/about.html
+54	3	src/app/shell/about/about.ts
+
+"Axel Pauwels <axel.pauwels@ravago.be>,Fri Oct 9 13:47:17 2026 +0200	0f0b3e82b368306d90a5aa39fdc4f69a130b8c10,Adding structural directive DataTable"
+45	0	src/app/domains/shared/ui-common/data-table/data-table.ts
+15	0	src/app/domains/shared/ui-common/data-table/table-field.ts
+13	0	src/app/shell/about/about.html
+19	2	src/app/shell/about/about.ts
+
+"Axel Pauwels <axel.pauwels@ravago.be>,Fri Oct 9 12:04:50 2026 +0200	ee6892a978be9d65ad1ff4077e46aba6671fd1a7,Adding tooltip by directive and passing a template parameters"
+6	6	src/app/domains/shared/ui-common/tooltip.ts
+13	4	src/app/shell/about/about.html
+
+"Axel Pauwels <axel.pauwels@ravago.be>,Fri Oct 9 11:55:45 2026 +0200	721b0d2f95b5661736ea66d68b3680e9e771da84,Adding tooltip by directive and passing a template (templateRef and ViewContainerRef)"
+96	0	src/app/domains/shared/ui-common/tooltip.ts
+10	0	src/app/shell/about/about.html
+2	1	src/app/shell/about/about.ts
+
+"Axel Pauwels <axel.pauwels@ravago.be>,Fri Oct 9 11:41:12 2026 +0200	27ea932777244d07b715d051cf8abeecdffd37f3,Adding tooltip by directive to controll DOM"
+79	0	src/app/domains/shared/ui-common/simple-tooltip.ts
+9	0	src/app/shell/about/about.html
+2	1	src/app/shell/about/about.ts
+
+"Axel Pauwels <axel.pauwels@ravago.be>,Fri Oct 9 11:18:46 2026 +0200	c768d82a5dd7e7849be8e0bea5d64bf1fadb7614,Adding attribute directive but use differently with only output of exportAs template variable assignment"
+11	1	src/app/shell/about/about.html
+5	1	src/app/shell/about/about.ts
+
+"Axel Pauwels <axel.pauwels@ravago.be>,Fri Oct 9 09:56:14 2026 +0200	57c083fb705095ed227f076a830703ba28e68029,Adding attribute directive (clickWithWarning)"
+33	0	src/app/domains/shared/ui-common/click-with-warning.directive.ts
+0	1	src/app/domains/shared/ui-common/tab/tab.html
+0	8	src/app/domains/shared/ui-common/tab/tab.ts
+0	1	src/app/domains/shared/ui-common/tabbed-pane/tabbed-pane.html
+0	8	src/app/domains/shared/ui-common/tabbed-pane/tabbed-pane.ts
+35	0	src/app/domains/shared/util-common/confirm.ts
+2	0	src/app/shell/about/about.html
+2	4	src/app/shell/about/about.ts
+
+"Axel Pauwels <axel.pauwels@ravago.be>,Thu Oct 8 12:50:30 2026 +0200	c77896aca3fcdfd355c2658156d37b3c3fa63c35,Adding tabpane but with service"
+25	0	src/app/domains/shared/ui-common/service-tabbed-pane/tab-registry.ts
+48	0	src/app/domains/shared/ui-common/service-tabbed-pane/tab.ts
+83	0	src/app/domains/shared/ui-common/service-tabbed-pane/tabbed-pane.ts
+
+"Axel Pauwels <axel.pauwels@ravago.be>,Thu Oct 8 12:39:58 2026 +0200	6cbeeb5c61b0f0635a7afea21eb0ec6685215bbf,Cummunicate by Template Variables"
+3	1	src/app/shell/about/about.html
+
+"Axel Pauwels <axel.pauwels@ravago.be>,Thu Oct 8 12:16:07 2026 +0200	b4d1905c53b07b9a3a83b051ab4af5842abfd4c3,Installing chartJs for viewChild examples"
+190	1	package-lock.json
+2	0	package.json
+10	1	src/app/domains/shared/util-common/config-service.ts
+17	0	src/app/domains/ticketing/data/flight-info.ts
+1	1	src/app/domains/ticketing/feature-reporting/ai/chart-resource.ts
+7	4	src/app/domains/ticketing/feature-reporting/ai/chart-runtime.ts
+3	53	src/app/domains/ticketing/feature-reporting/reporting-page/reporting-page.html
+
+"Axel Pauwels <axel.pauwels@ravago.be>,Thu Oct 8 11:55:19 2026 +0200	2eec22d15c90e39d5f8dd8913b291889cdd327ad,Installing chartJs for viewChild examples"
+28	8	package-lock.json
+2	1	package.json
+67	0	src/app/domains/ticketing/feature-reporting/ai/chart-resource.ts
+52	0	src/app/domains/ticketing/feature-reporting/ai/chart-runtime.ts
+22	0	src/app/domains/ticketing/feature-reporting/chart/chart-colors.ts
+4	0	src/app/domains/ticketing/feature-reporting/chart/data-item.ts
+8	0	src/app/domains/ticketing/feature-reporting/reporting-page/example-prompts.ts
+7	0	src/app/domains/ticketing/feature-reporting/reporting-page/reporting-page.css
+53	0	src/app/domains/ticketing/feature-reporting/reporting-page/reporting-page.html
+106	0	src/app/domains/ticketing/feature-reporting/reporting-page/reporting-page.ts
+5	0	src/app/domains/ticketing/ticketing.routes.ts
+
+"Axel Pauwels <axel.pauwels@ravago.be>,Thu Oct 8 11:22:32 2026 +0200	6c3e95c3168c480ebee1fe4bb8d3e55dbeda4f3a,Adding tabpane but with contentChilderen"
+48	0	src/app/domains/shared/ui-common/query-tabbed-pane/tab.ts
+115	0	src/app/domains/shared/ui-common/query-tabbed-pane/tabbed-pane.ts
+2	2	src/app/shell/about/about.ts
+
+"Axel Pauwels <axel.pauwels@ravago.be>,Thu Oct 8 11:05:44 2026 +0200	6b4c32427edfe17e3f80d637d4ccc7cf5ea5f8d9,Making injected class optional with optional:true"
+5	4	src/app/domains/shared/ui-common/injection-tabbed-pane/tab.ts
+
+"Axel Pauwels <axel.pauwels@ravago.be>,Thu Oct 8 10:45:19 2026 +0200	1adabb956a52b77b33af987fd3c57ccb6b2c1c9a,Adding tabpane for content-projection"
+47	0	src/app/domains/shared/ui-common/injection-tabbed-pane/tab.ts
+93	0	src/app/domains/shared/ui-common/injection-tabbed-pane/tabbed-pane.ts
+1	0	src/app/domains/shared/ui-common/tab/tab.html
+8	0	src/app/domains/shared/ui-common/tab/tab.ts
+1	0	src/app/domains/shared/ui-common/tabbed-pane/tabbed-pane.html
+8	0	src/app/domains/shared/ui-common/tabbed-pane/tabbed-pane.ts
+13	1	src/app/shell/about/about.html
+6	1	src/app/shell/about/about.ts
+
+"Axel Pauwels <axel.pauwels@ravago.be>,Thu Oct 8 10:09:09 2026 +0200	fe3d439fa53236e2cf16e34c75ab3167cb2a988f,Commenting module due standalone error (will it be used?)"
+16	16	src/app/domains/ticketing/feature-next-flights/next-flights.module.ts
+
+"Axel Pauwels <axel.pauwels@ravago.be>,Thu Oct 1 17:53:14 2026 +0200	6508e6d6efddfaa9389981194cd3d08e2be7c081,Fixing missing city pipe"
+1	1	src/app/domains/luggage/feature-luggage/luggage-card/luggage-card.html
+33	0	src/app/domains/shared/ui-common/city.pipe.ts
+
+"Axel Pauwels <axel.pauwels@ravago.be>,Thu Oct 1 17:47:28 2026 +0200	7f48f13ee9063c7df6a5ce295e242a43e851332f,Using custom features for SignalStore"
+19	6	src/app/domains/ticketing/feature-booking/passenger-search/passenger-store.ts
+
+"Axel Pauwels <axel.pauwels@ravago.be>,Thu Oct 1 17:32:53 2026 +0200	2243daa2fd71955ee1985540f9b32713ab8898f2,Adding custom features for SignalStore"
+46	0	src/app/domains/shared/util-common/call-state.feature.ts
+
+"Axel Pauwels <axel.pauwels@ravago.be>,Thu Oct 1 17:07:31 2026 +0200	7edb9c4850e854162c01910c883d81e73390fde8,Installing @ngrx/operators"
+13	0	package-lock.json
+1	0	package.json
+
+"Axel Pauwels <axel.pauwels@ravago.be>,Thu Oct 1 17:03:54 2026 +0200	5dc0c4d9244897e44874936755b51a3396eebef7,Adding dispachers to dispatch events"
+13	7	src/app/domains/luggage/feature-luggage/luggage-overview/luggage-overview.ts
+4	7	src/app/domains/luggage/feature-luggage/luggage-overview/luggage-store.ts
+
+"Axel Pauwels <axel.pauwels@ravago.be>,Thu Oct 1 16:52:16 2026 +0200	cbf1a124be4a75a1040d1a1a9136b152c6d3c9ce,Adding eventHandlers (redux 'effects')"
+6	2	src/app/domains/luggage/feature-luggage/luggage-overview/luggage-store.ts
+
+"Axel Pauwels <axel.pauwels@ravago.be>,Thu Oct 1 16:48:13 2026 +0200	b2619cfaebffc07603d3947d9dcf5e6673474fcf,Adding LuggageClient"
+46	0	src/app/domains/luggage/data/luggage-client.ts
+
+"Axel Pauwels <axel.pauwels@ravago.be>,Thu Oct 1 16:47:16 2026 +0200	001050ee73f7fe917ecb716cc5d6c8584f4bd822,Adding reducers"
+13	5	src/app/domains/luggage/feature-luggage/luggage-overview/luggage-store.ts
+
+"Axel Pauwels <axel.pauwels@ravago.be>,Thu Oct 1 16:40:12 2026 +0200	57421817493b07569a9d65b5f072d7132db0eeb0,Adding documentation about eventGroups"
+13	0	src/app/domains/luggage/feature-luggage/luggage-overview/luggage-store.ts
+
+"Axel Pauwels <axel.pauwels@ravago.be>,Thu Oct 1 16:34:33 2026 +0200	cfed7ddf271cd2d0e48587e6acb3524b4b1c0b51,Adding resources for feature luggage"
+29	0	src/app/domains/luggage/feature-luggage/luggage-card/luggage-card.html
+45	0	src/app/domains/luggage/feature-luggage/luggage-card/luggage-card.ts
+16	0	src/app/domains/luggage/feature-luggage/luggage-overview/luggage-overview.html
+27	0	src/app/domains/luggage/feature-luggage/luggage-overview/luggage-overview.ts
+90	0	src/app/domains/luggage/feature-luggage/luggage-overview/luggage-store.ts
+27	0	src/app/domains/luggage/feature-luggage/luggage-overview/simple-luggage-store.ts
+
+"Axel Pauwels <axel.pauwels@ravago.be>,Thu Oct 1 15:46:10 2026 +0200	7ea776096c976d464a11ea46633a231e04ccf104,Adding a normalized-store"
+71	56	src/app/domains/ticketing/feature-next-flights/next-flights-overview/normalized-store.ts
+
+"Axel Pauwels <axel.pauwels@ravago.be>,Thu Oct 1 15:06:39 2026 +0200	6597f60a75448544ce5eaceaa696cc1df918c356,Adding entities to store"
+8	13	src/app/domains/ticketing/feature-next-flights/next-flights-overview/next-flights-overview.ts
+23	6	src/app/domains/ticketing/feature-next-flights/next-flights-overview/next-flights-store.ts
+41	41	src/app/domains/ticketing/feature-next-flights/next-flights-overview/normalized-store.ts
+2	0	src/app/domains/ticketing/feature-next-flights/next-flights.routes.ts
+7	0	src/app/domains/ticketing/ticketing.routes.ts
+
+"Axel Pauwels <axel.pauwels@ravago.be>,Thu Oct 1 14:26:11 2026 +0200	1f42d0568306a5bf3f5881f7c7bf25c8774fe6ce,Renaming FlightsDomainModel to Flights"
+17	17	src/app/domains/ticketing/data/flight-client.ts
+3	3	src/app/domains/ticketing/data/flight-mapper.ts
+3	2	src/app/domains/ticketing/data/flight-model.ts
+5	5	src/app/domains/ticketing/data/flight-validators.ts
+50	0	src/app/domains/ticketing/data/ticket-client.ts
+2	2	src/app/domains/ticketing/feature-booking/flight-edit/flight-detail-store.ts
+4	4	src/app/domains/ticketing/feature-booking/flight-edit/flight-edit.ts
+3	3	src/app/domains/ticketing/feature-booking/flight-edit/simple-flight-detail-store.ts
+6	6	src/app/domains/ticketing/feature-booking/flight-search/flight-search.ts
+2	2	src/app/domains/ticketing/feature-booking/flight-search/flight-store.ts
+2	2	src/app/domains/ticketing/feature-booking/flight-search/simple-flight-store.ts
+18	18	src/app/domains/ticketing/feature-next-flights/next-flights-overview/next-flights-overview.html
+6	5	src/app/domains/ticketing/feature-next-flights/next-flights-overview/next-flights-overview.ts
+11	7	src/app/domains/ticketing/feature-next-flights/next-flights-overview/next-flights-store.ts
+1	1	src/app/domains/ticketing/feature-next-flights/next-flights-overview/normalized-store.ts
+2	2	src/app/domains/ticketing/ui/flight-card/flight-card.ts
+
+"Axel Pauwels <axel.pauwels@ravago.be>,Thu Oct 1 14:14:09 2026 +0200	11b8bb1d812eba70d86eeab63a88178c0913b5c8,Adding resources for feature next-flights"
+20	0	src/app/domains/ticketing/feature-next-flights/next-flights-overview/next-flights-overview.html
+37	0	src/app/domains/ticketing/feature-next-flights/next-flights-overview/next-flights-overview.ts
+72	0	src/app/domains/ticketing/feature-next-flights/next-flights-overview/next-flights-store.ts
+134	0	src/app/domains/ticketing/feature-next-flights/next-flights-overview/normalized-store.ts
+24	0	src/app/domains/ticketing/feature-next-flights/next-flights-overview/simple-next-flights-store.ts
+16	0	src/app/domains/ticketing/feature-next-flights/next-flights.module.ts
+10	0	src/app/domains/ticketing/feature-next-flights/next-flights.routes.ts
+
+"Axel Pauwels <axel.pauwels@ravago.be>,Thu Oct 1 11:58:53 2026 +0200	da474d7e60972129ea322714ae29b6b2ee2ddb7f,Adding a signalMethod to FlightDetailStore and use it to bind it to input id"
+4	0	src/app/domains/ticketing/feature-booking/flight-edit/flight-detail-store.ts
+15	12	src/app/domains/ticketing/feature-booking/flight-edit/flight-edit.ts
+
+"Axel Pauwels <axel.pauwels@ravago.be>,Thu Oct 1 11:48:35 2026 +0200	b34f513239d6e016a30e2675c835aabd9ff40a40,Adding a manual subscription destroy for rxMethod (exceptional, this is all cleaned up on destroy by default)"
+9	3	src/app/domains/ticketing/feature-booking/passenger-search/passenger-search.ts
+
+"Axel Pauwels <axel.pauwels@ravago.be>,Thu Oct 1 11:45:00 2026 +0200	9fc18e979218d512f2822ff239fe4a20b2409efa,Adding PassengerStore and implementing the rxMethod of the Store"
+25	2	src/app/domains/ticketing/feature-booking/passenger-search/passenger-search.ts
+3	0	src/app/domains/ticketing/feature-booking/passenger-search/passenger-store.ts
+
+"Axel Pauwels <axel.pauwels@ravago.be>,Thu Oct 1 11:36:04 2026 +0200	c37d692e275bdbd1657e6c1215d160147e8662e9,Adding rxMethod to PassengerStore (a method that can use rxjs)"
+69	0	src/app/domains/ticketing/feature-booking/passenger-search/passenger-store.ts
+
+"Axel Pauwels <axel.pauwels@ravago.be>,Thu Oct 1 11:26:57 2026 +0200	4fbc2f2c44abe1e98273624c43ed45f0e28215e2,Adding Passenger interface, schema and client"
+112	0	src/app/domains/ticketing/data/passenger-client.ts
+10	0	src/app/domains/ticketing/data/passenger-schema.ts
+15	0	src/app/domains/ticketing/data/passenger.ts
+
+"Axel Pauwels <axel.pauwels@ravago.be>,Thu Oct 1 11:18:02 2026 +0200	e60afaab00807dbf8dc77562c731637a49103b87,Adding rxMutation to FlighClient"
+9	1	src/app/domains/ticketing/data/flight-client.ts
+5	7	src/app/domains/ticketing/feature-booking/flight-edit/flight-edit.ts
+
+"Axel Pauwels <axel.pauwels@ravago.be>,Thu Oct 1 11:12:41 2026 +0200	1525ccdc2abc5bc7e4d6d01e237c29411050d9b5,Adding run configurations"
+12	0	.run/test-coverage.run.xml
+12	0	.run/test.run.xml
+
+"Axel Pauwels <axel.pauwels@ravago.be>,Thu Oct 1 11:09:30 2026 +0200	bcfc686fa6d8ba4546c284e0835755f74fd2b00f,Using the http-mutation of the signal-store"
+1	0	src/app/domains/ticketing/data/flight-client.ts
+7	1	src/app/domains/ticketing/feature-booking/flight-edit/flight-detail-store.ts
+32	13	src/app/domains/ticketing/feature-booking/flight-edit/flight-edit.ts
+
+"Axel Pauwels <axel.pauwels@ravago.be>,Thu Oct 1 10:25:04 2026 +0200	bdb0cf6153187a8882751bbc3594936aa702d54a,Adding store mutation (withMutations)"
+16	0	src/app/domains/ticketing/data/flight-client.ts
+80	0	src/app/domains/ticketing/feature-booking/flight-edit/flight-detail-store.ts
+
+"Axel Pauwels <axel.pauwels@ravago.be>,Wed Sep 30 14:37:58 2026 +0200	29a1cb2bf6b04f2ecefc58f6f33c067fbebb4e1a,Refactoring withDevtools, only for dev, but now at compile time"
+3	1	sheriff.config.ts
+5	0	src/app/domains/shared/util-common/with-dev-tools-for-debug-mode.ts
+8	4	src/app/domains/ticketing/feature-booking/flight-search/flight-store.ts
+5	1	src/environments/environment.development.ts
+5	1	src/environments/environment.ts
+
+"Axel Pauwels <axel.pauwels@ravago.be>,Wed Sep 30 14:20:21 2026 +0200	75bc9dc94d20281d69b2699873a03cac5d1ccc73,Adding environments"
+7	1	angular.json
+1	0	src/environments/environment.development.ts
+1	0	src/environments/environment.ts
+
+"Axel Pauwels <axel.pauwels@ravago.be>,Wed Sep 30 14:19:20 2026 +0200	7712cc3adc7d370ef19850b282ef962cf2d1fa4e,Adding withDevtools fir Chrome Redux connection, only for dev at runtime"
+7	4	src/app/domains/ticketing/feature-booking/flight-search/flight-store.ts
+1	2	tsconfig.json
+
+"Axel Pauwels <axel.pauwels@ravago.be>,Wed Sep 30 13:55:59 2026 +0200	a042335247836509612a55dff57c90e1d0ce5de4,Using ngrx signal store"
+2	1	src/app/domains/ticketing/feature-booking/flight-search/flight-search.ts
+
+"Axel Pauwels <axel.pauwels@ravago.be>,Wed Sep 30 13:51:14 2026 +0200	32d4dd4c152b855c6db4b9a186afba57a8708ca3,Agging ngrx signal store"
+54	632	package-lock.json
+2	1	package.json
+129	0	src/app/domains/ticketing/feature-booking/flight-search/flight-store.ts
+
+"Axel Pauwels <axel.pauwels@ravago.be>,Wed Sep 30 11:52:01 2026 +0200	840ee6068401e1a4d56c7e0d890d138ba73b7060,Installing ngrx signals package"
+19	0	package-lock.json
+1	0	package.json
+
+"Axel Pauwels <axel.pauwels@ravago.be>,Wed Sep 30 11:51:32 2026 +0200	11299e1e90064652addd0b5b00019af096478cf9,Renaming flight-store to simple-flight-store"
+2	2	src/app/domains/ticketing/feature-booking/flight-search/flight-search.spec.ts
+2	2	src/app/domains/ticketing/feature-booking/flight-search/flight-search.ts
+3	3	src/app/domains/ticketing/feature-booking/flight-search/flight-store.spec.ts
+1	1	src/app/domains/ticketing/feature-booking/flight-search/{flight-store.ts => simple-flight-store.ts}
+2	2	src/app/domains/ticketing/feature-booking/reactive-flight-search/reactive-flight-search.ts
+
+"Axel Pauwels <axel.pauwels@ravago.be>,Tue Sep 29 13:45:33 2026 +0200	a17c95b0e5a2b17cbd4f4913347d194a4d6960af,Adding Lightweight Path Mappings in tsconfig"
+1	1	src/app/domains/ticketing/ui/flight-card/flight-card.ts
+5	1	tsconfig.json
+
+"Axel Pauwels <axel.pauwels@ravago.be>,Tue Sep 29 13:37:34 2026 +0200	374b12a24cfda5da205b79d74fdd5d4965a3272f,Installing detective"
+32	0	.detective/config.json
+1	0	.detective/hash
+499	0	.detective/log
+3632	0	.detective/trend-cache.json
+1711	21	package-lock.json
+3	1	package.json
+
 "Axel Pauwels <axel.pauwels@ravago.be>,Tue Sep 29 12:04:18 2026 +0200	9aef8a3b0f56355a68dce54623f767f0acd5b37a,Installing and configuring Sheriff"
 5	0	eslint.config.js
 454	182	package-lock.json

@@ -23,7 +23,6 @@ import {
 import { FlightFormModel } from './flight-model';
 import { aircraftSchema } from './aircraft-schema';
 import { priceSchema } from './price-schema';
-import { FlightForm } from '../feature-booking/flight-edit/flight-form/flight-form';
 
 export const delayedFlight = schema<FlightFormModel>((path) => {
   required(path.delay);

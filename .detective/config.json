@@ -1,17 +1,20 @@
 {
   "scopes": [
-    "src/app/domains/ticketing/feature-booking",
-    "src/app/domains/ticketing/data",
-    "src/app/domains/ticketing/ui",
-    "src/app/domains/shared/util-common",
-    "src/app/domains/shared/ui-forms",
-    "src/app/domains/shared/ui-common"
+    "projects/ui-common/src/lib",
+    "projects/miles/src/app",
+    "src/app/domains/shared",
+    "src/app/domains/ticketing/data"
   ],
   "groups": [
-    "src/app/domains/shared",
+    "projects/miles/src",
+    "projects/miles",
+    "projects/ui-common/src",
+    "projects/ui-common",
+    "projects",
     "src/app/domains/ticketing",
     "src/app/domains",
-    "src/app"
+    "src/app",
+    "src"
   ],
   "entries": [],
   "filter": {
@@ -20,7 +23,7 @@
   },
   "aliases": {},
   "teams": {
-    "example-team-a": [
+    "miles": [
       "John Doe",
       "Jane Doe"
     ],
