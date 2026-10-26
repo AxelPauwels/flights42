@@ -16,6 +16,8 @@
     "module": "preserve",
     "rootDir": ".",
     "paths": {
+      // three-part imports that mirror the matrix position (workspace/domain/module)
+      "@flights/*": ["./src/app/domains/*"],
       "@mfe/ui-common": ["./projects/ui-common/src/public-api.ts"],
       "@mfe/util-auth": ["./projects/util-auth/src/public-api.ts"]
     }

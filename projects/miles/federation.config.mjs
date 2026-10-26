@@ -1,6 +1,7 @@
 import {
   withNativeFederation,
   fromPackageJson,
+  mappingsFromWorkspace,
 } from '@angular-architects/native-federation/config';
 
 export default withNativeFederation({
@@ -22,7 +23,9 @@ export default withNativeFederation({
     .patch(['@angular/*'], { includeSecondaries: { keepAll: true } })
     .get(),
 
-  //sharedMappings: mappingsFromWorkspace({ singleton: true }).filter(['@my-org/*']).get(),
+  sharedMappings: mappingsFromWorkspace({ singleton: true })
+    .filter(['@mfe/*'])
+    .get(),
 
   skip: ['rxjs/ajax', 'rxjs/fetch', 'rxjs/testing', 'rxjs/webSocket'],
 

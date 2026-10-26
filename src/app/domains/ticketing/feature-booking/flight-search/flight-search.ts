@@ -24,8 +24,9 @@ import { firstValueFrom, Observable, Subject, takeUntil } from 'rxjs';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { FlightClient } from '../../data/flight-client';
 import { DefaultLanguageService, LanguageService } from '../../../shared/util-common/language';
-import { appSettings } from '../../../shared/ui-common/app-settings';
 import { FlightStore } from './flight-store';
+// import { appSettings } from '../../../shared/ui-common/app-settings';
+import { appSettings } from '@flights/shared/ui-common/app-settings';
 
 @Component({
   selector: 'app-flight-search',
