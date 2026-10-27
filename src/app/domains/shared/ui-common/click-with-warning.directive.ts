@@ -4,7 +4,7 @@ import { ConfirmComponent } from '../util-common/confirm';
 
 @Directive({
   selector: '[appClickWithWarning]',
-  exportAs: 'clickWithWarning',
+  exportAs: 'clickWithWarning', // gives the directive a name you can reference: <button (appClickWithWarning)="deleteAll()" #cww="clickWithWarning">Delete All!</button>
   host: {
     class: 'btn btn-danger',
     '(click)': 'handleClick($event.shiftKey)',
@@ -13,6 +13,8 @@ import { ConfirmComponent } from '../util-common/confirm';
 export class ClickWithWarning {
   private readonly dialog = inject(Dialog);
   readonly warning = input('Are you sure?');
+  // Trick: give the output the same name as the selector.
+  // Then one attribute both applies the directive and binds the event <button (appClickWithWarning)="deleteAll()">
   readonly appClickWithWarning = output<void>();
   handleClick(shiftKey: boolean): void {
     if (shiftKey) {
